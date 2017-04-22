@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button onclick="myFunction()">Clique!</button>
+        <script>
+            function myFunction() {
+                var i;
+                for(i=1;i<101;i++){
+                    if(i%3==0 && i%5==0){
+                        console.log("FizzBuzz");
+                    }
+                    if(i%3==0 && i%5!=0){
+                        console.log("Fizz");
+                    }
+                    if(i%5==0 && i%3!=0){
+                        console.log("Buzz");      
+                    }
+                    if(i%3!=0 && i%5!=0){
+                        console.log(i);
+                    }                                     
+                }
+                for(i=1;i<101;i++){
+                    if(i%3==0 && i%5==0){
+                        document.write("FizzBuzz");
+                    }
+                    if(i%3==0 && i%5!=0){
+                        document.write("Fizz");
+                    }
+                    if(i%5==0 && i%3!=0){
+                        document.write("Buzz");      
+                    }
+                    if(i%3!=0 && i%5!=0){
+                        document.write(i);
+                    }
+                    document.write("<br>");                                      
+                }
+            }
+        </script>
+    </body>
+</html>
