@@ -20,7 +20,7 @@ OBS: A quantidade de linhas deve ser informada pelo usuário.
 
 #### Resposta:
 ```javascript
-var linhas = prompt("Numero de linhas", 3)
+var linhas = prompt("Numero de linhas", 6)
 
 for (i = 0; i < linhas; ++i){
 	for (j = 0; j < i+1; ++j){
@@ -47,7 +47,7 @@ OBS: A quantidade de linhas deve ser informada pelo usuário.
 
 #### Resposta:
 ```javascript
-var linhas = prompt("Numero de linhas", 3)
+var linhas = prompt("Numero de linhas", 8)
 
 for (var i = 0; i < linhas; ++i){
     var HorS = (i%2 == 0) // Hashtag or Space
@@ -72,6 +72,12 @@ for (var i = 0; i < linhas; ++i){
 
 Implemente um programa que, dado uma palavra de entrada pelo usuário, verifique se essa palavra é um palíndromo. Um palíndromo é uma palavra que poder ser lida tanto da direita para a esquerda como da esquerda para a direita.
 
+#### Resposta:
+```javascript
+var palavra = prompt("É Palindromo?", "arara")
+document.write((palavra.split('').reverse().join('') == palavra) ? 'É Palindromo' : 'Num é Palindromo')
+```
+
 ### Um programa diferente...
 
 Escreva um programa que utilize a função console.log para imprimir números de 1 a 100, com duas exceções:
@@ -79,12 +85,21 @@ Escreva um programa que utilize a função console.log para imprimir números de
 Para números divsíveis por 3: Imprimir Fizz
 Para números divisíveis por 5: Imprimir Buzz
 Para números divisíveis por 3 e 5: Imprimir FizzBuzz
+#### Resposta:
+```javascript
+
+```
 
 # JavaScript: Funções
 
 ### Mínimo e Máximo
 
 Implemente duas funções JavaScript, uma para retornar o menor valor entre dois elementos (chamada `min(a, b)`), e outra para retornar o maior valor entre dois elementos (chamada `max(a, b)`).
+
+#### Resposta:
+```javascript
+
+```
 
 ### Recursividade
 
