@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="text" id="userInput"</input>
+        <button onclick="myFunction()">Clique!</button>
+        <button onclick="outraforma()">Outra forma</button>
+        <script>
+            function outraforma(){
+                var linhas = prompt("Numero de linhas", 0);
+                var isOdd = function(x) { return x & 1; };
+                var isEven  = function(x) { return !( x & 1 ); };
+                for (i=0;i<linhas;i++){
+                    if(isEven(i)){
+                        document.write("# # # #");
+                        document.writeln("<br>")
+                    }
+                    else{
+                        document.write("&nbsp;# # # #");
+                        document.writeln("<br>")
+                    }
+                }
+            }
+            function myFunction() {
+                var userInput = document.getElementById("userInput").value;
+                var isOdd = function(x) { return x & 1; };
+                var isEven  = function(x) { return !( x & 1 ); };
+                var i;
+                var j;
+                var cont=2;
+                for (i=0;i<userInput;i++){
+                    if(isEven(i)){
+                        document.write("# # # #");
+                        document.writeln("<br>")
+                    }
+                    else{
+                        document.write("&nbsp;# # # #");
+                        document.writeln("<br>")
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
