@@ -80,14 +80,19 @@ document.write((palavra.split('').reverse().join('') == palavra) ? 'É Palindrom
 
 ### Um programa diferente...
 
-Escreva um programa que utilize a função console.log para imprimir números de 1 a 100, com duas exceções:
+Escreva um programa que utilize a função ~~console.log~~ document.write para imprimir números de 1 a 100, com duas exceções:
 
 Para números divsíveis por 3: Imprimir Fizz
 Para números divisíveis por 5: Imprimir Buzz
 Para números divisíveis por 3 e 5: Imprimir FizzBuzz
 #### Resposta:
 ```javascript
-
+for (var i = 0; i < 100; ++i) {
+	if (i%3 == 0) document.write('Fizz')
+    if (i%5 == 0) document.write('Buzz')
+    if (i%3 != 0 && i%5 != 0) document.write(i)
+    document.write('<br>')
+}
 ```
 
 # JavaScript: Funções
