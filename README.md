@@ -118,9 +118,28 @@ function max(a, b) {
 
 * Extenda o exercício anterior de modo a criar uma função `mod(num, mod)`, que verifique se num é divisível por mod.
 
+```javascript
+function mod2(num){
+	return num%2 == 0
+}
+function mod(num,mod){
+	return num%mod == 0
+}
+```
+
 ### Contando caracteres
 
 Implemente uma função chamada `countChars(frase, c)` que receba como parâmetro uma string e um caractere e retorne quantas vezes aquele caracteres aparece na string.
+
+```javascript
+function countChars(frase, c) {//
+
+    var letras = frase.split('').filter(function(letra){
+    	return letra == c
+    })
+    return letras.length
+}
+```
 
 # JavaScript: Objetos & Arrays
 
