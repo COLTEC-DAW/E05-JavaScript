@@ -4,8 +4,7 @@
 
 **OBS: Todos os exercícios foram feitos e podem ser rodados no [JS.do](https://js.do)
 
-# JavaScript: Conceitos Básicos
-## Por Gustavo de Paula
+# JavaScript: Conceitos Básicos, feito por Gustavo de Paula
 
 ### Desenhando um triângulo
 
@@ -19,7 +18,7 @@ Implemente um programa em JavaScript que imprima a seguinte forma no console:
 ```
 OBS: A quantidade de linhas deve ser informada pelo usuário.
 
-Resposta:
+#### Resposta:
 ```javascript
 var linhas = prompt("Numero de linhas", 3)
 
@@ -30,8 +29,6 @@ for (i = 0; i < linhas; ++i){
 	document.writeln("<br>")
 }
 ```
-
-
 
 ### Tabuleiro de Xadrez
 
@@ -47,6 +44,29 @@ Implemente um programa em JavaScript que imprima na página um tabuleiro de xadr
  # # # #
 ```
 OBS: A quantidade de linhas deve ser informada pelo usuário.
+
+#### Resposta:
+```javascript
+var linhas = prompt("Numero de linhas", 3)
+
+for (var i = 0; i < linhas; ++i){
+    var HorS = (i%2 == 0) // Hashtag or Space
+	for (var j = 0; j < linhas-1; ++j){
+        document.write(HorS ? '#' : '&nbsp;')
+
+		if (j == linhas-2){
+            document.write(HorS ? '&nbsp;' : '#')
+			++j 
+			break
+		}
+
+        document.write(HorS ? '&nbsp;' : '#')
+        ++j
+	}
+	document.writeln("<br>")
+}
+```
+
 
 ### Verificando Palíndromos
 
