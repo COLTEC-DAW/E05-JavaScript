@@ -103,7 +103,13 @@ Implemente duas funções JavaScript, uma para retornar o menor valor entre dois
 
 #### Resposta:
 ```javascript
+function min(a, b) {
+	return (a<b ? a : b)
+}
 
+function max(a, b) {
+	return (a>b ? a : b)
+}
 ```
 
 ### Recursividade
