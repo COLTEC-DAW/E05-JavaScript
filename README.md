@@ -2,7 +2,10 @@
 
 *Nota: Exercícios retirados/inspirados do livro Eloquent JavaScript, de Marijn Haverbeke.*
 
+**OBS: Todos os exercícios foram feitos e podem ser rodados no [JS.do](https://js.do)
+
 # JavaScript: Conceitos Básicos
+## Por Gustavo de Paula
 
 ### Desenhando um triângulo
 
@@ -15,6 +18,20 @@ Implemente um programa em JavaScript que imprima a seguinte forma no console:
 ######
 ```
 OBS: A quantidade de linhas deve ser informada pelo usuário.
+
+Resposta:
+```javascript
+var linhas = prompt("Numero de linhas", 3)
+
+for (i = 0; i < linhas; ++i){
+	for (j = 0; j < i+1; ++j){
+		document.write('#')
+	}
+	document.writeln("<br>")
+}
+```
+
+
 
 ### Tabuleiro de Xadrez
 
