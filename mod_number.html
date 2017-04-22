@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            var n = prompt("Número:", 0);
+            var mod = prompt("Mod:",0);
+            function mod(x, y){
+                return (abs(x) > abs(y)) ? mod(abs(x)-abs(y), abs(y)) : (abs(x) < abs(y)) ? abs(x) : 0;
+            }
+            var result = mod(n,mod);
+            document.write(result);
+        </script>
+    </body>
+</html>
