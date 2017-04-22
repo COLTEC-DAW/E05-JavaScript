@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta encoding="utf-8">
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            var fraseUser = prompt("Escreva uma palavra");
+            var frase = fraseUser.toLowerCase();
+            function reverse(s){
+                return s.split("").reverse().join("");
+            }
+
+            var x = reverse(frase);
+            document.write(frase+ "<br>");
+            document.write(x+ "<br>");
+
+            if(x==frase){
+                document.write("É um palindromo!");
+            }
+            else{
+                document.write("Não é um palindromo!");
+            }
+        </script>
+    </body>
+</html>
