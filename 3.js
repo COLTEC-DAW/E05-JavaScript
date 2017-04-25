@@ -1,18 +1,12 @@
 var entrada = prompt("Insira uma string para verificarmos se é um palindromo");
-var entradaPurificada;
-console.log("Recebi: "+entrada);
-console.log("Tamanho: " + entrada.length);
-/*
-for (var i = 0; i<entrada.length; i++){
-    if (entrada[i] == ' '){
-        entrada[i] = entrada [i+1];
-        i--;
-        console.log("purificando...")
-    }
+var entradaPurificada = [];
+for (var i = 0; i<entrada.length; i++) if (entrada[i] !=  " ") entradaPurificada.push(entrada[i].toLowerCase());
+var and;
+var AND = true;
+    for (var i=0; i<entradaPurificada.length; i++) {
+        if (entradaPurificada[i] == entradaPurificada[entradaPurificada.length-i-1]) and = true;
+        else and = false;
+        AND = (and&&AND);
 }
-*/
-for (i = 0; i<entrada.length; i++){
-    entradaPurificada[i] = entrada[i].toLowerCase;
-    console.log("lowering...")
-}
-console.log("resultado: "+entradaPurificada)
+if (AND) console.log("É palíndromo");
+else console.log("Não é palíndromo");

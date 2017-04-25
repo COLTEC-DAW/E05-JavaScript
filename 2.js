@@ -9,8 +9,8 @@ for (i=0; i<entrada; i++){
     }
     else {
         for (j=0; j<entrada; j++){
-            if (j%2 == 0)saida = saida.concat(" ");
-            else saida = saida.concat("#");
+            if (j%2 == 0)saida = saida.concat("#");
+            else saida = saida.concat(" ");
         }
     }
     console.log(saida);
