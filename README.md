@@ -160,7 +160,13 @@ function range(min, max){
 }
 ```
 ```javascript
-
+function range(min, max, i){
+  var vetor = []
+    for (var cont = min; cont <= max; cont+=i){
+      vetor.push(cont)
+    }
+    return vetor;
+}
 ```
 
 ### Revertendo um array
