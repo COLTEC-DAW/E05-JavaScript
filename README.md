@@ -173,6 +173,17 @@ function range(min, max, i){
 
 Implemente uma função `reverseArray(array)` que receba um array como parâmetro e retorne outro array como reverso.
 
+#### Resposta
+```javascript
+function reverseArray(array){
+  var reversed = []
+    for (i = 0; i <= array.length+1; ++i){
+      reversed.push(array.pop())
+    }
+    return reversed
+}
+```
+
 ### Trabalhando com listas
 
 Implemente uma função `toList(array)` que converta o array `array` para uma lista. A lista deverá ter a estrutura abaixo:
