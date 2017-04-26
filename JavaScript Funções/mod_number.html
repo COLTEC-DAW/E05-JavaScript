@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <body>
+<head>
+    <meta charset="UTF-8">
         <script>
+        function mod2(){
             var n = prompt("Número:", 0);
-            var mod = prompt("Mod:",0);
-            function mod(x, y){
-                return (abs(x) > abs(y)) ? mod(abs(x)-abs(y), abs(y)) : (abs(x) < abs(y)) ? abs(x) : 0;
-            }
-            var result = mod(n,mod);
-            document.write(result);
-        </script>
+            if(n%2==0)
+                document.write("É mod!");
+            else
+                document.write("Não é mod!");
+          
+        }
+        function modn(){
+            var n = prompt("Número:", 0);
+            var mod = prompt("Mod:", 0);
+
+            if(n%mod==0)
+                document.write("É mod!");
+            else
+                document.write("Não é mod!");
+          
+        }
+    </script>
+</head>
+    <body>
+        <button onclick="mod2()">Mod 2!</button>
+        <button onclick="modn()">Mod n</button>
     </body>
 </html>

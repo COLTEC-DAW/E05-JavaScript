@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <button onclick="princ()">Clique!</button>
+    <head>
+        <meta charset="UTF-8">
         <script>
-            function min(a,b){
-                return a<b?a:b;
+            function min(a, b) {
+                return a<b ? a : b;
             }
-            function max(a,b) {
-                return a>b?a:b;
+
+            function max(a, b) {
+                return a>b ? a : b;
             }
             function princ(){
-                var a=21;
-                var b=20;
-
+                var a=prompt("Número 1:", 0);
+                var b=prompt("Número 2:", 0);
                 var result1 = min(a,b);
                 var result2 = max(a,b);
 
-                document.write(result1+"<br>");
-                document.write(result2);
+                document.write("Min:"+result1+"<br>");
+                document.write("Max:"+result2);
             }
         </script>
+    </head>
+    <body>
+        <button onclick="princ()">Clique!</button>
     </body>
 </html>
