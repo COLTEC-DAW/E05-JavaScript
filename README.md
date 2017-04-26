@@ -205,6 +205,13 @@ var list = {
 
 Implemente uma função chamada `deepEquals(obj1, obj2)` que verifica se dois objetos quaisquer possuem **as mesmas propriedades**.
 
+#### Resposta
+```javascript
+function deepEquals(obj1, obj2){
+  return ob1 === obj2
+}
+```
+
 *OBS: Você pode, através do próprio JavaScript, iterar sobre cada uma das propriedades existentes de um objeto javascript e seus valores.*
 
 # JavaScript: Funções de Alta Ordem
