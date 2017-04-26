@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+                var meuCarro1 = {
+                    marca: "Fiat",
+                    modelo: "Uno",
+                    ano: [2014, 2015],
+                    usado: false
+                };
+                var meuCarro2 = {
+                    marca: "Fiat",
+                    modelo: "Uno",
+                    ano: [2014, 2015],
+                    usado: false
+                };
+
+            function deepEquals(obj1, obj2){
+                if(obj1==obj2)
+                    return true;
+                else 
+                    return false;
+            }
+
+            var result = deepEquals(meuCarro1,meuCarro2);
+            document.write(result);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
