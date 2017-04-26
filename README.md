@@ -118,6 +118,7 @@ function max(a, b) {
 
 * Extenda o exercício anterior de modo a criar uma função `mod(num, mod)`, que verifique se num é divisível por mod.
 
+#### Resposta
 ```javascript
 function mod2(num){
 	return num%2 == 0
@@ -132,8 +133,7 @@ function mod(num,mod){
 Implemente uma função chamada `countChars(frase, c)` que receba como parâmetro uma string e um caractere e retorne quantas vezes aquele caracteres aparece na string.
 
 ```javascript
-function countChars(frase, c) {//
-
+function countChars(frase, c) {
     var letras = frase.split('').filter(function(letra){
     	return letra == c
     })
@@ -148,6 +148,20 @@ function countChars(frase, c) {//
 * Implemente uma função `range(min, max)` que receba dois números `min` e `max`, e retorne um array contendo todos os números inteiros entre `min` e `max`.
 
 * Adicione um parâmetro na função `range(min, max, i)` que representa o intervalo de variação entre os números a serem preenchidos no array.
+
+#### Resposta
+```javascript
+function range(min, max){
+  var vetor = []
+    for (var i = min; i <= max; ++i){
+      vetor.push(i)
+    }
+    return vetor;
+}
+```
+```javascript
+
+```
 
 ### Revertendo um array
 
