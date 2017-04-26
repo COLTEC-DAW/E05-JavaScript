@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            var list;
+            var array = [1,2,3];   
+
+            function toList(array){
+                list = {
+                    value: array[0],
+                    rest: {
+                        value: array[1],
+                        rest: {
+                            value: array[2],
+                            rest: null
+                        }
+                    }
+                };  
+            }
+            toList(array);
+            document.write(list.value);
+            document.write(list.rest.value);
+            document.write(list.rest.rest.value);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
