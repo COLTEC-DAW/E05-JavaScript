@@ -5,18 +5,14 @@
         <script>
             var list;
             var array = [1,2,3];   
-
             function toList(array){
-                list = {
-                    value: array[0],
-                    rest: {
-                        value: array[1],
-                        rest: {
-                            value: array[2],
-                            rest: null
-                        }
-                    }
-                };  
+                list = {};
+                var i, temp=list;
+                for(i=0;i<array.length;i++){
+                    temp.value = array[i];
+                    temp.rest ={};
+                    temp = temp.rest
+                }  
             }
             toList(array);
             document.write(list.value);

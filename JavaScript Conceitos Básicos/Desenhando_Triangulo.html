@@ -4,12 +4,14 @@
         <meta charset="UTF-8">
         <script>
                 function outraforma(){
-                    var linhas = prompt("Numero de linhas", 0)
-                    for (i = 0; i < linhas; ++i){
-                        for (j = 0; j < i+1; ++j){
-                            document.write('#')
+                    var linhas = prompt("Numero de linhas", 0);
+                    var txt="";
+                    for (i = 1; i < linhas; i++){
+                        for (j = 0; j <=i; j++){
+                            txt+='#';
                         }
-                        document.writeln("<br>")
+                        console.log(txt);
+	                    txt = "";
                     }
                 }
                 function myFunction() {
