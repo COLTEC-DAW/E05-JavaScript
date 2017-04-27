@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            var vetor = [34, 203, 3, 746, 200, 984, 198, 764, 9];
+
+            function verifica(cond,a,i){
+                if(cond)//true = crescente
+                    return a[i] > a[i+1];
+                else//false = decrescente
+                    return a[i] < a[i+1]; 
+            }
+
+            function bubbleSort(a,cond){
+                var x;
+                do{
+                    x = false;
+                    for (var i=0; i < a.length-1; i++) {
+                        if (verifica(cond,a,i)) {
+                            var temp = a[i];
+                            a[i] = a[i+1];
+                            a[i+1] = temp;
+                            x = true;
+                        }
+                    }
+                }while(x);
+            }
+            var i=0;
+            bubbleSort(vetor,false);
+            document.write(vetor);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
