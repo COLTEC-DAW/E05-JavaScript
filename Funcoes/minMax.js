@@ -1,9 +1,9 @@
 function min(a, b) {
-	return b < a ? b + 1 : a + 1;
+	return a < b ? a : b;
 }
 
 function max(a, b) {
-	return b < a ? a - 1 : b - 1;
+	return a > b ? a : b;
 }
 
 console.log(max(1, 10));
