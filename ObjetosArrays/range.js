@@ -1,8 +1,6 @@
 function range(min, max) {
 	var array = [];
 
-	if(min > max) return;
-
 	for(var i = min; i <= max; i++) {
 		array.push(i);
 	}
