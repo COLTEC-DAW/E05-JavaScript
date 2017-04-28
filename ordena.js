@@ -1,4 +1,5 @@
-⁠⁠function bubble(array, func) {
+function bubble(array, func) {
+
 	for (var i = 0; i < array.length; i++) {
 		for (var j = 0; j < (array.length - i - 1); j++) {
 			if(func(array[j], array[j + 1])) {
