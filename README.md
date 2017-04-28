@@ -265,6 +265,26 @@ Implemente uma função que faça uma determinada verificação de um número, r
 
 Teste a função utilizando como verificações se um número é impar, e se um número é primo.
 
+#### Resposta
+
+```javascript
+verificacao = function (number, f){
+  return f(number)
+}
+
+// https://en.wikipedia.org/wiki/Prime_number#Trial_division
+prime = function (n){
+  for (i = 2; i <= Math.sqrt(n); ++i){
+    if (n%i==0) return false
+  }
+  // o numero 1 passa no for acima, porém n é primo
+  return n>1?true:false
+}
+
+console.log(verificacao(6, n => n%2 == 0))
+console.log(verificacao(11, prime))
+```
+
 ### Transformações em uma String
 
 Implemente uma função que faça transformações nos caracteres de uma string. A transformação a ser realizada deverá ser enviada por parâmetro, na forma de função.
