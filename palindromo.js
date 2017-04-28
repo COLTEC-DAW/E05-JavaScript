@@ -1,3 +1,5 @@
+    //Para node.js
+
     var str;
 
     console.log("Digite uma frase");
