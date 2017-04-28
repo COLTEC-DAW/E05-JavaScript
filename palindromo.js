@@ -1,4 +1,4 @@
-    //Para node.js
+//para console
 
     var str;
 
