@@ -1,3 +1,5 @@
+    //Para node.js
+
     var num;
     var i;
     var j;
