@@ -3,7 +3,7 @@ var inversa = "";
 var j, i = 0;
 
 function isChar(string, num) {
-	return (string.charCodeAt(num) >= 65 && string.charCodeAt(num) <= 90) ? true : false;
+	return (string.charCodeAt(num) >= 65 && string.charCodeAt(num) <= 90);
 }
 
 function isPalindromo(string) {	

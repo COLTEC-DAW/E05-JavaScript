@@ -13,16 +13,16 @@ function bubbleSort(array, criterio) {
 }
 
 function crescente(value1, value2) {
-	return value1 > value2 ? true : false;
+	return value1 > value2;
 }
 
 function decrescente(value1, value2) {
-	return value1 < value2 ? true : false;
+	return value1 < value2;
 }
 
 function crescenteImpar(value1, value2, condicao) {
 	if((value1 % 2 != 0 && value2 % 2 != 0) || (value1 % 2 == 0 && value2 % 2 == 0)) {
-		return value1 > value2 ? true : false;
+		return value1 > value2;
 	}
 	else {
 		if(value1 % 2 != 0) {
@@ -36,7 +36,7 @@ function crescenteImpar(value1, value2, condicao) {
 
 function decrescentePar(value1, value2, condicao) {
 	if((value1 % 2 != 0 && value2 % 2 != 0) || (value1 % 2 == 0 && value2 % 2 == 0)) {
-		return value1 < value2 ? true : false;
+		return value1 < value2;
 	}
 	else {
 		if(value1 % 2 == 0) {

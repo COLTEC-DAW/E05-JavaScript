@@ -1,5 +1,5 @@
 function mod(number, mod) {
-	return number % mod == 0 ? true : false;
+	return number % mod == 0;
 }
 
 console.log(mod(10, 5));
