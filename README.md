@@ -242,6 +242,23 @@ Implemente uma função que faça a criptografia de uma determinada string. O cr
 
 Teste a criptografia utilizando como critério a [cifra de César](https://pt.wikipedia.org/wiki/Cifra_de_C%C3%A9sar).
 
+#### Resposta
+```javascript
+function criptografar (string, criptografia) {
+  return string.split('').map(criptografia)
+}
+
+caeserCipher = function  (text){
+  // ele irá criptografar o char sendo que a key da cifra = 3
+  // restrição da função: deve ser letra maiúscula
+  var criptografado = String.fromCharCode(text.charCodeAt(0) + 3) 
+  if (criptografado.charCodeAt(0) > 90){
+    criptografado = String.fromCharCode(65 + (90 - criptografado.charCodeAt(0)))
+  }
+  return criptografado
+}
+```
+
 ### Verificando um número
 
 Implemente uma função que faça uma determinada verificação de um número, retornando sempre verdadeiro ou falso. Essa verificação deverá ser enviada como parâmetro, na forma de função.
