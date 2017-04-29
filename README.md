@@ -332,6 +332,25 @@ Teste a função passando como parâmetro as seguintes transformações:
 * Caixa baixa nas vogais
 * Caixa baixa nas consoantes
 
+#### Resposta
+```javascript
+var vogaisUp = function(letra){
+  return (/^[aeiou]$/).test(letra)? letra.toUpperCase() : letra
+}
+var consoantesUp = function(letra){
+  return !(/^[aeiou]$/i).test(letra)? letra.toUpperCase() : letra
+}
+var vogaisDown = function(letra){
+  return (/^[AEIOU]$/).test(letra)? letra.toLowerCase() : letra
+}
+var consoantesDown = function(letra){
+  return (/^[aeiou]$/i).test(letra)? letra.toLowerCase() : letra
+}
+var transformaChars = function(frase,metodo){
+    return (frase).split('').map(metodo).toString().replace(/,/g, '')
+}
+```
+
 ### Funções Matriciais
 
 Implemente uma função que crie matrizes com base em uma função matricial com base nos índices da matriz. A função matricial deverá ser enviada por parâmetro, na forma de função.
