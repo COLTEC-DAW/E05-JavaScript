@@ -236,6 +236,42 @@ Implemente uma função que faça a ordenação de um vetor. O critério de orde
 
 Teste a ordenação criando critérios de ordenação crescente, descrente, crescente ímpares, decrescente pares.
 
+#### Resposta
+```javascript
+function bubbleSort(array, criterio){
+  for (var i = 1; i < array.length; ++i) {
+    for(var j = 0; j < (array.length-1); ++j){
+      // troca quando criterio == true
+      if (criterio(array,j)){
+        var temp = array[j];
+        array[j] = array[j+1];
+        array[j+1] = temp;
+      }
+    }
+  }
+  return array;
+}
+
+function crescente(array,i){
+  return (array[i] > array[i+1]) ? true : false ;
+}
+function decrescente(array,i){
+  return (array[i] < array[i+1]) ? true : false;
+}
+function crescenteImpar(array,i){
+  return (array[i] > array[i+1] && array[i]%2!=0)? true : false;
+}
+function decrescentePar(array,i){
+  return (array[i] < array[i+1] && array[i]%2==0)? true : false;
+}
+
+var array = bubbleSort([4,2,6,7,9,1,3,5],crescente)
+console.log(bubbleSort(array,crescente));
+console.log(bubbleSort(array,decrescente));
+console.log(bubbleSort(array,crescenteImpar));
+console.log(bubbleSort(array,decrescentePar););
+```
+
 ### Criptografia
 
 Implemente uma função que faça a criptografia de uma determinada string. O critério de criptografia deverá ser enviado por parâmetro, na forma de função.
