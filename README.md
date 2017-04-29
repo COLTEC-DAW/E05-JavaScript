@@ -362,3 +362,25 @@ Teste o exercício passando como parâmetro as seguintes funções matriciais:
 * `m[i,j] = i == j ? 1 : 0`
 * `[i,j] = i^2/(j+1)`
 * `m[i,j] = i > j ? 1 : (i < j ? 5 : 0)`
+
+#### Resposta
+```javascript
+var soma = ((i,j) => i+j)
+var mult = ((i,j) => i*j)
+var igual = ((i,j) => (i == j ? 1 : 0))
+var funct4 = ((i,j) => ((i*i)/(j+1)))
+var funct5 = ((i,j) => ( i > j ? 1 : (i < j ? 5 : 0)))
+
+function matriz(a,b,funcao){
+  var matriz=[[],[]];
+
+  for(var i=0;i<a;i++){
+    for(j=0;j<b;j++){
+      matriz[i][j] = funcao(i,j);
+    }
+  }
+  return matriz;
+}
+
+console.log(matriz(2, 2, soma));
+```
