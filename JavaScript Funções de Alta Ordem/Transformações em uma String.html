@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+
+        function upVogal(c) {
+            var temp = c.toLowerCase();
+            return (temp==='a'||temp==='e'||temp==='i'||temp==='o'||temp==='u')? c.toUpperCase():c;
+        }
+
+        function upConsoante(c) {
+            var temp = c.toLowerCase();
+            return !(temp==='a'||temp==='e'||temp==='i'||temp==='o'||temp==='u')? c.toUpperCase():c;
+        }
+
+        function downVogal(c) {
+            var temp = c.toLowerCase();
+            return (temp==='a'||temp==='e'||temp==='i'||temp==='o'||temp==='u')? c.toLowerCase():c;
+        }
+
+        function downConsoante(c) {
+            var temp = c.toLowerCase();
+            return !(temp==='a'||temp==='e'||temp==='i'||temp==='o'||temp==='u')? c.toLowerCase():c;
+        }
+
+        function transforma(c,metodo){
+            var result = "";
+            for(var i=0;i<c.length;i++){
+                result = result.concat(metodo(c[i]));
+            }
+            return result;
+        }
+
+
+        var string = "aecbu";
+        document.write(transforma(string,upVogal)+"</br>");
+        document.write(transforma(string,upConsoante)+"</br>");
+        string = "AECBU";
+        document.write(transforma(string,downVogal)+"</br>");
+        document.write(transforma(string,downConsoante));
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
