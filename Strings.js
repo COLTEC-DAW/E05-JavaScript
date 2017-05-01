@@ -1,7 +1,7 @@
 function mudaString(str, func){
     return func(str);
 }
-
+ 
 function capsVogais(str){
     var modificada = "";
 
