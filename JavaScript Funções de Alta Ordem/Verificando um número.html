@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+
+            function isodd(n){return (!n%2==0);}
+
+            function primo(n){
+                var div=0;
+
+                for(var i=n;i>0;i--){
+                    if(n%i==0)
+                        div++;
+                }
+                if(div==2)
+                    return true;
+                else
+                    return false;
+
+            }
+
+            function verificaN(n,metodo){
+                return metodo(n);
+            }
+
+            document.write(verificaN(9,isodd)+"</br>");
+            document.write(verificaN(7,primo));
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
