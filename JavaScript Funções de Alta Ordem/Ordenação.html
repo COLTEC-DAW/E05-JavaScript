@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            var vetor = [34, 203, 3, 746, 200, 984, 198, 764, 9];
+/*
+            function verifica(cond,a,i){
+                if(cond)//true = crescente
+                    return a[i] > a[i+1];
+                else//false = decrescente
+                    return a[i] < a[i+1]; 
+            }
+*/
+
+            function crescente(array,i){return (array[i] > array[i+1]) ? true : false ;}
+            function decrescente(array,i){return (array[i] < array[i+1]) ? true : false;}
+            function crescente_impar(array,i){return (array[i] > array[i+1] && array[i]%2!=0)? true : false;}
+            function decrescente_par(array,i){return (array[i] < array[i+1] && array[i]%2==0)? true : false;}
+
+            function bubbleSort(a,cond){
+                for (var i=1;i<a.length; i++) {
+                    for(var j=0;j<a.length-1;j++){
+                        if (cond(a,j)) {    
+                            var temp = a[j];
+                            a[j] = a[j+1];
+                            a[j+1] = temp;
+                        }
+                    }
+                }
+                return a;
+            }
+            var result = bubbleSort(vetor,decrescente);
+            document.write(result);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

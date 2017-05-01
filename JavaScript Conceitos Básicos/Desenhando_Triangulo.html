@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+                function outraforma(){
+                    var linhas = prompt("Numero de linhas", 0);
+                    var txt="";
+                    for (i = 1; i < linhas; i++){
+                        for (j = 0; j <=i; j++){
+                            txt+='#';
+                        }
+                        console.log(txt);
+	                    txt = "";
+                    }
+                }
+                function myFunction() {
+                    var userInput = document.getElementById("userInput").value;
+                    var i;
+                    var j;
+                    var cont=2;
+                    for(i=0;i<userInput;i++){
+                        for(j=0;j<cont;j++){
+                            document.write("#");
+                        }
+                        document.write("<br>");
+                        cont++;
+                    }
+                }
+            </script>
+    </head>
+    <body>
+        <input type="text" id="userInput"</input>
+        <button onclick="myFunction()">Clique!</button>
+        <button onclick="outraforma()">Outra forma</button>
+    </body>
+</html>

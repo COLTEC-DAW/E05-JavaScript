@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+
+            function cifraCesar(char, chave){
+                return String.fromCharCode(char.charCodeAt()+chave);
+            }
+/*
+            function decifra(mensagem,chave) {
+                var result = "";
+                for(var i=0;i<mensagem.length;i++){
+                    result = result.concat(cifraCesar(mensagem[i],-chave));
+                }
+                return result;
+            }
+*/
+            function cifrar(mensagem,chave) {
+                var result = "";
+                for(var i=0;i<mensagem.length;i++){
+                    result = result.concat(cifraCesar(mensagem[i],chave));
+                }
+                return result;
+            }
+
+            var char = "efghi";
+            var chave =3;
+            document.write(char+"</br>");
+            document.write(cifrar(char,chave)+"</br>");
+//            document.write(decifra(char,chave));
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
