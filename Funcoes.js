@@ -80,7 +80,7 @@ function contarCarctrs () {
 
     function countChars(frase, c) {
         var repete=0;  
-        var tam = frase.lenght; //.lenght nao funciona 
+        var tam = frase.length; 
         console.log(tam);
         for(i=0; i<tam; i++) {
             if(frase[i]==c) {
