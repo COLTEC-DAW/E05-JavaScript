@@ -1,16 +1,12 @@
-function inverte(palavra){
-    for(i=0;i<palavra.length;i++){
-        
-    }
-}
-
 var string = prompt("Digite sua String:");
-var stringInvertida = [];
-stringInvertida=string.split(" ");
-stringInvertida=stringInvertida.reverse();
-var tam = stringInvertida.length;
-//console.log(tam);
-for(i=0;i<tam;i++){
-    //console.log("ola");
+var stringInvertida = string.split('').reverse().join('');
+//console.log(stringInvertida);
+string = string.split(' ').join('');
+stringInvertida = stringInvertida.split(' ').join('');
+
+if(string === stringInvertida){
+    console.log( "É Palindromo");
 }
-console.log(stringInvertida);
+else{
+    console.log("Não é palindromo");
+}
