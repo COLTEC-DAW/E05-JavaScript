@@ -52,3 +52,28 @@ function reverterArray ( ) {
     console.log(reverseArray(array));
 
 }
+
+function listas () {
+
+    function toLista (array) {
+        var lista = {};
+        var lista2 = lista;
+
+        for (var i = 0; i < array.length; i++) {
+        lista2.value = array[i];
+        lista2.rest = {};
+        lista2 = lista2.rest;
+    }
+    
+    return lista;
+    }
+    var array = [2,4,5,6];
+    var lista = {};
+    lista=toLista(array);
+}
+
+function DeepEquals () {
+        function deepEquals () {
+            //terminar
+        }
+}
