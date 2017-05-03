@@ -1,17 +1,28 @@
 function deepEquals(obj1, obj2){
-	var a1 = [], a2 = [];
-	a1 = obj1.values();
-	a2 = obj2.values();
+	var props1 = Object.keys(obj1);
+	var props2 = Object.keys(obj2);
 
-	if(a1.length != a2.length){
-		return false;
+	if (obj1 === obj2){
+		return true;
 	}
 
-	for(var i = 0; i < a1.length; i++){
-		if(a1[i] != a2[i]){
+	for(var i = 0; i < props1.length && i < props2.length; i++){
+		if(obj1[props1[i]] !== obj2[props2[i]]){
 			return false;
 		}
 	}
-
 	return true;
 }
+
+/*
+	Objetos de teste
+
+var fusca = {
+  usado: false
+};
+
+var ferrari = {
+	usado: true
+};
+
+*/
