@@ -10,6 +10,7 @@ Implemente um programa em JavaScript que imprima a seguinte forma no console:
 ```
 ##
 ###
+
 ####
 #####
 ######
