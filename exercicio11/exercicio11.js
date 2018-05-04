@@ -31,5 +31,5 @@ function deepEquals(obj1, obj2){
     for(prop in obj2){
         propsObj2.push(prop)
     }
-    return comparaArr(propsObj1, propsObj2) ? "Os objetos tem as mesmas propriedade" : "Os objetos não tem as mesmas propriedade";
+    return comparaArr(propsObj1, propsObj2) ? "Os objetos tem as mesmas propriedade" : "Os objetos não tem as mesmas propriedades";
 }
