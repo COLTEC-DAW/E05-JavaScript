@@ -25,7 +25,7 @@ function tabuleiro(number) {
 }
 
 function palindromo(word) {
-  word.toUpperCase();
+  word = word.toLowerCase();
   for(i = word.length-1; i >= 0; i--) {
     if(word[i] != word[word.length-1-i]){
       return console.log("NÃO");
@@ -55,5 +55,5 @@ function numeros1a100() {
 
 piramide(5);
 tabuleiro(5);
-palindromo("Ovo");
+palindromo("ovo");
 numeros1a100();
