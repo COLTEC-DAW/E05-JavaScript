@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button name="button" onclick="triangulo()">Triângulo</button>
+    <button name="button1" onclick="changeName()">Click me again!!</button>
+    <span id=userName></span>
+    <script>
+        function triangulo(){
+            var linhast = prompt("Digite o número de linhas");
+            var tri="";
+            for (var i = 0; i < linhast; i++) {
+                for(var j = 0; j < i+2; j++){
+                   tri+="#";
+                }
+                tri+="\n";
+                
+            }
+            console.log(tri);
+        };
+        function changeName() {
+        var name = prompt("Digite seu nome");
+        document.getElementById("userName").innerHTML = name;
+      };
+    </script>
+</body>
+</html>
