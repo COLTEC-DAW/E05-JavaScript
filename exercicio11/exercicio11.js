@@ -1,6 +1,6 @@
 const obj1 = {
-    "idade": 25,
-    "nome": "Jorge"
+    "idade": 17,
+    "nome": "mathias"
 }
 const obj2 = {
     "idade": 25,
@@ -31,5 +31,5 @@ function deepEquals(obj1, obj2){
     for(prop in obj2){
         propsObj2.push(prop)
     }
-    return comparaArr(propsObj1, propsObj2) ? "Os objetos tem as mesmas propriedade" : "Os objetos não tem as mesmas propriedades";
+    return comparaArr(propsObj1, propsObj2) ? "Os objetos tem as mesmas propriedades" : "Os objetos não tem as mesmas propriedades";
 }
