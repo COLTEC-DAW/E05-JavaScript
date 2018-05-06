@@ -3,13 +3,121 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="E05-JavaScript.js"></script>
 
   <title>JS</title>
 </head>
 <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                    <nav class=" navbar navbar-expand-lg navbar-dark bg-dark">
+                      <a class="navbar-brand" href="#">E05-JavaScript</a>
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
 
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             Conceitos Básicos
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <ul class="nav">
+                                    <li><a data-toggle="tab" class="dropdown-item" href="#menu10">Desenhando um triângulo</a></li>
+                                    <li><a data-toggle="tab" class="dropdown-item" href="#menu11">Tabuleiro de Xadrez</a></li>
+                                    <li><a data-toggle="tab" class="dropdown-item" href="#menu12">Verificando Palíndromos</a></li>
+                                    <li><a data-toggle="tab" class="dropdown-item" href="#menu13">Um programa diferente...</a></li>
+                                </ul>
+                            </div>
+                          </li>
 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             Funções
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <ul class="nav">
+                                    <li><a data-toggle="tab" class="dropdown-item" href="#menu20">Mínimo e Máximo</a></li>
+                                    <li><a data-toggle="tab" class="dropdown-item" href="#menu21">Recursividade</a></li>
+                                    <li><a data-toggle="tab" class="dropdown-item" href="#menu22">Contando caracteres</a></li>
+                                </ul>
+                            </div>    
+                        </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                 Objetos & Arrays
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <ul class="nav">
+                                      <li><a data-toggle="tab" class="dropdown-item" href="#">Trabalhando com intervalos</a></li>
+                                      <li><a data-toggle="tab" class="dropdown-item" href="#">Revertendo um array</a></li>
+                                      <li><a data-toggle="tab" class="dropdown-item" href="#">Trabalhando com listas</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>                        
+                    </div>                      
+                </nav>                          
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="tab-content">
+                    <div id="menu10" class="tab-pane fade in active">
+                        <br>
+                        <div class="container">
+                            <h1>Desenhando um triângulo</h1>        
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quod tempore eos maxime rem esse voluptatem dolore quidem, dolores unde facilis deleniti, ratione dolor at culpa illo nam saepe hic! Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>                            
+                            <form class="form-group">
+                                <input  class="form-control"  placeholder="Digite um numero" type="number" id="tri">
+                                <button type="submit" class="btn btn-primary" OnClick="Desenha_triangulo() ">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div id="menu11" class="tab-pane fade in active">
+                        <div class="container-fluid">
+                            <h1>Tabuleiro de Xadrez</h1>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quod tempore eos maxime rem esse voluptatem dolore quidem, dolores unde facilis deleniti, ratione dolor at culpa illo nam saepe hic! Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <form class="form-group">
+                                <input  class="form-control"  placeholder="Digite um numero" type="number" id="xad">
+                                <button type="submit" class="btn btn-primary" OnClick="Tabuleiro_de_xadrez()">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div id="menu12" class="tab-pane fade in active">
+                        <div class="container-fluid">
+                            <h1>Verificando Palíndromos</h1>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quod tempore eos maxime rem esse voluptatem dolore quidem, dolores unde facilis deleniti, ratione dolor at culpa illo nam saepe hic! Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <form class="form-group">
+                                <input  class="form-control"  placeholder="Digite uma frase" type="text" id="campo">
+                                <button type="submit" class="btn btn-primary" OnClick="Desenha_triangulo()">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div id="menu13" class="tab-pane fade in active">
+                        <div class="container-fluid">
+                            <h1>Um programa diferente...</h1>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta quod tempore eos maxime rem esse voluptatem dolore quidem, dolores unde facilis deleniti, ratione dolor at culpa illo nam saepe hic! Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <form class="form-group">
+                                <input  class="form-control"  placeholder="Digite um numero" type="number" id="campo">
+                                <button type="submit" class="btn btn-primary" OnClick="Desenha_triangulo() ">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-</html>
