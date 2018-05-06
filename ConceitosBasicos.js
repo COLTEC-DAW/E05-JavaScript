@@ -55,5 +55,5 @@ function numeros1a100() {
 
 piramide(5);
 tabuleiro(5);
-palindromo("ovo");
+palindromo("Ovo");
 numeros1a100();
