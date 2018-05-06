@@ -28,7 +28,6 @@ function toList(array) {
   first = list;
   for(i = 0; i < array.length; i++) {
     list.value = array[i];
-    console.log(list.value);
     list.rest = {};
     list = list.rest;
   }
