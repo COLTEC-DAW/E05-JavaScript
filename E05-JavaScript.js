@@ -9,3 +9,16 @@ function Desenha_triangulo() {
 	  }
 }
 
+function Tabuleiro_de_xadrez() {
+	var xad = document.getElementById('xad');
+
+	for(var x =0;x<xad.value;x++){
+		for(var i =0;i<=4;i++){  
+			if(x%2 == 0)
+				document.write('&nbsp;'+"#")
+			else
+				document.write("#"+'&nbsp;')
+	}
+			document.write("<br>")
+}
+}
