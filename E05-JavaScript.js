@@ -1,7 +1,7 @@
 function Desenha_triangulo() {
-	var tri = document.getElementById('tri');
+	var trin = document.getElementById('tri');
 
-	for(var i =0;i<=tri.value;i++){  
+	for(var i =0;i<=trin.value;i++){  
 	    for(var x =0;x<i;x++){  
 		  document.write("#");
 			}  
@@ -18,7 +18,25 @@ function Tabuleiro_de_xadrez() {
 				document.write('&nbsp;'+"#")
 			else
 				document.write("#"+'&nbsp;')
-	}
+		}
 			document.write("<br>")
+	}
 }
-}
+
+function mostraPalindromo() {
+	var str = document.getElementById('palindromo').value;
+
+	var tamanho = str.length;
+	str = str.toLowerCase();
+	var x = 0;
+  
+	for (var i =0; i < tamanho; i++) {
+	  if (str[i] !== str[tamanho - i-1])
+	  x++;                  
+		}
+
+	  if(x == 0)
+		document.write("É um palindromo");
+	  else
+		document.write("Não é um palindromo");
+  }
