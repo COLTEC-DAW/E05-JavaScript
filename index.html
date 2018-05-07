@@ -8,25 +8,40 @@
 </head>
 <body>
     <button name="button" onclick="triangulo()">Triângulo</button>
-    <button name="button1" onclick="changeName()">Click me again!!</button>
-    <span id=userName></span>
+    <button name="button1" onclick="xadrez()">Xadrez</button>
+    <span id="text"></span>
+
+
     <script>
         function triangulo(){
             var linhast = prompt("Digite o número de linhas");
-            var tri="";
+            var tri="<br>";
             for (var i = 0; i < linhast; i++) {
                 for(var j = 0; j < i+2; j++){
                    tri+="#";
                 }
-                tri+="\n";
+                tri+="<br>";
                 
             }
+            document.getElementById("text").innerHTML = tri;
             console.log(tri);
         };
-        function changeName() {
-        var name = prompt("Digite seu nome");
-        document.getElementById("userName").innerHTML = name;
-      };
+        function xadrez() {
+            var linhasx = prompt("Digite o número de linhas");
+            var xdz="<br>";
+            for(var i = 0;i<linhasx;i++){
+                for(var j =0; j<linhasx;j++){
+                    if(i%2 == j%2){
+                        xdz+="■ ";
+                    }else{
+                        xdz+="□ ";
+                    }
+                }
+                xdz+="<br>";
+            }
+            document.getElementById("text").innerHTML = xdz;
+
+        };
     </script>
 </body>
 </html>
