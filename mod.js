@@ -9,3 +9,16 @@ function mod2 (number) {
 		return true;
 	}
 }
+
+function modx(number, mod) {
+	if (number >= mod){
+		return modx(number-mod, mod);
+	}
+	else if(number == 0){
+		return true;
+	}
+	else if(number < mod){
+		return false;
+	}
+}
+
