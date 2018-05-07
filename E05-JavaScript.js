@@ -86,3 +86,13 @@ function mod(num, mod){
 			else
 			return false;
 }
+
+function countChars(frase, c){
+	var char_N=0;
+	for(i=0;i<frase.length;i++){
+		if(c === frase[i]){
+			char_N++;
+		}
+	}
+	return(char_N);
+}
