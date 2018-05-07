@@ -10,12 +10,13 @@
     <button name="button" onclick="triangulo()">Triângulo</button>
     <button name="button1" onclick="xadrez()">Xadrez</button>
     <button name="button2" onclick="palindromo()">Palindromo</button>
-
+    <button name="button3" onclick="fizzbuzz()">FizzBuzz</button>
     
-
+    
+    
     <span id="text"></span>
-
-
+    
+    
     <script>
         function triangulo(){
             var linhast = prompt("Digite o número de linhas");
@@ -46,6 +47,7 @@
             document.getElementById("text").innerHTML = xdz;
         };
         function palindromo(){
+            var i=0, j=0;
             var palavra = prompt("Digite a palavra");
             for(i=0, j=(palavra.length)-1;i!=j;i++, j--){
                 if(palavra[i]!=palavra[j]){
@@ -55,7 +57,24 @@
                 }
             }
             alert("É palindromo");
-        }
+        };
+        
+        function fizzbuzz(){
+            for(var i=1;i<=100;i++){
+                if(i%3==0&&i%5==0){
+                    console.log("FizzBuzz");
+                }else if(i%3==0){
+                    console.log("Fizz");
+                }else if(i%5==0){
+                   console.log("Buzz");
+                }else{
+                    console.log(i);
+                }
+            }
+        };
+        
+        
+
     </script>
 </body>
 </html>
