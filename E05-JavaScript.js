@@ -38,5 +38,23 @@ function mostraPalindromo() {
 	  if(x == 0)
 		document.write("É um palindromo");
 	  else
-		document.write("Não é um palindromo");
+		document.write("Não é um palindromo");	
+	}
+
+function FizzBuzz(){
+	
+	for(var i =0;i<=100;i++){
+    if(i%15){
+      console.log("FizzBuzz");
+      }
+     else if(i%3 === 0) {
+       console.log("Fizz");
+       }
+       else if(i%5 === 0){
+         console.log("Buzz");
+         }
+         else {
+           console.log(i);
+           }
   }
+}
