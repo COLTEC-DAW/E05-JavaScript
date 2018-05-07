@@ -40,19 +40,13 @@ var toList = function(array){
 
 // Deep Equals //
 var deepEquals = function(obj1, obj2){
-    var ok = true;
-
     for (var prop in obj1){
         if (prop in obj2){ // Verifica se a propriedade está também no objeto 2 //
             if (obj1[prop] !== obj2[prop]){ // Verifica se o valor da propriedade é o mesmo //
-               ok = false;
+              return false
             }
         }else{
-            ok = false;
-        }
-
-        if (!ok){
-            return false;
+           return false;
         }
     }
     return true;
