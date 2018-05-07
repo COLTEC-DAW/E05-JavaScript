@@ -111,8 +111,36 @@
             }
         }
 
-
+        function contChars(str, c){
+            var qtd=0;
+            for(var i=0;i<str.length;i++){
+                if(str[i]==c){
+                    qtd++;
+                }
+            }
+            return qtd;
+        }
+        function range(min, max, i){
+            var array;
+            min++;
+            for(min;min<max;min+=i){
+                array.push(min);
+            }
+            return array;
+        }
         
+
+
+
+
+
+
+
+
+
+
+
+
 
     </script>
 </body>
