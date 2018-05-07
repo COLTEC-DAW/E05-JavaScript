@@ -1,7 +1,18 @@
+let number = 9
+let divisor = 3
+
+console.log(modx(number,divisor))
+
 function mod2(number){
-    return number%2==0 ? true : false
+    if(number<1){
+        return number==0 ? true:false
+    }
+    return mod2(number-2)
 }
 
-function mod(number, mod){
-    return number%mod==0 ? true : false
+function modx(number, mod){
+    if(number<1){
+        return number==0 ? true:false
+    }
+    return modx(number-mod, mod)
 }
