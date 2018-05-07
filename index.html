@@ -9,6 +9,10 @@
 <body>
     <button name="button" onclick="triangulo()">Triângulo</button>
     <button name="button1" onclick="xadrez()">Xadrez</button>
+    <button name="button2" onclick="palindromo()">Palindromo</button>
+
+    
+
     <span id="text"></span>
 
 
@@ -41,6 +45,17 @@
             }
             document.getElementById("text").innerHTML = xdz;
         };
+        function palindromo(){
+            var palavra = prompt("Digite a palavra");
+            for(i=0, j=(palavra.length)-1;i!=j;i++, j--){
+                if(palavra[i]!=palavra[j]){
+                    alert("Não é palindromo");
+                    return;
+
+                }
+            }
+            alert("É palindromo");
+        }
     </script>
 </body>
 </html>
