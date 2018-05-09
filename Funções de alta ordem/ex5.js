@@ -1,5 +1,5 @@
 function makeM(func, tam){
-    var m = [[]];
+    var m = [];
     var i, j;
 
     for (i = 0; i < tam; i++) {

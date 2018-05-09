@@ -1,7 +1,7 @@
 function sorting(vet, func){
   var aux = 0;
-  for(var i = 0; i<5; i++){
-		for(var j = 0; j<4; j++){
+  for(var i = 0; i<vet.length + 1; i++){
+		for(var j = 0; j<vet.length; j++){
 			if(func(vet[j], vet[j + 1])){
 				aux = vet[j];
 				vet[j] = vet[j+1];
@@ -9,6 +9,7 @@ function sorting(vet, func){
 			}
 		}
 	}
+	return vet;
 }
 
 function maior(a, b){

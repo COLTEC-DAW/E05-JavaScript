@@ -2,7 +2,7 @@ function mod2(num){
   return num % 2 == 0;
 }
 
-function mod(num){
+function mod(num, mod){
   return num % mod == 0;
 }
 
