@@ -11,6 +11,9 @@ function triangulo(){
     document.getElementById("text").innerHTML = tri;
     console.log(tri);
 };
+
+
+
 function xadrez() {
     var linhasx = prompt("Digite o número de linhas");
     var xdz="<br>";
@@ -26,6 +29,9 @@ function xadrez() {
     }
     document.getElementById("text").innerHTML = xdz;
 };
+
+
+
 function palindromo(){
     var i=0, j=0;
     var palavra = prompt("Digite a palavra");
@@ -38,6 +44,8 @@ function palindromo(){
     }
     alert("É palindromo");
 };
+
+
 
 function fizzbuzz(){
     for(var i=1;i<=100;i++){
@@ -52,6 +60,9 @@ function fizzbuzz(){
         }
     }
 };
+
+
+
 function min(a,b){
     if(a>b){
         return b;
@@ -61,6 +72,10 @@ function min(a,b){
         return a;
     }
 }
+console.log(min(8, 4));
+
+
+
 function max(a,b){
     if(a>b){
         return a;
@@ -71,6 +86,8 @@ function max(a,b){
     }
 }
 
+
+
 function mod2(number){
     if(number==0){
         return true;
@@ -80,16 +97,22 @@ function mod2(number){
         return mod2(number-2);
     }
 }
+console.log(mod2(101));
 
-function mod(number, mod){
+
+
+function mod(number, mod_){
     if(number==0){
         return true;
     }else if(number<0){
         return false;
     }else{
-        return mod2(number-mod);
+        return mod(number-mod_, mod_);
     }
 }
+console.log(mod(90,3));
+
+
 
 function contChars(str, c){
     var qtd=0;
@@ -100,34 +123,47 @@ function contChars(str, c){
     }
     return qtd;
 }
+console.log(contChars("aaabbbaaa",'b'));
+
+
+
 function range(min, max, i){
-    var array;
+    var array = [];
     min++;
     for(min;min<max;min+=i){
         array.push(min);
     }
     return array;
 }
+console.log (range(2, 10, 3));
+
+
 
 function reverseArray(array){
-    var aux;
+    var aux = [];
     for(var i=(array.length)-1;i>=0;i--){
         aux.push(array[i]);
     }
     return aux;
 }
+console.log(reverseArray([1,2,3,4,5,6,7,8]));
+
 
 
 function toList(array){
-    var lista = null;
+    var lista=null;
 
     for(var i =0; i<array.length;i++){
         var nlista = {value: array[i], rest: null}
         nlista.rest = lista;
         lista = nlista; 
     }
-    return list;
+    return lista;
 }
+console.log(toList([1,2,3]));
+
+
+
 function deepEquals(obj1, obj2){
     if(Object.keys(obj1).length!=Object.keys(obj2).length){
         return false;
@@ -140,4 +176,4 @@ function deepEquals(obj1, obj2){
     }
     return true;
 }
-console.log (deepEquals({ 100: 'a', 2: 'b', 7: 'c' , 8:{4:'a', 5:'b'}},{ 100: 'a', 2: 'b', 7: 'x', 8: 'y' }));
+console.log (deepEquals({ 100: 'a', 2: 'b', 7: 'c' , 8:'d'},{ 100: 'a', 2: 'b', 7: 'x', 8: 'y' }));
