@@ -12,7 +12,7 @@ function primo (num) {
         if (num % index === 0) {
             cont++;
         }    
-    }       
+    }      
     return cont === 2;
 }
 
