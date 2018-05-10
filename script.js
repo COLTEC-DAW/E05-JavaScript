@@ -132,28 +132,12 @@ function deepEquals(obj1, obj2){
     if(Object.keys(obj1).length!=Object.keys(obj2).length){
         return false;
     }
-
     for (var i = 0; i < Object.keys(obj1).length; i++){
-        var value1 = obj1[i];
-        var value2 =obj2[i];
-        console.log(value1);
-        console.log(value2);
-        
-        if(value1!=value2){
+        if(Object.keys(obj1)[i]!=Object.keys(obj2)[i]){
             return false;
         }
-        
+
     }
     return true;
 }
-deepEquals({ 100: 'a', 2: 'b', 7: 'c' },{ 100: 'a', 2: 'b', 7: 'x' });
-
-
-
-
-
-
-
-
-
-
+console.log (deepEquals({ 100: 'a', 2: 'b', 7: 'c' , 8:{4:'a', 5:'b'}},{ 100: 'a', 2: 'b', 7: 'x', 8: 'y' }));
