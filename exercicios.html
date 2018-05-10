@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercícios de JavaScript</title>
+</head>
+<body>
+    <h1>Aula 05</h1>
+    
+    <button name=button1 onclick="piramide()">Pirâmide</button><br> 
+    <button name=button2 onclick="tabuleiro()">Xadrez</button><br>  
+    <button name=button3 onclick="pali()">Palíndromo</button><br> 
+    <button name=button4 onclick="divisao()">1 a 100</button><br>
+    <button name=button4 onclick="max()">Máximo</button>
+    <button name=button4 onclick="min()">Mínimo</button><br>
+    <button onclick=executa()>Procurando caracter</button><br>
+    <button onclick=executa1()>Inteiros em um intervalo</button><br>
+    <button onclick=executa2()>Inversão de frase</button><br>
+
+
+<!--SCRIPT DOS EXERCÍCIOS-->
+
+    <script>
+
+//Exercício 1
+    function piramide(){
+        var i, j, tri="";
+        var l=prompt("Digite o número de linhas: ");
+        for(i=0;i<l;i++){
+            for(j=0;j<i+2;j++){
+                tri+="#";
+            }
+            tri+="\n";
+        }
+        window.alert(tri);  
+    }
+
+//Exercício 2
+    function tabuleiro(){
+        var i, j, chess="";
+        var l=prompt("Digite o número de linhas: ");
+        for(i=1;i<=l;i++){
+            for(j=1;j <= 8;j++){
+                if(i%2==0){
+                    if(j%2==0) chess+="#";
+
+                    else chess+=" ";    
+                }
+                else{
+                    if(j%2==0) chess+=" ";
+
+                    else chess+="#";   
+                }
+            }
+            chess+="\n";
+        }
+        window.alert(chess);
+    }
+
+//Exercício 3
+    function pali(){
+        var i, j, palavra=prompt("Digite a palavra: ");
+        for(i=0;i < palavra.length;i++){
+            if(palavra[i]!=palavra[(palavra.length-i)-1]){
+                window.alert("Lamento Amigo!");
+                return;
+            }
+        }
+        window.alert("Palindromo");
+    }
+
+//Exercício 4
+    function divisao(){
+        var i;
+        
+        for(i=1;i<=100;i++){
+            if(i%15==0) console.log(i + " - FizzBuzz");   
+            else if(i%3==0) console.log(i + " - Fizz");
+            else if(i%5==0) console.log(i + " - Buzz");
+            else console.log(i);
+        }
+    }
+
+//Exercício 5
+    function min(){       
+
+        var a=prompt("Digite o primeiro número"), b=prompt("Digite o segundo número");
+        if(a>b) window.alert("Mínimo:"+b);
+        else window.alert("Mínimo:"+a);
+    }
+    function max(){
+        var a=prompt("Digite o primeiro número"), b=prompt("Digite o segundo número");
+        
+        if(a>b) window.alert("Máximo:"+a);
+        else window.alert("Máximo:"+b);
+    }
+
+//Exercício 6
+    function divisaoRecursiva(number){
+        if (number == 0) return true;
+        else if (number < 0) return false;
+        else return divisaoRecursiva(number-2);
+    }
+
+    function mod(num, m){
+
+        if (num==0) return true;
+        else return mod(num-m, m);
+        }
+
+    console.log(mod(4,4));
+
+//Exercício 7
+
+    function countChars(frase, c){
+        
+        var count=0;
+
+        for(var i=0; i<frase.length;i++){
+            if(frase[i]==c){
+                count++;
+            }
+        }
+        return window.alert(count);
+    }
+
+    function executa(){
+        var f=prompt("Frase"), c=prompt("Caracter");
+        countChars(f,c);
+    }
+
+// Exercício 8
+
+    function range(a, b, i){
+    
+        var array=[];
+
+        for(var j=(a+1);j<b;j+i){
+            array[j]=j;
+        }
+        
+        return window.alert(array);
+    }
+
+    function executa1(){
+        var a=prompt("min"), b=prompt("máx"), i=prompt("intervalo entre números");
+        range(a,b, i);
+    }
+
+//Exercício 9
+
+    function reverseArray(array){
+
+        var arrayReverse=[];
+
+        for(var i=0;i<array.length;i++){
+            array[array.length-i+1]==arrayReverse[i];
+        }
+        return window.alert(arrayReverse);
+    }
+
+    function executa2(){
+        var a=prompt("Frase a ser invertida"), b=[];
+        for(var i=0;i<a.length;i++){
+            b[i]==a[i];
+        }
+        reverseArray(b);
+    }
+
+
+    </script>
+</body>
+</html>
+
+
