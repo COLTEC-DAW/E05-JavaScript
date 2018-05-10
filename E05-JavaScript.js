@@ -96,3 +96,46 @@ function countChars(frase, c){
 	}
 	return(char_N);
 }
+
+function range(min,max,i){
+  var array = [];
+  for(min++;min<max;min=min+i){
+    array.push(min);
+  }  
+  return(array);
+}
+
+//ReverseArray #1
+function reverseArray(array){
+  return array.reverse();
+}
+
+//ReverseArray #2
+function popArray(array){
+  var newArray = [], item =array.length;
+   for(var i =0;i<item;i++){
+    newArray[i] = array.pop();
+  }
+  return newArray;
+}
+
+function tolist(array) {  
+  var list = {
+		value: array[0],
+		rest: {
+			value: array[1],
+			rest: {
+				value: array[2],
+				rest: null
+			}
+		}
+	};
+  return list
+}
+
+function deepEquals(obj1, obj2){
+	if(obj1 === obj2)
+	return true
+		else
+		return false
+}
