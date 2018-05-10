@@ -1,17 +1,26 @@
 function mod2(number) {
-    
-    while (number >= 0 ) {       
-            if(number == 0)
-            console.log("É divisivel")
-            
-            else if(number == 1) 
-            console.log("Não é divisivel")
-            
-            else
-            mod2(number - 2)            
+    if (number < 1){ 
+    return number==0 ? true:false
+
     }
-    
+    return mod2(number -2)
 }
 
 var number = prompt("Digite um numero")
-mod2 (number)
+
+console.log(mod2(number))
+
+//bolinha dois
+
+function modX(num, modY) {
+
+    if (num < modY) {
+        return num==0 ? true:false
+    }
+    return modX(num-modY, modY)    
+}
+
+var num = prompt("Digite um numero")
+var modY = prompt("Digite seu divisor")
+
+console.log(modX(num, modY))
