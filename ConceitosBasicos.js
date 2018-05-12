@@ -56,8 +56,6 @@ var palindromo = function(texto){
     var i=0;
     var j=(texto.length) - 1;
     for(i;i<texto.length;i++){
-        console.log(texto[i]);
-        console.log(texto[j]);
         if(texto[i]!=texto[j]){
             console.log("Não eh palindromo");
             return false;
