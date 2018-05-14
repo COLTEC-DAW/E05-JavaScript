@@ -177,3 +177,29 @@ function deepEquals(obj1, obj2){
     return true;
 }
 console.log (deepEquals({ 100: 'a', 2: 'b', 7: 'c' , 8:'d'},{ 100: 'a', 2: 'b', 7: 'x', 8: 'y' }));
+
+/* Funções de Alta Ordem */
+
+
+
+var vet = [2, 7, 5, 3, 7 ,2 ,1,8];
+var maiorque = function(a, b){
+    if(a>b){
+        return true;
+    }else{
+        return false;
+    }
+}
+function bubblesort(v, test) {
+    for(var i=0;i<v.length;i++){
+        for(var j=0;j<v.length;j++){
+            if(test(v[j], v[i])){
+                var aux=v[j];
+                v[j]=v[i];
+                v[i]=aux;
+            }
+        }
+    }
+    return v;
+}
+console.log(bubblesort(vet, maiorque));
