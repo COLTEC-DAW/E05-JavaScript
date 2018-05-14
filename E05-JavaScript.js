@@ -133,9 +133,22 @@ function tolist(array) {
   return list
 }
 
-function deepEquals(obj1, obj2){
-	if(obj1 === obj2)
-	return true
-		else
-		return false
+function DeepEquals(obj1, obj2) {
+  
+	var p_OBJ1 = Object.getOwnPropertyNames(obj1);
+	var p_OBJ2 = Object.getOwnPropertyNames(obj2);
+  var lenghtt = p_OBJ1.length;
+
+	if (p_OBJ1.length != p_OBJ2.length) {
+			return "false1";
+	}
+	
+	for (var i = 0; i < lenghtt; i++) {
+			var propName = p_OBJ1[i];
+
+			if (obj1[propName] !== obj2[propName]) {
+					return "false2";
+			}
+	}
+	return true;
 }
