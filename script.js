@@ -178,13 +178,20 @@ function deepEquals(obj1, obj2){
 }
 console.log (deepEquals({ 100: 'a', 2: 'b', 7: 'c' , 8:'d'},{ 100: 'a', 2: 'b', 7: 'x', 8: 'y' }));
 
-/* Funções de Alta Ordem */
+/*   F u n ç õ e s      d e      A l t a    O r d e m */
 
 
-
+/* ordenação */
 var vet = [2, 7, 5, 3, 7 ,2 ,1,8];
 var maiorque = function(a, b){
     if(a>b){
+        return true;
+    }else{
+        return false;
+    }
+}
+var menorque = function(a, b){
+    if(a<b){
         return true;
     }else{
         return false;
@@ -202,4 +209,22 @@ function bubblesort(v, test) {
     }
     return v;
 }
-console.log(bubblesort(vet, maiorque));
+console.log(bubblesort(vet, menorque));
+
+/*criptografia*/
+function criptografia(str, criterio){
+    for(i=0;i<str.length;i++){
+        str[i]=criterio(str[i]);
+    }
+    return str;
+}
+console.log(criptografia( "mateus", function(a){
+    var deslocamento = 1;
+    var alfa="abcdefgaihklmnopqrstuvxyzABCDEFGHIJKLMNOPQRSTUVXYZ";
+    if(alfa.indexOf(a)+deslocamento<=25){
+        return  alfa[alfa.indexOf(a)+deslocamento];
+    }else{
+        return  alfa[alfa.indexOf(a)+deslocamento-25];
+    }
+
+}));
