@@ -140,15 +140,31 @@ function DeepEquals(obj1, obj2) {
   var lenghtt = p_OBJ1.length;
 
 	if (p_OBJ1.length != p_OBJ2.length) {
-			return "false1";
+			return false;
 	}
 	
 	for (var i = 0; i < lenghtt; i++) {
 			var propName = p_OBJ1[i];
 
 			if (obj1[propName] !== obj2[propName]) {
-					return "false2";
+					return false;
 			}
 	}
 	return true;
+}
+
+function bubbleSort(a)
+{
+    var swapped;
+    do {
+        swapped = false;
+        for (var i=0; i < a.length-1; i++) {
+            if (a[i] > a[i+1]) {
+                var temp = a[i];
+                a[i] = a[i+1];
+                a[i+1] = temp;
+                swapped = true;
+            }
+        }
+    } while (swapped);
 }
