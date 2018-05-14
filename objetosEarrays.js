@@ -42,10 +42,11 @@ reverseArray(arrayNormal);
 
 function toList(array) {
     var list = {};
-    var i = 0;
-    for (i;i<array.length;i++) {
-        list.value = array[i];
-        list.rest = value = {};
+    var list2 = list;
+    for (var i = 0; i < array.length; ++i) {
+        list2.value = array[i];
+        list2.rest = {};
+        list2 = list2.rest;
     }
     return console.log(list);
 }
@@ -58,23 +59,17 @@ toList(array);
  * verificar se dois objetos possuem as mesmas propriedades
  */
 
-//O meu codigo verifica somente se eles possuem as mesmas propriedades, pois voce nao especificou se as propriedades precisam possuir o mesmo valor
 function deepEquals(obj1, obj2) {
-    var propriedadesOBJ1 = [];
-    var propriedadesOBJ2 = [];
-    for (var prop in obj1) {            //var prop recebe cada propriedade do obj1
-        propriedadesOBJ1.push(prop);    //push na variavel propriedadesOBJ1 para verificar depois com a prop 2
+    /*Verificar se obj1 possui as mesmas propriedades do obj2*/
+    for (var prop in obj1) {            
+        if (obj1[prop] != obj2[prop])   {
+            return console.log("Nao possuem as mesmas propriedades..");
+        }
     }
-    for (var prop2 in obj2) {            //var prop recebe cada propriedade do obj2
-        propriedadesOBJ2.push(prop2);    //push na variavel propriedadesOBJ2 para verificar com a prop 1
-    }
-    console.log(propriedadesOBJ1.join(", "));
-    console.log(propriedadesOBJ2.join(", "));
-    
-    /*verificar se as propriedades do obj1 = as prop do obj2 =*/
-    for(var i=0;i<propriedadesOBJ1.length || i<propriedadesOBJ2.length;i++) {
-        if(propriedadesOBJ1[i] != propriedadesOBJ2[i]) {
-            return console.log("Nao possuem as mesmas propriedades!");
+    /*Verificar se obj2 possui as mesmas propriedades do obj1*/
+    for (var prop in obj2) {            
+        if (obj2[prop] != obj1[prop])   {
+            return console.log("Nao possuem as mesmas propriedades..");
         }
     }
     return console.log("Possuem as mesmas propriedades!");
@@ -85,9 +80,15 @@ var obj1 = {
     turma: 303
 }
 var obj2 = {
-    nome: "teste",
-    sobrenome: "lima",
-    turma: 306,
-    subTurma: "b"
+    sobrenome: "assis",
+    turma: 303,
+    nome: "guilherme"
+}
+
+/*obj3 eh diferente para fazer teste!*/
+var obj3 = {
+    teste: "diferente",
+    teste2: "diferente2"
 }
 deepEquals(obj1, obj2);
+deepEquals(obj1, obj3);
