@@ -246,3 +246,42 @@ console.log(verifica(5,function(n){
     }
     return n==1?false:true; 
 }));
+
+/*transformação em uma string*/
+
+function transformacao(str, trsf){
+    var newstring="";
+    for(var i=0; i<str.length;i++){
+        var aux = trsf(str[i]);
+        newstring+=aux;
+    }
+    return newstring;
+}
+console.log(transformacao("aaaAAAbbbBBB",function(a){
+    if(['a', 'e', 'i', 'o', 'u'].indexOf(a.toLowerCase()) !== -1){
+        return a.toLowerCase();
+    }else{
+        return a;
+    }
+}));
+console.log(transformacao("aaaAAAbbbBBB",function(a){
+    if(['a', 'e', 'i', 'o', 'u'].indexOf(a.toLowerCase()) === -1){
+        return a.toLowerCase();
+    }else{
+        return a;
+    }
+}));
+console.log(transformacao("aaaAAAbbbBBB",function(a){
+    if(['a', 'e', 'i', 'o', 'u'].indexOf(a.toLowerCase()) !== -1){
+        return a.toUpperCase();
+    }else{
+        return a;
+    }
+}));
+console.log(transformacao("aaaAAAbbbBBB",function(a){
+    if(['a', 'e', 'i', 'o', 'u'].indexOf(a.toLowerCase()) === -1){
+        return a.toUpperCase();
+    }else{
+        return a;
+    }
+}));
