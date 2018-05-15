@@ -211,7 +211,7 @@ function bubblesort(v, test) {
 }
 console.log(bubblesort(vet, menorque));
 
-/*criptografia*/
+/*criptografia*/ //not working
 function criptografia(str, criterio){
     for(i=0;i<str.length;i++){
         str[i]=criterio(str[i]);
@@ -226,5 +226,6 @@ console.log(criptografia( "mateus", function(a){
     }else{
         return  alfa[alfa.indexOf(a)+deslocamento-25];
     }
+})); //not working
 
-}));
+
