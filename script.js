@@ -229,3 +229,20 @@ console.log(criptografia( "mateus", function(a){
 })); //not working
 
 
+/* verificando um número*/
+
+function verifica(num, condicao){
+    return condicao(num);
+}
+console.log(verifica(5,function(n){
+    return n%2!=0; //impar
+}));
+
+console.log(verifica(5,function(n){
+    for(var i=2;i<n;i++){ //primo
+        if(n%i==0){
+            return false;
+        }
+    }
+    return n==1?false:true; 
+}));
