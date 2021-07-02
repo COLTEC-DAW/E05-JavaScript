@@ -8,3 +8,18 @@ function Triangulo(NLinhas){
         console.log(aux);
     }
 }
+
+// Parte II: Tabuleiro de Xadrez
+function Tabuleiro(NLinhas, NColunas){
+    for(var i=0;i<NLinhas;i++){
+        var aux = "";
+        if(i!=0 && i%2!=0){
+            aux += " ";
+        }
+        for(var j=0;j<NColunas;j++){
+            aux += "# ";
+        }
+        console.log(aux);
+    }
+}
+Tabuleiro(5,2);
