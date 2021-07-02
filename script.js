@@ -52,3 +52,11 @@ function Anormal(){
         }
     }
 }
+
+// Parte V: Mínimo e Máximo
+function min(a,b){
+    return ((a<b) ? a:b);
+}
+function max(a,b){
+    return ((a>b) ? a:b);
+}
