@@ -22,4 +22,18 @@ function Tabuleiro(NLinhas, NColunas){
         console.log(aux);
     }
 }
-Tabuleiro(5,2);
+
+// Parte III: Verificando Palíndromos
+function Palindromo(alvo){
+    var EhPalindromo = true;
+    var Alvo = alvo.replace(/\s+/g, '').split('');
+ 
+    for(var i=0,j=(Alvo.length-1);i<Alvo.length;i++,j--){
+        if(Alvo[i] != Alvo[j]){
+            EhPalindromo = false;
+            break;
+        }
+    }
+
+    return EhPalindromo;
+}
