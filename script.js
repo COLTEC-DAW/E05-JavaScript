@@ -60,3 +60,11 @@ function min(a,b){
 function max(a,b){
     return ((a>b) ? a:b);
 }
+
+// Parte VI: Recursividade
+function mod2(number){
+   return mod(number,2);
+}
+function mod(number, mod){
+    return (number%mod == 0) ? true:false;
+}
