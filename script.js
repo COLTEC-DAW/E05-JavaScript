@@ -68,3 +68,17 @@ function mod2(number){
 function mod(number, mod){
     return (number%mod == 0) ? true:false;
 }
+
+// Parte VII: Contando caracteres
+function countChars(frase, c){
+    var count = 0;
+    frase = frase.split('');
+    
+    for(var i=0;i< frase.length;i++){
+        if(frase[i] == c){
+            count++;
+        }
+    }
+
+    return count;
+}
