@@ -186,3 +186,14 @@ function Encrypt(string, criterio){
     }
     return encrypted;
 }
+
+// Parte XIV: Verificando um número
+function EhImpar(nb){ return (nb%2!=0) ? true:false; }
+function EhPrimo(nb){
+    return (((nb > 1) && nb%2!=0 && nb%3!=0 && nb%5!=0 && nb%7!=0) || (nb==2 || nb==3 || nb==5 || nb==7)) ? true:false;
+}
+
+function CheckNb(nb,check){
+    if(typeof nb !== "number") return null; // Erro
+    return check(nb);
+}
