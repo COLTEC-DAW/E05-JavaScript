@@ -13,3 +13,20 @@ function range(min, max, j){
 
 console.log(range(3,14,2));
 
+//Revertendo um array
+
+function reverseArray(array){
+
+    var revertido = [];
+
+    for (var i in array){
+
+        revertido.push(array[(array.length - 1 - i)]);
+    }
+    return revertido;
+}
+
+console.log(reverseArray([1,2,'',4,'oi',6]));
+
+
+
