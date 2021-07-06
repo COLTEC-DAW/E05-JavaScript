@@ -107,3 +107,17 @@ function reverseArray(array){
 
     return newArray;
 }
+
+// Parte X: Trabalhando com listas
+function toList(array){
+    var lista = null;
+
+    for(var i=0;i<array.length;i++){
+        var obj = {};
+        obj.value = array[i];
+        obj.rest = lista;
+        lista = obj;
+    }
+
+    return lista;
+}
