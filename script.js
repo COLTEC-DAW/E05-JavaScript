@@ -161,3 +161,28 @@ function bubbleSort(array, compare){
     }
     return array;
 }
+
+// Parte XIII: Criptografia
+function CifraDeCesar(item){
+    var alfabeto = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    //26 letras     tres posições dps
+
+    var index;
+    for(index=0;index<26;index++){
+        if(alfabeto[index] == item) { break; }
+    }
+    index += 3;
+    if(index >25) index-=26;
+
+    return alfabeto[index];
+}
+
+function Encrypt(string, criterio){
+    var encrypted = "";
+    var aux = string.split('');
+    
+    for(var i=0;i<aux.length;i++) {
+        encrypted += criterio(aux[i]);
+    }
+    return encrypted;
+}
