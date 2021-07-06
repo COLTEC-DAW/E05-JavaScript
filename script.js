@@ -197,3 +197,40 @@ function CheckNb(nb,check){
     if(typeof nb !== "number") return null; // Erro
     return check(nb);
 }
+
+// Parte XV: Transformações em uma String
+function UpperVogais(caracter){
+    var Vogais = ["a","e","i","o","u"];
+    var aux = caracter.toLowerCase();
+
+    return (Vogais.includes(aux)) ? caracter.toUpperCase():caracter;
+}
+function LowerVogais(caracter){
+    var Vogais = ["a","e","i","o","u"];
+    var aux = caracter.toLowerCase();
+
+    return (Vogais.includes(aux)) ? caracter.toLowerCase():caracter;
+}
+
+function UpperConsoantes(caracter){
+    var Consoantes = ["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"];
+    var aux = caracter.toLowerCase();
+
+    return (Consoantes.includes(aux)) ? caracter.toUpperCase():caracter;
+}
+function LowerConsoantes(caracter){
+    var Consoantes = ["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"];
+    var aux = caracter.toLowerCase();
+
+    return (Consoantes.includes(aux)) ? caracter.toLowerCase():caracter;
+}
+
+function Transformacao(string, func){
+    var array = string.split('');
+    array.toString();
+    for(var i=0;i<array.length;i++){
+        array[i] = func(array[i]);
+    }
+
+    return array.toString();
+}
