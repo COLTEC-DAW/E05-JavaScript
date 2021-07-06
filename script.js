@@ -121,3 +121,22 @@ function toList(array){
 
     return lista;
 }
+
+// Parte XI: DeepEquals
+function deepEquals(obj1,obj2){
+    var equal;
+
+    for(var i in obj1){
+        equal = true;
+        for(var j in obj2){
+            equal = false;
+            if(i==j){
+                equal = true;
+                break;
+            }
+        }
+        if(!equal)break;
+    }
+
+    return equal;
+}
