@@ -27,7 +27,7 @@ function xadrez (num){
     }
 }
 
-xadrez(3)
+xadrez(10)
 
 function palindromo (palavra){
 
@@ -43,3 +43,30 @@ function palindromo (palavra){
 }
 
 console.log(palindromo('socorrammesubinoonibusemmarrocos'));
+
+
+function contadorEstranho(){
+
+    for(var i = 0; i < 100; i++){
+
+        if ((i % 3 == 0) && (i % 5 != 0)){
+
+            console.log('Fizz');
+
+        }
+        else if ((i % 5 == 0) && (i % 3 != 0)){
+
+            console.log('Buzz');
+        }
+        else if ((i % 5 == 0) && (i % 3 == 0)){
+
+            console.log('FizzBuzz');
+        }
+        else{
+
+            console.log(i);
+        }
+    }
+}
+
+contadorEstranho();
