@@ -140,3 +140,24 @@ function deepEquals(obj1,obj2){
 
     return equal;
 }
+
+// Parte XII: Ordenação
+function Sort_crescente(a,b){ return (a>b) ? true:false; }
+function Sort_decrescente(a,b){ return (a<b) ? true:false; }
+function Sort_crescenteImpar(a,b){ return ((a>b) && (a%2!=0)) ? true:false}
+function Sort_decrescentePar(a,b){ return ((a<b) && (a%2==0)) ? true:false}
+
+function bubbleSort(array, compare){
+    var len = array.length;
+    for (var i = 0; i < len; i++) {
+        for (var j = 0; j < len; j++) {
+            //if (array[j] > array[j + 1]) {}
+            if(compare(array[j],array[j+1])){
+                var tmp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = tmp;
+            }
+        }
+    }
+    return array;
+}
