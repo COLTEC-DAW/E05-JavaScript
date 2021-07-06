@@ -28,3 +28,18 @@ function xadrez (num){
 }
 
 xadrez(3)
+
+function palindromo (palavra){
+
+    var vetor = palavra.split('');
+
+    for (var i = 0; i < (vetor.length/2); i++ ){
+        if (vetor[i] != vetor[(vetor.length - i - 1)]){
+            return false;
+        }
+    }
+
+    return true;
+}
+
+console.log(palindromo('socorrammesubinoonibusemmarrocos'));
