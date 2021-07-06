@@ -234,3 +234,23 @@ function Transformacao(string, func){
 
     return array.toString();
 }
+
+// Parte XVI: Funções Matriciais
+function MatValue_SOMA(a,b){ return a+b; }
+function MatValue_MULT(a,b){ return a*b; }
+function MatValue_BIN(a,b){ return a==b ? 1:0; }
+function MatValue_DIV(a,b){ return a^2/(b+1); }
+function MatValue_COM_ESTRANHA(a,b){ return a>b ? 1 : (a<b ? 5:0); }
+
+function CreateMat(len, GetValue){
+    var matriz = [];
+
+    for(var i=0;i<len;i++){
+        matriz[i] = [];
+        for(var j=0;j<len;j++){
+            matriz[i][j] = GetValue(i,j);        
+        }
+    }
+
+    return matriz;
+}
