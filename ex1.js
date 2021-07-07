@@ -1,4 +1,4 @@
-var nLinhas = prompt("Digite o número de linhas do triângulo: ");
+var nLinhas = prompt("Digite o número de linhas do triângulo:");
 
 var triangulo = "#";
 
