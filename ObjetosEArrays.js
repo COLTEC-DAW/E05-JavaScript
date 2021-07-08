@@ -29,4 +29,24 @@ function reverseArray(array){
 console.log(reverseArray([1,2,'',4,'oi',6]));
 
 
+//Trabalhando com listas
 
+function toList(array){
+
+    var lista = {};
+
+    if (array.length > 0){
+
+        lista.value = array[0];
+        array.shift()
+        if (array.length > 0){
+            lista.rest = toList(array);
+        }
+        else {
+            lista.rest = null;
+        }
+    }
+    return lista;
+}
+
+console.log(toList([1,2,3]));
