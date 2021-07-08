@@ -27,3 +27,28 @@ console.log(ordencao(vt, function(a, b){
     else if (a % 2 != 0){ return true ;}
 }));
 
+
+// Criptografia
+
+function crypt(str, criterio){
+
+    var vet = str.split('');
+    console.log(vet);
+
+    for ( var i = 0; i < vet.length; i++){
+        vet[i] = criterio(vet[i]);
+    }
+
+    return vet.join('');
+}
+
+function cifraDeCezar(char){
+
+    var chave = (Math.random() % 25) + 1;
+    if ((char.toUpperCase().charCodeAt(0) + chave) <= 90){
+        return String.fromCharCode((char.charCodeAt(0) + chave));
+    }
+    else { return String.fromCharCode((char.charCodeAt(0) + chave - 26)); }
+}
+
+console.log(crypt('Avavavav', cifraDeCezar));
