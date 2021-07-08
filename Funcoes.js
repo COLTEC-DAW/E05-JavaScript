@@ -15,7 +15,22 @@ function min(a, b){
     return b;
 }
 
-console.log(modulo(30, 3));
+
+
+function modulo (num, mod){
+    
+    if (num-mod == 0){
+        return true;
+    }
+    else if (num-mod < 0){
+        return false;
+    }
+
+    return modulo((num-mod), mod);
+}
+
+console.log(modulo(58, 3));
+
 
 function countChars (frase, c){
 
