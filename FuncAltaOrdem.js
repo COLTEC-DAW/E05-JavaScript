@@ -52,3 +52,24 @@ function cifraDeCezar(char){
 }
 
 console.log(crypt('Avavavav', cifraDeCezar));
+
+
+// Verificando um número
+
+
+function verifica(num, condicao){
+    
+    return condicao(num);
+}
+
+function primo (num){
+
+    for ( var i = 2; i < num; i++){
+        if (num % i == 0) { return false; }
+    }
+    return true;
+}
+
+console.log(verifica(16, function(num){return (num % 2 == 0)}));
+console.log(verifica(31, primo));
+
