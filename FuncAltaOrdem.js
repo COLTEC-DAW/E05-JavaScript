@@ -73,3 +73,38 @@ function primo (num){
 console.log(verifica(16, function(num){return (num % 2 == 0)}));
 console.log(verifica(31, primo));
 
+
+// Transformações em uma String
+
+function transformaString(str, transformacao){
+
+    var vet = str.split('');
+
+    for ( var i = 0; i < vet.length; i++){
+        vet[i] = transformacao(vet[i]);
+    }
+
+    return vet.join('');
+}
+
+var vogais = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+
+console.log(transformaString('MALUQUICE vei q saco to ha 3h nissaqui', function(char) { 
+    if(vogais.includes(char)) {return char.toUpperCase();}
+    return char;
+} ))
+
+console.log(transformaString('MALUQUICE vei q saco to ha 3h nissaqui', function(char) { 
+    if(vogais.includes(char)){return char.toLowerCase();}
+    return char;
+} ))
+
+console.log(transformaString('MALUQUICE vei q saco to ha 3h nissaqui', function(char) { 
+    if (!(vogais.includes(char))){return char.toUpperCase();}
+    return char;
+} ))
+
+console.log(transformaString('MALUQUICE vei q saco to ha 3h nissaqui', function(char) { 
+    if (!(vogais.includes(char))){return char.toLowerCase();}
+    return char;
+} ))
