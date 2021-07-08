@@ -50,3 +50,33 @@ function toList(array){
 }
 
 console.log(toList([1,2,3]));
+
+
+//DeepEquals
+
+function DeepEquals(obj1, obj2){
+
+    for (let key in obj1){
+        if (obj2[key] != undefined){
+            if (obj2[key] == obj1[key]){
+                continue;
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            return false;
+        }
+    }
+    return true;
+}
+
+var objeto1 = {'a':'b', 'c':'d'};
+var objeto2 = {'a':'b', 'c':'d'};
+var objeto3 = {'c':'d', 'a':'b'};
+var objeto4 = {'a': 1 , 'b': 2 };
+
+console.log(DeepEquals(objeto1, objeto2));
+console.log(DeepEquals(objeto2, objeto3));
+console.log(DeepEquals(objeto3, objeto4));
