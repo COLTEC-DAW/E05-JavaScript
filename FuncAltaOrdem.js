@@ -108,3 +108,33 @@ console.log(transformaString('MALUQUICE vei q saco to ha 3h nissaqui', function(
     if (!(vogais.includes(char))){return char.toLowerCase();}
     return char;
 } ))
+
+
+
+
+// Funções Matriciais
+
+function criaMatriz(tamAresta, funcaoMatricial){
+
+    var matriz = [];
+
+    for (var i = 0; i < tamAresta; i++){
+        var novaLinha = [];
+
+        for (var j = 0; j < tamAresta; j++){
+
+            novaLinha.push(funcaoMatricial(i,j));
+        }
+        matriz.push(novaLinha);
+    }
+
+    return matriz;
+}
+
+console.log(criaMatriz(4, function(i,j){ return i + j;}));
+console.log(criaMatriz(4, function(i,j){ return i * j;}));
+console.log(criaMatriz(4, function(i,j){ return i == j ? 1 : 0;}));
+console.log(criaMatriz(4, function(i,j){ return i^2/(j+1);}));
+console.log(criaMatriz(4, function(i,j){ return i > j ? 1 : (i < j ? 5 : 0);}));
+
+
