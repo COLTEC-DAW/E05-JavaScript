@@ -74,3 +74,27 @@ function max(n1, n2) {
     else
         console.log(n1);
 }
+
+//Recursividade
+
+var number = prompt("Digite um número natural");
+var num = prompt("Digite outro número natural");
+var mod = prompt("Digite mais um número natural");
+var verdadeiro = true;
+var falso = false;
+mod2(number);
+mod3(num, mod);
+
+function mod2(number) {
+    if (number % 2 == 0)
+        console.log(verdadeiro);
+    else
+        console.log(falso);
+}
+
+function mod3(num, mod) {
+    if (num % mod == 0)
+        console.log(verdadeiro);
+    else
+        console.log(falso);
+}
