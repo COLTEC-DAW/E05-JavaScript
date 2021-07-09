@@ -98,3 +98,18 @@ function mod3(num, mod) {
     else
         console.log(falso);
 }
+
+//Contando caracteres
+
+var frase = prompt('Digite uma frase');
+var c = prompt('Digite o caractere que deseja encontrar');
+countChars(frase);
+console.log(char);
+
+function countChars(frase, c) {
+    var char = 0;
+    for(var i = 1; i <= frase.length; i++) {
+        if(frase === c)
+            char++;
+    }
+}
