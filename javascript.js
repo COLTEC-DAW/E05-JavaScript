@@ -53,3 +53,24 @@ for (var i = 1; i <= 100; i++) {
     else
     	console.log(i);
 }
+
+//Mínimo e Máximo
+
+var n1 = prompt('Digite um numero natural');
+var n2 = prompt('Digite outro numero natural');
+min(n1, n2);
+max(n1, n2);
+
+function min(n1, n2) {
+    if(n1 > n2)
+        console.log(n2);
+    else
+    	console.log(n1);
+}
+
+function max(n1, n2) {
+    if(n1 < n2)
+        console.log(n2);
+    else
+        console.log(n1);
+}
