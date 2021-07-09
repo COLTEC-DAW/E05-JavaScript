@@ -25,3 +25,18 @@ function xadrez(nLinhas) {
             console.log(" " + tabuleiroxad);
     }
 }
+
+//Verificando Palíndromos
+
+var palavra = prompt('Digite uma palavra');
+var verdadeiro = true;
+var falso = false;
+palindromo(palavra);
+
+function palindromo(palavra) {
+	var palin = palavra.split('').reverse().join('');;
+  if(palavra === palin)
+  	console.log(verdadeiro);
+ 	else
+  	console.log(falso);
+}
