@@ -188,3 +188,49 @@ function Checar(num, checagem) {
     if (typeof num !== "number") return null; // Erro
     return checagem(num);
 }
+
+
+function ToUpperVogal(string){
+
+    for (var i = 0; i < string.length; i++){
+
+        if (string[i] == "a" || string[i] == "e" || string[i] == "i" || string[i] == "o" || string[i] == "u" ) string[i] = string[i].toUpperCase;
+    }
+
+    return string;
+}
+
+function ToLowerVogal(string){
+
+    for (var i = 0; i < string.length; i++){
+
+        if (string[i] == "a" || string[i] == "e" || string[i] == "i" || string[i] == "o" || string[i] == "u" ) string[i] = string[i].toLowerCase;
+    }
+
+    return string;
+}
+
+function ToLowerConsoante(string){
+
+    for (var i = 0; i < string.length; i++){
+
+        if (string[i] != "a" || string[i] != "e" || string[i] != "i" || string[i] != "o" || string[i] != "u" ) string[i] = string[i].toLowerCase;
+    }
+
+    return string;
+}
+
+function ToUpperConsoante(string){
+
+    for (var i = 0; i < string.length; i++){
+
+        if (string[i] != "a" || string[i] != "e" || string[i] != "i" || string[i] != "o" || string[i] != "u" ) string[i] = string[i].toUpperCase;
+    }
+
+    return string;
+}
+
+function TransformString (string,transformacao){
+
+    return transformacao(string);;
+}
