@@ -220,3 +220,16 @@ function Checar(num, checagem) {
     if (typeof num !== "number") return null; // Erro
     return checagem(num);
 }
+
+// Transformações em uma String
+
+function transformaString(str, transformacao) {
+    var vet = str.split("");
+
+    for (var i = 0; i < vet.length; i++) {
+        vet[i] = transformacao(vet[i]);
+    }
+
+    return vet.join("");
+}
+
