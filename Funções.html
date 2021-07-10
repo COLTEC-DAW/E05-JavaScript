@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>funções</title>
+    <script>
+
+    function max(Numero1,Numero2){
+        if(Numero1>Numero2){
+            return Numero1;
+        }else if(Numero2>Numero1){
+            return Numero2;
+        }else{
+            return "Iguais";
+        }
+    }
+
+    function min(Numero1,Numero2){
+        if(Numero1<Numero2){
+            return Numero1;
+        }else if(Numero2<Numero1){
+            return Numero2;
+        }else{
+            return "Iguais";
+        }
+    }
+
+    function mod2(Number){
+        if(Number % 2 == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function mod2(Number,mod){
+        if(Number % mod == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    function countChars(frase,letra){
+        var NQuantidade = 0;
+        for(i=0;i<frase.length;i++){
+            if(frase[i] == letra){
+                NQuantidade++;
+            }
+        }
+        return NQuantidade;
+    }
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

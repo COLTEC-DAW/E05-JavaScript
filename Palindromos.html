@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirâmide</title>
+</head>
+<body>
+    Digite a palavra:
+    <input type= "text" id = "Pergunta"/> 
+    <input type="button" value="GO" onclick="Verifica()"/>
+    <br/>
+    <script>
+    function Verifica(){
+        var palavra = window.document.getElementById("Pergunta").value;
+        var ePalindromo = EPalindromo(palavra);
+        document.write(ePalindromo);
+    }
+
+    function EPalindromo(palavra){
+        var palavra1 = palavra;
+        var palindromo = true;
+        var letrainicio, letraFim;
+
+        for (i=0;i<palavra1.length;i++){
+          letrainicio = palavra1[i];
+          letraFim = palavra1[palavra1.length-1 - i];
+          if(letrainicio != letraFim){
+              palindromo = false;
+          }
+        }
+        return palindromo;
+    } 
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xadrez</title>
+</head>
+<body>
+    Digite o numero de linhas:
+    <input type= "number" id = "Pergunta"/> 
+    <input type="button" value="GO" onclick="Xadrez()"/>
+    <br/>
+    <script>
+        function Xadrez(){
+            var numeroLinhas = window.document.getElementById("Pergunta").value;
+            var linha1 = true;
+            var linhaDois = "&nbsp# # # # #";
+            var linhaUm = "# # # # #";
+            for (i = 0;i<numeroLinhas;i++){
+                if(linha1){
+                    document.write(linhaUm+"<br/>");
+                    linha1 = false;
+                }else if(!linha1){
+                    document.write(linhaDois+"<br/>");
+                    linha1 = true;
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>
