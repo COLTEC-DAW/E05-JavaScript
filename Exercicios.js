@@ -133,3 +133,23 @@ function toList(array){
     return list;
 }
 
+// DeepEquals
+
+function deepEquals(objeto1,objeto2){
+
+    var equal;
+
+    for(var i in objeto1){
+        equal = true;
+        for(var j in objeto2){
+            equal = false;
+            if(i==j){
+                equal = true;
+                break;
+            }
+        }
+        if(!equal)break;
+    }
+    return equal;
+}
+
