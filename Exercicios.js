@@ -141,3 +141,28 @@ function bubbleSort(array, forma) {
     }
     return array;
 }
+
+function CifraCesar(string) {
+
+    var strEncriptografada = "";
+
+    for (var i = 0; i < string.length; i++) {
+        if (string[i] != "!" && string[i] != " " && string[i] != "." && string[i] != "?") {
+
+            if (string.charCodeAt(i) <= 77) {
+                strEncriptografada += String.fromCharCode(string.charCodeAt(i) + (Math.random() * (26 - 1) + 1));
+            }
+            else {
+                strEncriptografada += String.fromCharCode(string.charCodeAt(i) - (Math.random() * (26 - 1) + 1));
+            }
+
+        } else {
+            strEncriptografada += string[i];
+        }
+    }
+    return strEncriptografada;
+}
+
+function Encriptografar(str, criterio) {
+    return criterio(str);
+} 
