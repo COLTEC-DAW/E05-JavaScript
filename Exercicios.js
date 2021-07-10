@@ -233,3 +233,36 @@ function transformaString(str, transformacao) {
     return vet.join("");
 }
 
+// Funcoes Matriciais
+
+function SomaMatriz(i, j) {
+    return i + j;
+}
+function MultMatriz(i, j) {
+    return i * j;
+}
+
+function BinariosMatriz(i, j) {
+    return i == j ? 1 : 0;
+}
+
+function ElevadoMatriz(i, j) {
+    return i ^ (2 / (j + 1));
+}
+
+function ContaLoucaMatriz(i, j) {
+    return i > j ? 1 : i < j ? 5 : 0;
+}
+
+function CriarMatriz(Size, ModMatriz) {
+    var matrix = [];
+    for (var i = 0; i < Size; i++) {
+        matrix[i] = [];
+        for (var j = 0; j < Size; j++) {
+            matrix[i][j] = ModMatriz(i, j);
+        }
+    }
+    return matrix;
+}
+
+
