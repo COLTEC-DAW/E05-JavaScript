@@ -108,3 +108,15 @@ function Intervalo(min,max,i){
 
     return array;
 }
+
+// Revertendo um array
+
+function ContrarioArray(array){
+
+    var revertido = [];
+
+    for (var i in array){
+        revertido.push(array[(array.length - 1 - i)]);
+    }
+    return revertido;
+}
