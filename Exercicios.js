@@ -78,3 +78,16 @@ function module2(num){
  function mod(num, mod){
      return (num % mod == 0) ? true:false;
  }
+
+ // Contador de caracteres
+
+ function countChars(frase, c){
+     
+    var aux = 0;
+    for(i = 0; i < frase.length; i++){
+        if(frase[i] === c){
+            aux++
+        }
+    }
+    return aux;
+}
