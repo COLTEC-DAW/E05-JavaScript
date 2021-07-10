@@ -1,3 +1,7 @@
+/**  
+ * @description PARTE I - JavaScript: Conceitos Básicos
+*/
+
 const hash = '#';
 
 /**
@@ -45,6 +49,8 @@ function fizzBuzz(width = 100){
     var arr = Array.from({length: width}, (x, i) => i + 1);
     return arr.map( (x) => x = (x % 3 == 0 && x % 5 == 0) ? String("FizzBuzz") : x % 3 == 0 ? String("Fizz") : x % 5 == 0 ?  String("Buzz") : x)
 }
+
+// TESTES
 
 console.log(fizzBuzz());
 console.log(halfTriangle(5));
