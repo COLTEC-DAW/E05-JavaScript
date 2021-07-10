@@ -234,3 +234,33 @@ function TransformString (string,transformacao){
 
     return transformacao(string);;
 }
+
+function SomaMatriz(i, j) {
+    return i + j;
+}
+function MultMatriz(i, j) {
+    return i * j;
+}
+
+function BinariosMatriz(i, j) {
+    return i == j ? 1 : 0;
+}
+
+function ElevarMatriz(i, j) {
+    return i ^ (2 / (j + 1));
+}
+
+function ContaPeculiar(i, j) {
+    return i > j ? 1 : i < j ? 5 : 0;
+}
+
+function CriarMatriz(tamanho, tipo) {
+    var matrix = [];
+    for (var i = 0; i < Size; i++) {
+        matrix[i] = [];
+        for (var j = 0; j < Size; j++) {
+            matrix[i][j] = tipo(i, j);
+        }
+    }
+    return matrix;
+}
