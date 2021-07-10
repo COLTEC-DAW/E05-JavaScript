@@ -120,3 +120,16 @@ function ContrarioArray(array){
     }
     return revertido;
 }
+
+// Trabalhando com listas
+
+function toList(array){
+    for(var i = 0; i < array.length; i++){
+        var list = {
+            value: array[i],
+            rest: list,
+        }
+    }
+    return list;
+}
+
