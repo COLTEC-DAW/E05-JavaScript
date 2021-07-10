@@ -75,3 +75,14 @@ function mod2(num){
  function mod(num, mod){
      return (num % mod == 0) ? true:false;
  }
+
+ function CountChars(frase,c){
+     
+    var aux = 0;
+
+    for (var i = 0; i < frase.length; i++){
+        if (frase[i] == c) aux++;
+    }
+
+    return aux;
+ }
