@@ -153,3 +153,19 @@ function deepEquals(objeto1,objeto2){
     return equal;
 }
 
+// Ordenação
+
+function ordencao(vetor, Modo){
+
+    for (var i = 0; i < vetor.length; i++){
+        for (var j = 0; j < (vetor.length - 1); j++){
+            if(Modo(vetor[j], vetor[(j+1)]) == false){
+                var tmp = vetor[j];
+                vetor[j] = vetor[(j+1)];
+                vetor[(j+1)] = tmp;
+            }
+        }
+    }
+
+    return vetor;
+}
