@@ -88,10 +88,15 @@ function mod2(num){
  }
 
  function Intervalo(min,max,i){
-     
+
     var array = [];
 
     for(var j=min;j<=max;j+=i) array.push(j);
 
     return array;
+}
+
+function reverseArray(array){
+
+    return array.reverse();
 }
