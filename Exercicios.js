@@ -33,3 +33,19 @@ function xadrez (){
 } 
 
 xadrez ();
+
+function palindromo(){
+
+    var frase = prompt("Digite uma frase/palavra");
+
+    frase = frase.toLowerCase();
+    frase = frase.split(' ').join('');
+
+    var fraseContraria = frase.split('').reverse().join('');
+    console.log(fraseContraria);
+    console.log(frase);
+    if (frase === fraseContraria) console.log("É um palindromo");
+    else console.log("Não é um palindromo");
+}
+
+palindromo();
