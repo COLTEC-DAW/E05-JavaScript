@@ -27,3 +27,20 @@ function xadrez (num){
         console.log('\n');
     }
 }
+
+// Verificando Palíndromos
+
+function Palindromo(num) {
+    var ehPalindromo = true;
+    var Num;
+    Num = num.replace(/\s+/g, '').split('');
+
+    for (var i = 0, j = (Num.length - 1); i < Num.length; i++, j--) {
+        if (Num[i] != Num[j]) {
+            ehPalindromo = false;
+            break;
+        }
+    }
+
+    return ehPalindromo;
+}
