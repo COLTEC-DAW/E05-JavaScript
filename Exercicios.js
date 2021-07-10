@@ -196,3 +196,27 @@ function CifraDeCesar(string) {
 function Encriptar(str, criterio) {
     return criterio(str);
 }
+
+// Verificando um número
+
+function EhImpar(num) {
+    return num % 2 != 0 ? true : false;
+}
+function EhPrimo(num) {
+    return (num > 1 &&
+        num % 2 != 0 &&
+        num % 3 != 0 &&
+        num % 5 != 0 &&
+        num % 7 != 0) ||
+        num == 2 ||
+        num == 3 ||
+        num == 5 ||
+        num == 7
+        ? true
+        : false;
+}
+
+function Checar(num, checagem) {
+    if (typeof num !== "number") return null; // Erro
+    return checagem(num);
+}
