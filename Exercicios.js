@@ -82,7 +82,7 @@ function module2(num){
  // Contador de caracteres
 
  function countChars(frase, c){
-     
+
     var aux = 0;
     for(i = 0; i < frase.length; i++){
         if(frase[i] === c){
@@ -90,4 +90,21 @@ function module2(num){
         }
     }
     return aux;
+}
+
+// Trabalhando com intervalos
+
+function Intervalo(min,max){
+    var array = [];
+
+    for(var i=min;i<=max;i++) array.push(i);
+
+    return array;
+}
+function Intervalo(min,max,i){
+    var array = [];
+
+    for(var j=min;j<=max;j+=i) array.push(j);
+
+    return array;
 }
