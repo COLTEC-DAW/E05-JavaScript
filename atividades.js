@@ -34,10 +34,29 @@ function ehPalindromo(palavra){
     if(palavra.toLowerCase() === clone.toLowerCase()){
         console.log("A palavra %s é um Palíndromo",palavra);
     }else{
-        console.log("A palavra %s não é um Palíndromo",palavra)
+        console.log("A palavra %s não é um Palíndromo",palavra);
     }
 
 }
 
-var palavra = prompt("Digite uma palavra para conferir se ela é um Palíndromo: ")
-ehPalindromo(palavra)
+//var palavra = prompt("Digite uma palavra para conferir se ela é um Palíndromo: ")
+//ehPalindromo(palavra)
+
+function imprimeNumeros(number){
+    for(i = 0; i <= number; i++){
+        if(i % 3 == 0 && i % 5 == 0){
+            console.log("FizzBuzz");
+        }
+        else if(i % 3 == 0){
+            console.log("Fizz");
+        }
+        else if(i % 5 == 0){
+            console.log("Buzz");
+        }
+        else{
+            console.log(i);
+        }
+    }
+}
+var number = 100;
+imprimeNumeros(number);
