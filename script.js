@@ -179,3 +179,59 @@ function deepEquals(obj1,obj2){
     return igual;
 }
 
+//JavaScript: Funções de Alta Ordem
+//ordenação crescente, descrente,
+//crescente ímpares, decrescente pares.
+function crescente(a, b){
+    return (a > b);
+}
+
+function decrescente(a, b){
+    return (a < b);
+}
+
+function crescenteImpar(a, b){
+    return ((a > b) && (a%2 !== 0));
+}
+
+function decrescentePar(a, b){
+    return ((a < b) && (a%2 === 0));
+}
+
+function bubbleSort(array, compara){
+    for(var i = 0; i < array.length; i++){
+        for( var j = 0; j < array.length; j++){
+            if(compara(array[j], array[j + 1])){
+                var tmp = array[j];
+                array[j] = array [j + 1];
+                array[j + 1] = tmp;
+            }
+        }
+    }
+    return array;
+}
+/*var array = [4, 14, 23, 232, 234, 25, 569, 52, 14, 963, 02, 10];
+bubbleSort(array, decrescente);
+console.log(array);*/
+
+function cifraDeCesar(letra){
+    var cripto = " ";
+    var ascii=letra.charCodeAt(0);
+      if(letra != "!" && letra != " " && letra != "." && letra != "?"){
+        if(letra == 'z') return ('a');
+        else if (letra == 'Z')  return ('A');
+        else if (ascii>=65 && ascii<=89 || ascii>=97 && ascii<=121  )return (String.fromCharCode(ascii + 1));
+      }else{
+        return letra;
+      }
+  }
+
+function encriptografar(str, criterio){
+    var segredo="";
+    for(var i = 0; i < str.length; i++){
+        segredo+=cifraDeCesar(str[i]);
+    }
+    return segredo;
+}
+
+console.log(encriptografar("oiiiiiiiiii tudo bem com vocs", cifraDeCesar));
