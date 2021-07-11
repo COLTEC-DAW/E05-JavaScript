@@ -25,5 +25,5 @@ if(max(x, y)!=null){
     document.write(max(x, y) + " é o maior número.<br>");
     document.write(min(x, y) + " é o menor número.<br>");
 }else{
-    document.write("Os dois números são iguais");
+    document.write("Os dois números são iguais<br>");
 }
