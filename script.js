@@ -286,14 +286,36 @@ function tranformar(str, criterio){
 
 //console.log(tranformar("oiiiiiiiiii tudo bem com vocs", vogalAlta));
 
-/*
-Funções Matriciais
-Implemente uma função que crie matrizes com base em uma função matricial com base nos índices da matriz. A função matricial deverá ser enviada por parâmetro, na forma de função.
+//funções Matriciais
 
-Teste o exercício passando como parâmetro as seguintes funções matriciais:
+function somaMatriz(i, j){
+    return i + j;
+}
+function produtoMatriz(i, j) {
+    return i * j;
+}
 
-m[i,j] = i + j
-[i,j] = i * j
-m[i,j] = i == j ? 1 : 0
-[i,j] = i^2/(j+1)
-m[i,j] = i > j ? 1 : (i < j ? 5 : 0)*/
+function binarioMatriz(i, j) {
+    return i == j ? 1 : 0;
+}
+
+function elevarMatriz(i, j) {
+    return i ^ 2 / (j + 1);
+}
+
+function contaMatriz(i, j) {
+    return i > j ? 1 : (i < j ? 5 : 0);
+}
+
+function funcaoMatricial(tam, calculo){
+    var matriz = [];
+    for(var i = 0; i < tam; i++) {
+        matriz[i] = [];
+        for(var j = 0; j < tam; j++) {
+            matriz[i][j] = calculo(i, j);
+        }
+    }
+    return matriz;
+}
+
+console.log(funcaoMatricial(5, somaMatriz));
