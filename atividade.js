@@ -18,7 +18,6 @@ triangulo(5);
 
 var tabuleiroXadrez = function(size){
     var xadrez = []
-    var k = 2;
     for(var i = 0; i < size; i++){
         xadrez[i] = [];
         for(var j = 0; j < size; j++){
@@ -45,3 +44,12 @@ var tabuleiroXadrez = function(size){
     imprimeTabuleiro(xadrez);
 }
 tabuleiroXadrez(20);
+
+var ehPalindrono = function  (str){
+    var aux = str.split('').reverse().join('')
+
+    if(str === aux){
+        return true;
+    }else{ return false; }
+}
+console.log(ehPalindrono("ava"))
