@@ -159,4 +159,23 @@ function toList(array){
     }
     return list;
 }
+//var array = {"olá", "tudo bem", "com", "vc"};
+//console.log(toLista(array));
+function deepEquals(obj1,obj2){
+    var igual;
+
+    for(var i in obj1){
+        igual = true;
+        for(var j in obj2){
+            igual = false;
+            if(i==j){
+                igual = true;
+                break;
+            }
+        }
+        if(!igual)break;
+    }
+
+    return igual;
+}
 
