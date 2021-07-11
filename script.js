@@ -229,12 +229,12 @@ function cifraDeCesar(letra){
 function encriptografar(str, criterio){
     var segredo="";
     for(var i = 0; i < str.length; i++){
-        segredo+=cifraDeCesar(str[i]);
+        segredo+=criterio(str[i]);
     }
     return segredo;
 }
 
-///console.log(encriptografar("oiiiiiiiiii tudo bem com vocs", cifraDeCesar));
+//console.log(encriptografar("oiiiiiiiiii tudo bem com vocs", cifraDeCesar));
 
 function eimpar(num){
     return (num%2!=0)
@@ -245,15 +245,48 @@ function epar(num){
 function verifica (num, criterio){
     return criterio(num);
 }
-/*Transformações em uma String
-Implemente uma função que faça transformações nos caracteres de uma string. A transformação a ser realizada deverá ser enviada por parâmetro, na forma de função.
+//Transformações em uma String
 
-Teste a função passando como parâmetro as seguintes transformações:
+function vogalAlta(letra){
+    var cripto = " ";
+    var ascii=letra.charCodeAt(0);
+    if(letra==='a'||letra==='e'|| letra==='i'|| letra==='o'||letra==='u') return (String.fromCharCode(ascii - 32));
+    return letra;
+}
+function vogalBaixa(letra){
+    var cripto = " ";
+    var ascii=letra.charCodeAt(0);
+    if(letra==='A'||letra==='E'|| letra==='I'|| letra==='O'||letra==='U') return (String.fromCharCode(ascii + 32));
+    return letra;
+}
+function consoanteBaixa(letra){
+    var cripto = " ";
+    var ascii=letra.charCodeAt(0);
+    if(ascii>=65 && ascii<=90){
+        if(letra!='A'&&letra!='E'&& letra!='I'&& letra!='O'&&letra!='U') return (String.fromCharCode(ascii + 32));
+    }
+    return letra;
+}
+function consoanteAlta(letra){
+    var cripto = " ";
+    var ascii=letra.charCodeAt(0);
+    if(ascii>=97 && ascii<=122){
+        if(letra!='a'&&letra!='e'&& letra!='i'&& letra!='o'&&letra!='u') return (String.fromCharCode(ascii - 32));
+    }
+    return letra;
+}
 
-Caixa alta nas vogais
-Caixa alta nas consoantes
-Caixa baixa nas vogais
-Caixa baixa nas consoantes
+function tranformar(str, criterio){
+    var trans="";
+    for(var i = 0; i < str.length; i++){
+        trans+=criterio(str[i]);
+    }
+    return trans;
+}
+
+//console.log(tranformar("oiiiiiiiiii tudo bem com vocs", vogalAlta));
+
+/*
 Funções Matriciais
 Implemente uma função que crie matrizes com base em uma função matricial com base nos índices da matriz. A função matricial deverá ser enviada por parâmetro, na forma de função.
 
