@@ -68,3 +68,28 @@ var fizzBuzzDe1a100 = function(){
     }
 }
 fizzBuzzDe1a100();
+
+
+var min = function (val1, val2){
+    if(val1 < val2){
+        return val1;
+    }else if (val2 < val1){
+        return val2;
+    }
+    // caso ambos sejam iguais
+    else{
+        return null;
+    }
+}
+var max = function (val1, val2){
+    if(val1 > val2){
+        return val1;
+    }else if (val2 > val1){
+        return val2;
+    }
+    // caso ambos sejam iguais
+    else{
+        return null;
+    }
+}
+console.log("O menor valor eh:",min(1,2), "; o maior valor eh:",max(1,2))
