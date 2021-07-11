@@ -9,19 +9,35 @@ function triangulo(nLinhas){
         console.log(jogoDaVelha);
     }   
 }
-var nLinhas = prompt("Desenhando um triangulo - Quantas linhas terá o triangulo? ");
-triangulo(nLinhas);
+//var nLinhas = prompt("Desenhando um triangulo - Quantas linhas terá o triangulo? ");
+//triangulo(nLinhas);
 
 function xadrex(nLinhas){
     console.log("Desenhando um tabuleiro");
     var jogoDaVelha ="# # # #";
     for (i = 0; i < nLinhas ; i++){
         if(!(i % 2)){
-            console.log(jogoDaVelha)
+            console.log(jogoDaVelha);
         }else{
             console.log(" " + jogoDaVelha);
         }
     }
 }
-var nLinhas = prompt("Desenhando um tabuleiro - Quantas linhas terá o tabuleiro? ");
-xadrex(nLinhas);
+//var nLinhas = prompt("Desenhando um tabuleiro - Quantas linhas terá o tabuleiro? ");
+//xadrex(nLinhas);
+
+function ehPalindromo(palavra){
+    //separa a string por "" para inverter os caracteres usando o reverse, e depois usa join para reagrupar sem os ""
+    var clone = palavra.split("").reverse().join("");
+    
+    //Transforma as strings em minusculas para que não haja erro na hora de comparar
+    if(palavra.toLowerCase() === clone.toLowerCase()){
+        console.log("A palavra %s é um Palíndromo",palavra);
+    }else{
+        console.log("A palavra %s não é um Palíndromo",palavra)
+    }
+
+}
+
+var palavra = prompt("Digite uma palavra para conferir se ela é um Palíndromo: ")
+ehPalindromo(palavra)
