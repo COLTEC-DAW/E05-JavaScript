@@ -9,10 +9,9 @@ var triangulo = function(NLinhas){
     }
 }
 
-/*
 var NLinhasT = prompt("Quantas Linhas deseja que o triangulo tenha? ");
 triangulo(NLinhasT);
-*/
+
 
 /* Tabuleiro De Xadrez */
 var Xadrez = function(NLinhas){
@@ -28,10 +27,9 @@ var Xadrez = function(NLinhas){
     }
 }
 
-/*
 var NLinhasX = prompt("Quantas Linhas deseja que o tabuleiro de Xadrez tenha? ");
 Xadrez(NLinhasX);
-*/
+
 
 /* Palindromo */
 var Palindromo = function(Palavra){
@@ -46,10 +44,9 @@ var Palindromo = function(Palavra){
     }
 }
 
-/*
 var Palavra = prompt("Digite a palavra que deseja conferir se é um palíndromo ")
 Palindromo(Palavra);
-*/
+
 
 /* Programa Diferente */
 var ProgramaDif = function(){
@@ -73,14 +70,13 @@ var ProgramaDif = function(){
     }
 }
 
-//ProgramaDif();
+ProgramaDif();
 
 /* Min e Max */
 var MinMax = function(a,b,Action){
     return Action(a,b);
 }
 
-/*
 var Num1 = prompt("Digite o primeiro número ");
 var Num2 = prompt("Digite o segundo número ");
 var Acao = prompt("Digite 1 para Minimo, qualquer outro numero será maximo ");
@@ -90,7 +86,7 @@ if (Acao == 1){
 else{
     console.log("O maior número é: " + MinMax(Num1,Num2,Math.max))
 }
-*/
+
 
 /* Recursividade */
 var Mod = function(Number, Mod){
@@ -105,7 +101,7 @@ var Mod = function(Number, Mod){
 var Mod2 = function(Number){
     return Mod(Number, 2);
 }
-/*
+
 var Number = prompt("Digite um número que deseja saber se é par");
 var Resposta = Mod2(Number);
 if(Resposta == true){
@@ -124,7 +120,7 @@ if(Resposta == true){
 else{
     console.log("O número %s não é divisível por %s ", Number, ModNum);
 }
-*/
+
 
 /* Contando Caracteres */
 var CountChars = function(Frase, C){
@@ -138,12 +134,11 @@ var CountChars = function(Frase, C){
     return aux;
 }
 
-/*
 var Frase = prompt("Digite a frase ");
 var C = prompt("Digite o caractere ");
 var QuantCharac = CountChars(Frase,C);
 console.log("Tem %s do character %s dentro da frase: %s ", QuantCharac, C,Frase);
-*/
+
 
 /* Trabalhando com Intervalos */
 var range = function(Min, Max){
@@ -180,7 +175,6 @@ var RangeI = function(Min, Max, i){
     return Vetor;
 }
 
-/*
 var MinR = prompt("Digite o minimo ");
 var MaxR = prompt("Digite o maximo ");
 var Inter = prompt("Digite o intervalo");
@@ -192,7 +186,7 @@ MaxR = prompt("Digite o maximo ");
 Inter = prompt("Digite o intervalo");
 Vetor = RangeI(MinR,MaxR,Inter);
 console.log(Vetor);
-*/
+
 
 /* Revertendo um Array */
 var ReverseArray = function(Vetor){
@@ -205,10 +199,10 @@ var ReverseArray = function(Vetor){
 
 
 var Vetor2 = [5, 68, 75, 40, 70, 87];
-/*
+
 VetorInver =ReverseArray(Vetor2);
 console.log(VetorInver);
-*/
+
 
 var ToList = function(Vetor){
     var Lista;
@@ -222,10 +216,9 @@ var ToList = function(Vetor){
     return Lista;
 }
 
-/*
 var ListaDoVetor = ToList(Vetor2);
 console.log(ListaDoVetor);
-*/
+
 
 /* DeepEquals */
 var DeepEquals = function(objeto1, objeto2){
@@ -266,13 +259,12 @@ var Objeto3 = {
     alcool: "vod"
 };
 
-/*
 var DeepEqualsDif = DeepEquals(Objeto1,Objeto2);
 console.log(DeepEqualsDif);
 
 var DeepEqualsEqual = DeepEquals(Objeto2,Objeto3);
 console.log(DeepEqualsEqual);
-*/
+
 
 /* Ordenação */
 var bubbleSort = function(vetor, criterio){
@@ -304,10 +296,9 @@ function DecrescentePar(a, b){
     return ((a < b) && (a%2 === 0));
 }
 
-/*
 bubbleSort(Vetor2, Crescente);
 console.log(Vetor2);
-*/
+
 
 /* Criptografia */
 function CifraDoCesar(string){
@@ -332,9 +323,9 @@ function CifraDoCesar(string){
 var Encripta = function(string, criterio){
     return criterio(string);
 }
-/*
+
 console.log(Encripta("Eu sou alguem escondido", CifraDoCesar));
-*/
+
 
 /* Verificando um Número */
 var VerifNumero = function(num, verif){
@@ -371,9 +362,9 @@ function EhPrimo(num){
         return false;
     }
 }
-/*
+
 console.log(VerifNumero(13, EhPrimo));
-*/
+
 
 /* Transformações em uma String */
 var TransformaString = function(string, Parametro) {
@@ -409,3 +400,37 @@ function CaixaBaixaCons(character){
 }
 
 console.log(TransformaString("dawdnwadnawdjwadnwaudwah", CaixaAltaCons));
+
+
+/* Funções Matriciais */
+var CriaMatriz = function(tam, parametro){
+    var matriz = [];
+    for(var i = 0; i < tam; i++) {
+        matriz[i] = [];
+        for(var j = 0; j < tam; j++) {
+            matriz[i][j] = parametro(i, j);
+        }
+    }
+    return matriz;
+}
+
+function SomaMat(i, j){
+    return i + j;
+}
+function MultMat(i, j) {
+    return i * j;
+}
+
+function BinMat(i, j) {
+    return (i == j ? 1 : 0);
+}
+
+function ElevaMat(i, j) {
+    return (i ^ 2 / (j + 1));
+}
+
+function ParamQQ(i, j) {
+    return (i > j ? 1 : (i < j ? 5 : 0));
+}
+
+console.log(CriaMatriz(5, MultMat)); 
