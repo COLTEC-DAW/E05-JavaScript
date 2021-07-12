@@ -67,4 +67,19 @@ var ProgramaDif = function(){
     }
 }
 
-ProgramaDif();
+//ProgramaDif();
+
+/* Min e Max */
+var MinMax = function(a,b,Action){
+    return Action(a,b);
+}
+
+var Num1 = prompt("Digite o primeiro número ");
+var Num2 = prompt("Digite o segundo número ");
+var Acao = prompt("Digite 1 para Minimo, qualquer outro numero será maximo ");
+if (Acao == 1){
+    console.log("O menor número é: " + MinMax(Num1,Num2,Math.min))
+}
+else{
+    console.log("O maior número é: " + MinMax(Num1,Num2,Math.max))
+}
