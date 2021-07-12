@@ -68,3 +68,80 @@ function imprime1a100(){
 }
 
 imprime1a100();
+
+
+//Questão 5 - Mínimo e Máximo
+function min(a, b){
+    var menor = 0;
+
+    if(a < b){
+        menor = a;
+    }else{
+        menor = b;
+    }
+
+    return menor;
+}
+
+function max(a, b){
+    var maior = 0;
+
+    if(a > b){
+        maior = a;
+    }else{
+        maior = b;
+    }
+
+    return maior;
+}
+
+var a = prompt("Digite o primeiro numero que deseja comparar:");
+var b = prompt("Digite o segundo numero que deseja comparar:");
+
+
+console.log("menor:" +  min(a,b) + "\nmaior: " + max(a,b));
+
+
+//Questão 6 - Recursividade
+
+var mod = function(num, mod){
+    if (num % mod == 0){ return true; }
+    else { return false; }
+}
+
+var mod2 = function(num){
+    if ( num % 2 == 0) { return true; }
+    else { 
+        console.log(mod(num, num % 2));
+        return false;
+    }
+}
+var num = prompt("Digite o número que deseja saber se é divisível por 2:");
+if(mod(num) == true){
+    console.log("É divisivel por 2");
+} else if (mod(num) == false){
+    console.log("Não é divisivel por 2");
+}
+
+//Questão 7 - Contando caracteres
+var countChars = function(frase, c){
+    var qtd = 0;
+    var arrayfrase = frase.split(''); 
+
+    for (var i = 0; i < arrayfrase.length; i++){
+
+        if(arrayfrase[i] == c){
+            qtd += 1;
+        }
+    }
+    return qtd;
+}
+//main
+var frase = prompt("Digite uma frase: ");
+var car = prompt("Digite o caracter que deseja saber quantas vezes aparece: ");
+console.log(countChars(frase, car)); 
+
+
+
+
+
