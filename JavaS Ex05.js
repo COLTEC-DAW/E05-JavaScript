@@ -203,8 +203,9 @@ var ReverseArray = function(Vetor){
     return Clone.reverse();
 }
 
-/*
+
 var Vetor2 = [5, 68, 75, 40, 70, 87];
+/*
 VetorInver =ReverseArray(Vetor2);
 console.log(VetorInver);
 */
@@ -265,8 +266,43 @@ var Objeto3 = {
     alcool: "vod"
 };
 
+/*
 var DeepEqualsDif = DeepEquals(Objeto1,Objeto2);
 console.log(DeepEqualsDif);
 
 var DeepEqualsEqual = DeepEquals(Objeto2,Objeto3);
 console.log(DeepEqualsEqual);
+*/
+
+/* Ordenação */
+var bubbleSort = function(vetor, criterio){
+    for(var i = 0; i < vetor.length; i++){
+        for( var j = 0; j < vetor.length; j++){
+            if(criterio(vetor[j], vetor[j + 1])){
+                var tmp = vetor[j];
+                vetor[j] = vetor [j + 1];
+                vetor[j + 1] = tmp;
+            }
+        }
+    }
+    return vetor;
+}
+
+var Crescente = function(a, b){
+    return (a > b);
+}
+
+var Decrescente = function(a, b){
+    return (a < b);
+}
+
+var CrescenteImpar = function(a, b){
+    return ((a > b) && (a%2 !== 0));
+}
+
+var DecrescentePar = function (a, b){
+    return ((a < b) && (a%2 === 0));
+}
+
+bubbleSort(Vetor2, Crescente);
+console.log(Vetor2);
