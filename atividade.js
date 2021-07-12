@@ -117,3 +117,8 @@ var range = function(min, max, j){
     return interval;
 }
 console.log("O intervalo eh: ", range(12,28,3));
+
+var reverseArray = function (array){
+    return array.reverse();
+}
+console.log(reverseArray(['D','R','A','C','U','L','A',]));
