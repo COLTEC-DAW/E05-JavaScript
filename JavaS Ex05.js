@@ -288,19 +288,19 @@ var bubbleSort = function(vetor, criterio){
     return vetor;
 }
 
-var Crescente = function(a, b){
+function Crescente(a, b){
     return (a > b);
 }
 
-var Decrescente = function(a, b){
+function Decrescente(a, b){
     return (a < b);
 }
 
-var CrescenteImpar = function(a, b){
+function CrescenteImpar(a, b){
     return ((a > b) && (a%2 !== 0));
 }
 
-var DecrescentePar = function (a, b){
+function DecrescentePar(a, b){
     return ((a < b) && (a%2 === 0));
 }
 
@@ -332,4 +332,44 @@ function CifraDoCesar(string){
 var Encripta = function(string, criterio){
     return criterio(string);
 }
+/*
 console.log(Encripta("Eu sou alguem escondido", CifraDoCesar));
+*/
+
+/* Verificando um Número */
+var VerifNumero = function(num, verif){
+    num = parseInt(num);
+    if(typeof num == "number"){
+        return verif(num);
+    }
+    else{
+        console.log("Este não é um número ");
+    }
+}
+
+function EhImpar(num){
+    if (num % 2 !== 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+function EhPrimo(num){
+    var aux = 0;
+
+    for(var i = 1; i < num; i++){
+        if(num % i == 0){
+            aux++;
+        }
+    }
+    if(aux === 1){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+console.log(VerifNumero(13, EhPrimo));
