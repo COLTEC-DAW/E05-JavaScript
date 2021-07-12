@@ -203,9 +203,8 @@ var ReverseArray = function(Vetor){
     return Clone.reverse();
 }
 
-
-var Vetor2 = [5, 68, 75, 40, 70, 87];
 /*
+var Vetor2 = [5, 68, 75, 40, 70, 87];
 VetorInver =ReverseArray(Vetor2);
 console.log(VetorInver);
 */
@@ -222,5 +221,52 @@ var ToList = function(Vetor){
     return Lista;
 }
 
+/*
 var ListaDoVetor = ToList(Vetor2);
 console.log(ListaDoVetor);
+*/
+
+/* DeepEquals */
+var DeepEquals = function(objeto1, objeto2){
+    var Keys1 = Object.keys(objeto1);
+    var Keys2 = Object.keys(objeto2);
+    var Vetor = [];
+
+    for(var i = 0; i < Keys1.length; i++){
+        if(Keys1[i] in objeto2){
+            Vetor.push(Keys1[i]);
+        }
+        else if(Keys2[i] in objeto1){
+            Vetor.push(Keys2[i]);
+        }
+    }
+    if(Keys1.length == Vetor.length && Keys2.length == Vetor.length){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+var Objeto1 = {
+    sucinto: "bombar",
+    ganhar: "sempre"
+};
+
+var Objeto2 = {
+    sucinto: "bombar",
+    ganhar: "sempre",
+    alcool: "vodka"
+};
+
+var Objeto3 = {
+    sucinto: "bombar",
+    ganhar: "sempre",
+    alcool: "vod"
+};
+
+var DeepEqualsDif = DeepEquals(Objeto1,Objeto2);
+console.log(DeepEqualsDif);
+
+var DeepEqualsEqual = DeepEquals(Objeto2,Objeto3);
+console.log(DeepEqualsEqual);
