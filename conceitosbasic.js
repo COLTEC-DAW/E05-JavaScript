@@ -1,3 +1,4 @@
+/*
 //Questão 1 - Desnhando um triângulo
 function triangle(nLinhas){
     console.log("Desenhando um triângulo...")
@@ -142,6 +143,91 @@ var car = prompt("Digite o caracter que deseja saber quantas vezes aparece: ");
 console.log(countChars(frase, car)); 
 
 
+//Questão 8
+function range(min, max, i){
+    var array = [];
+    var varia = 0;
+
+    for(j = min + 1; j < max; j++ ){
+        if(varia = i){
+            array.push(j);
+        }else{
+            varia+=1;
+        }
+    }
+    return array;
+}
+
+var min = 1;
+var max = 9;
+var inter = prompt("Digite o intervalo");
+
+console.log(range(min, max, inter))
+
+
+//Questão 9 - Revertendo um array
+function reverseArray(array){
+    var arraycopia = array;
+    arraycopia.reverse();
+
+    return arraycopia
+}
+
+array = [1, 2, 3, 4, 5]
+console.log(reverseArray(array));
+
+
+//Questão 10 - Trabalhando com listas
+var toList = function(array){
+    var lista = {};
+    var arrayR= array;
+    arrayR.reverse();
+
+    for(var i=0; i< arrayR.length; i++){
+        var aux = {};
+        aux.value = arrayR[i];
+        aux.rest = lista;
+        lista = aux;
+    }
+
+    return lista;
+}
+
+var array = [0,1,2,3,4,5,6,7];
+console.log(toList(array)); 
+*/
+
+//Questão 11 - DeepEquals
+function deepEquals(obj1, obj2){
+    if((obj1.turma == obj2.turma)&&  (obj1.idade == obj2.idade) && (obj1.nome == obj2.nome)){
+        return "Turma, idade e nome são iguais"
+    }else if((obj1.turma == obj2.turma)&&  (obj1.idade == obj2.idade)){
+        return "Turma e idade são iguais";
+    }else if((obj1.turma == obj2.turma)&&  (obj1.nome == obj2.nome)){
+        return "Turma e nome são iguais";
+    }else if((obj1.nome == obj2.nome)&&  (obj1.idade == obj2.idade)){
+        return "Nome e idade são iguais";
+    }else if((obj1.turma == obj2.turma)){
+        return "Turma é igual";
+    }else if((obj1.idade == obj2.idade)){
+        return "Idade é igual";
+    }else if((obj1.nome == obj2.nome)){
+        return "Nome é igual";
+    }else{
+        return "nenhum é igual";
+    }
+
+}
+
+function aluno(turma, idade, nome){
+    this.turma = turma;
+    this.idade = idade; 
+    this.nome = nome;
+}
+
+var obj1 = new aluno(333, 17, "Joao");
+var obj2 = new aluno(333, 16, "Indiano");
+console.log(deepEquals(obj1, obj2)); 
 
 
 
