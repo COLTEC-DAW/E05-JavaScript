@@ -203,6 +203,24 @@ var ReverseArray = function(Vetor){
     return Clone.reverse();
 }
 
-var Vetor = [5, 68, 75, 40, 70, 87];
-VetorInver =ReverseArray(Vetor);
-console.log(VetorIver);
+
+var Vetor2 = [5, 68, 75, 40, 70, 87];
+/*
+VetorInver =ReverseArray(Vetor2);
+console.log(VetorInver);
+*/
+
+var ToList = function(Vetor){
+    var Lista;
+
+    for(var i = 0; i < Vetor.length; i++){
+            Lista = {
+            value: Vetor[i],
+            rest: Lista,
+        }
+    }
+    return Lista;
+}
+
+var ListaDoVetor = ToList(Vetor2);
+console.log(ListaDoVetor);
