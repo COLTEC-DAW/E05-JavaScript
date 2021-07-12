@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceitos Básicos</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row display-1">
+            <p>
+                Conceitos Básicos
+            </p>
+        </div>
+        <div class="row">
+            <div class="d-grid gap-2 mb-3">
+                <button type="button" class="btn btn-primary btn-lg" onclick="console.clear()">
+                    Limpar Console
+                </button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-primary btn-lg"
+                    onclick="imprimeTriangulo(prompt('Informe o número de linhas:'))">
+                    Imprimir Triângulo no Console
+                </button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-primary btn-lg"
+                    onclick="imprimeTabuleiroDeXadres(prompt('Informe o número de linhas:'))">
+                    Imprimir Tabuleiro de Xadrês no Console
+                </button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-primary btn-lg"
+                onclick="logSePalindromo(prompt('Digite a string a verificar:'))">
+                    Verificar Palíndromo
+                </button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-primary btn-lg"
+                onclick="monstrosity(100)">
+                    Imprime... Essa coisa...?
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function repeat(functionToRun, timesToRepeat) {
+            for (var i = 0; (i < timesToRepeat); i++) {
+                functionToRun(i);
+            }
+        }
+
+        function alternateFunctions(funcArray, timesToRun, startingIndex) {
+            repeat(function(i) {
+                funcArray[(i + startingIndex) % funcArray.length]();
+            }, timesToRun);
+        }
+
+        function cycleArray(array, timesToCycle) {
+            var newArray = [];
+            if (timesToCycle === undefined) {
+                timesToCycle = 1;
+            }
+            repeat(function (i) {
+                newArray[i] = array[(timesToCycle + i) % array.length];
+            }, array.length);
+            return newArray;
+        }
+
+        function criaLinhaComCharset(charset, tamLinha, indexInicial) {
+            var linha = "";
+            if (indexInicial === undefined) {
+            indexInicial = 0;
+            }
+            repeat(function (i) { 
+            linha += charset[(i + indexInicial) % charset.length];
+            }, tamLinha);
+            return linha;
+        }
+
+        function reverse(string) {
+            var reverseString = "";
+            repeat(function(i){
+                reverseString += string[string.length - i - 1];
+            }, string.length);
+            return reverseString;
+        }
+        
+        function isPalyndrome(string) {
+            if (string == reverse(string)) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        function imprimeTriangulo(nLinhas) {
+            var linha = "#";
+            repeat(function () {
+                linha += "#";
+                console.log(linha);
+            }, nLinhas);
+        }
+
+        function imprimeTabuleiroDeXadres(nLinhas) {
+            var charset = ["#", " "];
+
+            repeat(function(i) {
+                console.log(criaLinhaComCharset(charset, nLinhas, (i % charset.length)));
+            }, nLinhas);
+        }
+
+        function logSePalindromo(string) {
+            if (isPalyndrome(string)) {
+                console.log("O conjunto de caracteres '" + string + "' é um palíndromo!");
+            }
+            else {
+                console.log("O conjunto de caracteres '" + string + "' não é um palíndromo...");
+            }
+        }
+
+        function monstrosity(countTo) {
+            repeat(function(i) {
+                var actualNumber = i + 1;
+                if (actualNumber % 3 === 0) {
+                    if (actualNumber % 5 !== 0) {
+                        console.log("Fizz");
+                    }
+                    else {
+                        console.log("FizzBuzz");
+                    }
+                }
+                else if (actualNumber % 5 === 0) {
+                    console.log("Buzz");
+                }
+                else {
+                    console.log(actualNumber);
+                }
+            }, countTo);
+        }
+
+    </script>
+</body>
+
+</html>
