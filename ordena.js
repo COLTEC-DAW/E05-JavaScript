@@ -29,5 +29,5 @@ var descrescentepar = function(linha1, linha2){
 var numeros = [1, 5, 99, 3, -7, 3.1];
 
 document.write(numeros + " -> ");
-bubble(numeros, crescente)
+bubble(numeros, crescente);
 document.write(numeros + "<br>");
