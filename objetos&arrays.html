@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos e Arrays</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 class="display-1">
+                Objetos e Arrays
+            </h1>
+        </div>
+        <div class="row">
+            <div class="d-grid gap-2 mb-3">
+                <button type="button" class="btn btn-primary btn-lg" onclick="console.clear()">
+                    Limpar Console
+                </button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-primary btn-lg" onclick="logRange(
+                        prompt('Digite o valor inicial para o intervalo:'),
+                        prompt('Digite o valor limite para o intervalo:'),
+                        prompt('Digite o passo entre os valores do intervalo:')
+                        )">
+                    Imprimir Intervalo
+                </button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-primary btn-lg" onclick="logReverseArray(promptArray())">
+                    Inverter um Array
+                </button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-primary btn-lg" onclick="logArrayToList(promptArray())">
+                    Converter um Array em Lista
+                </button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-primary btn-lg" onclick="logDeepEquals(promptArray())">
+                    Objetos DeepEquals
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function min(n1, n2) {
+            if (n1 < n2) {
+                return n1;
+            }
+            else {
+                return n2;
+            }
+        }
+
+        function range(start, end, step) {
+            var rangeArray = [];
+
+            start = parseFloat(start);
+            end = parseFloat(end);
+            step = parseFloat(step);
+
+            if (step < 0) {
+                step *= -1;
+            }
+
+            if (min(start, end) == start) {
+                for (var i = start; i < end; i += step) {
+                    rangeArray.push(i);
+                }
+            }
+            else {
+                for (var i = start; i > end; i -= step) {
+                    rangeArray.push(i);
+                }
+            }
+            return rangeArray;
+        }
+
+        function logRange(start, end, step) {
+            console.log(range(start, end, step));
+        }
+
+        function reverseArray(array) {
+            reverse = []
+            for (var i = 0; i < array.length; i++) {
+                reverse[i] = array[array.length - i - 1];
+            }
+            return reverse;
+        }
+
+        function promptArray() {
+            var array = [];
+            var itemAtual = "";
+
+            for (var i = 0; itemAtual !== "acabou"; i++) {
+                itemAtual = prompt("Digite o item para a posição " + i + ": (Digite 'acabou', fora de aspas, para acabar a sequência.)");
+                array.push(itemAtual);
+            }
+
+            array.pop();
+
+            return array;
+        }
+
+        function logReverseArray(array) {
+            console.log(array)
+            console.log(reverseArray(array));
+        }
+
+        function List(value) {
+            this.value = value;
+            this.rest = null,
+
+            this.push = function(item) {
+                if (this.rest != null) {
+                    this.rest.push(item);
+                }
+                else {
+                    this.rest = new List(item);
+                }
+            }
+        }
+
+        function toList(array) {
+            var lista = new List(array[0]);
+            for (var i = 1; i < array.length; i++) {
+                lista.push(array[i]);
+            }
+            return lista;
+        }
+
+        function logArrayToList(array) {
+            console.log(toList(array));
+        }
+
+        function deepEquals(obj1, obj2) {
+            var propertiesObj1 = [];
+            var propertiesObj2 = [];
+
+            for (var property in obj1) {
+                propertiesObj1.push(property);
+            }
+            for (var property in obj2) {
+                propertiesObj2.push(property);
+            }
+
+            return areArraysEqual(propertiesObj1, propertiesObj2);
+        }
+
+        function areArraysEqual(array1, array2) {
+            if (array1.length != array2.length) {
+                return false;
+            }
+            for (var i = 0; i < array1.length; i++) {
+                if (array1[i] != array2[i]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function logDeepEquals(arrayDeTeste) {
+            var list = toList(arrayDeTeste);
+
+            var decoy = {
+                notvalue: "definetely not a value"
+            }
+
+            console.log(list);
+            console.log(list.rest.rest);
+            console.log(deepEquals(list, list.rest.rest));
+
+            console.log(list);
+            console.log(decoy);
+            console.log(deepEquals(list, decoy));
+        }
+    </script>
+</body>
+
+</html>
