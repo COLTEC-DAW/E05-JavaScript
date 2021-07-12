@@ -93,3 +93,15 @@ var max = function (val1, val2){
     }
 }
 console.log("O menor valor eh:",min(1,2), "; o maior valor eh:",max(1,2))
+
+var countChars = function (frase, c){
+    var aux = frase.split('');
+    var count = 0;
+    for(var i = 0; i < frase.length; i++){
+        if(aux[i] == c){
+            count++;
+        }
+    }
+    return count;    
+}
+console.log(countChars("Eu estou digitando agora", 't'));
