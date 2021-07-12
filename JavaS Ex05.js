@@ -138,7 +138,56 @@ var CountChars = function(Frase, C){
     return aux;
 }
 
+/*
 var Frase = prompt("Digite a frase ");
 var C = prompt("Digite o caractere ");
 var QuantCharac = CountChars(Frase,C);
 console.log("Tem %s do character %s dentro da frase: %s ", QuantCharac, C,Frase);
+*/
+
+/* Trabalhando com Intervalos */
+var range = function(Min, Max){
+    var Vetor = [];
+    var aux;
+    
+    if(Min > Max){
+        aux = Min;
+        Min = Max;
+        Max = aux;
+    }
+
+    for(var j = Min + 1; j < Max; j ++){
+        Vetor.push(j)
+    }
+
+    return Vetor;
+}
+
+var RangeI = function(Min, Max, i){
+    var Vetor = [];
+    var aux;
+    
+    if(Min > Max){
+        aux = Min;
+        Min = Max;
+        Max = aux;
+    }
+
+    for(var j = Min + 1; j < Max; j += i){
+        Vetor.push(j)
+    }
+
+    return Vetor;
+}
+
+var MinR = prompt("Digite o minimo ");
+var MaxR = prompt("Digite o maximo ");
+var Inter = prompt("Digite o intervalo");
+var Vetor = range(MinR,MaxR);
+console.log(Vetor);
+
+MinR = prompt("Digite o minimo ");
+MaxR = prompt("Digite o maximo ");
+Inter = prompt("Digite o intervalo");
+Vetor = RangeI(MinR,MaxR,Inter);
+console.log(Vetor);
