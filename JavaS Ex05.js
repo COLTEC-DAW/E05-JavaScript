@@ -1,6 +1,6 @@
 /* Atividade Do Triangulo */
 var triangulo = function(NLinhas){
-    for (var i = 1; i <= NLinhas; i++){
+    for (i = 1; i <= NLinhas; i++){
         var HashTag = "";
         for(var j = 1; j <= i; j++){
             HashTag += "#";
@@ -44,3 +44,27 @@ var Palindromo = function(Palavra){
 
 var Palavra = prompt("Digite a palavra que deseja conferir se é um palíndromo ")
 Palindromo(Palavra);
+
+/* Programa Diferente */
+var ProgramaDif = function(){
+    for(i = 0; i <= 100; i++){
+        if(i % 3 == 0 && i % 5 == 0){
+            console.log("FizzBuzz");
+        }
+        else{
+            if(i % 3 == 0){
+                console.log("Fizz");
+            }
+            else{
+                if(i % 5 == 0){
+                    console.log("Buzz");
+                }
+                else{
+                    console.log(i);
+                }
+            }
+        }
+    }
+}
+
+ProgramaDif();
