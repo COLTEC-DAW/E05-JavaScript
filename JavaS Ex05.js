@@ -359,7 +359,7 @@ function EhImpar(num){
 function EhPrimo(num){
     var aux = 0;
 
-    for(var i = 1; i < num; i++){
+    for(i = 1; i < num; i++){
         if(num % i == 0){
             aux++;
         }
@@ -371,5 +371,41 @@ function EhPrimo(num){
         return false;
     }
 }
-
+/*
 console.log(VerifNumero(13, EhPrimo));
+*/
+
+/* Transformações em uma String */
+var TransformaString = function(string, Parametro) {
+    var stringModif = "";
+    for(i = 0; i < string.length; i++){
+        stringModif += Parametro(string[i]); 
+    }
+    return stringModif;
+}
+
+function CaixaAltaVogais(character){
+    var vogais = ["a", "e", "i", "o", "u"];
+    var novoCharac = character.toLowerCase();
+    return (vogais.includes(novoCharac)) ? character.toUpperCase():character;
+}
+
+function CaixaAltaCons(character){
+    var consoantes = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
+    var novoCharac = character.toLowerCase();
+    return (consoantes.includes(novoCharac)) ? character.toUpperCase():character;
+}
+
+function CaixaBaixaVogais(character){
+    var vogais = ["a", "e", "i", "o", "u"];
+    var novoCharac = character.toLowerCase();
+    return (vogais.includes(novoCharac)) ? character.toLowerCase():character;
+}
+
+function CaixaBaixaCons(character){
+    var consoantes = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
+    var novoCharac = character.toLowerCase();
+    return (consoantes.includes(novoCharac)) ? character.toLowerCase():character;
+}
+
+console.log(TransformaString("dawdnwadnawdjwadnwaudwah", CaixaAltaCons));
