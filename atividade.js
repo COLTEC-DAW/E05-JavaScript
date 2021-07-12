@@ -106,11 +106,14 @@ var countChars = function (frase, c){
 }
 console.log(countChars("Eu estou digitando agora", 't'));
 
-var range = function(min, max){
-    var interval = []; 
-    for(var i = min+1; i < max; i++){
-        interval[i-min+1] = i;
+var range = function(min, max, j){
+    var interval = [];
+    
+    if( j == 0 ){ j = 1; }
+
+    for(var i = min+1; i < max; i += j){
+        interval[(i-(min+1))/j] = i;
     }
     return interval;
 }
-console.log("O intervalo eh: ", range(12,28));
+console.log("O intervalo eh: ", range(12,28,3));
