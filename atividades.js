@@ -1,3 +1,5 @@
+
+//JavaScript: Conceitos Básicos
 //Atividade Desenhando Triangulo
 function triangulo(nLinhas){
     console.log("****Desenhando um triângulo****")
@@ -58,5 +60,20 @@ function imprimeNumeros(number){
         }
     }
 }
-var number = 100;
-imprimeNumeros(number);
+//var number = 100;
+//imprimeNumeros(number);
+
+// **************************************************************************************
+//JavaScript: Funções
+
+function min(a,b){
+    return Math.min(a,b);
+}
+function max(a,b){
+    return Math.max(a,b);
+}
+
+var number1 = prompt("Digite o primeiro número: ");
+var number2 = prompt("Digite o segundo número: ")
+console.log("O menor número entre os dois é: " + min(number1,number2));
+console.log("O maior número entre os dois é: " + max(number1,number2))
