@@ -73,7 +73,17 @@ function max(a,b){
     return Math.max(a,b);
 }
 
-var number1 = prompt("Digite o primeiro número: ");
-var number2 = prompt("Digite o segundo número: ")
-console.log("O menor número entre os dois é: " + min(number1,number2));
-console.log("O maior número entre os dois é: " + max(number1,number2))
+//var number1 = prompt("Digite o primeiro número: ");
+//var number2 = prompt("Digite o segundo número: ")
+//console.log("O menor número entre os dois é: " + min(number1,number2));
+//console.log("O maior número entre os dois é: " + max(number1,number2))
+
+// Recursividade
+
+function mod2(number){
+    return (number % 2 == 0)
+}
+
+function mod(number, mod){
+    return (number % mod == 0)
+}
