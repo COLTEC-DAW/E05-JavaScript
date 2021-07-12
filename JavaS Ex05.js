@@ -74,6 +74,7 @@ var MinMax = function(a,b,Action){
     return Action(a,b);
 }
 
+/*
 var Num1 = prompt("Digite o primeiro número ");
 var Num2 = prompt("Digite o segundo número ");
 var Acao = prompt("Digite 1 para Minimo, qualquer outro numero será maximo ");
@@ -82,4 +83,38 @@ if (Acao == 1){
 }
 else{
     console.log("O maior número é: " + MinMax(Num1,Num2,Math.max))
+}
+*/
+
+/* Recursividade */
+var Mod = function(Number, Mod){
+    if(Number % Mod == 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+var Mod2 = function(Number){
+    return Mod(Number, 2);
+}
+
+var Number = prompt("Digite um número que deseja saber se é par");
+var Resposta = Mod2(Number);
+if(Resposta == true){
+    console.log("O número %s é par", Number);
+}
+else{
+    console.log("O número %s não é par", Number);
+}
+
+Number = prompt("Digite um número ");
+var ModNum = prompt("Digite o divisor ");
+Resposta = Mod(Number,ModNum);
+if(Resposta == true){
+    console.log("O número %s é divisível por %s ", Number, ModNum);
+}
+else{
+    console.log("O número %s não é divisível por %s ", Number, ModNum);
 }
