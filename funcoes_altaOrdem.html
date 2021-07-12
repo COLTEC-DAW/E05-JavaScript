@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções de Alta Ordem</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 class="display-1">
+                Funções de Alta Ordem
+            </h1>
+        </div>
+        <div class="row">
+            <div class="d-grid gap-2 mb-3">
+                <button type="button" class="btn btn-primary btn-lg" onclick="console.clear()">
+                    Limpar Console
+                </button>
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-primary btn-lg" onclick="logOrderedArray(promptValueArray(), promptOrderCriteria())">
+                    Ordenar Vetor
+                </button>
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-primary btn-lg" onclick="logEncrypt(prompt('Digite a frase a ser criptografada em Caesar:'), caesarCipher, prompt('Digite a chave para a cifra:'))">
+                    Criptografar String
+                </button>
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-primary btn-lg" onclick="logVerifyNumber(parseFloat(prompt('Digite o numero a ser verificado:')))">
+                    Verificar Número
+                </button>
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-primary btn-lg" onclick="logTransformString(prompt('Digite a string a ser transformada:'))">
+                    Transformar String
+                </button>
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-primary btn-lg" onclick="">
+                    Funções Matriciais
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function promptValueArray() {
+            var array = [];
+            var itemAtual = 0;
+
+            for (var i = 0; itemAtual !== "acabou"; i++) {
+                itemAtual = prompt("Digite o número para a posição " + i + ": (Digite 'acabou', fora de aspas, para acabar a sequência.)");
+                array.push(parseFloat(itemAtual));
+            }
+
+            array.pop();
+
+            return array;
+        }
+
+        function swap(v1, v2) {
+            var aux = v1;
+            v1 = v2;
+            v2 = aux;
+        }
+
+        function orderArray(array, criteria) {
+            var orderedArray = array;
+            for (var i = 0; i < array.length; i++) {
+                for (var j = 0; j < (array.length - i - 1); j++) {
+                    if (criteria(orderedArray[j], orderedArray[j + 1])) {
+                        var aux = orderedArray[j];
+                        orderedArray[j] = orderedArray[j + 1];
+                        orderedArray[j + 1] = aux;
+                    }
+                }
+            }
+            return orderedArray;
+        }
+
+        function promptOrderCriteria() {
+            var input = prompt("Digite o número do critério da ordenação: (1)crescente, (2)descrente, (3)crescente ímpares, (4)decrescente pares");
+            var criteria;
+            switch (input) {
+                case "2":
+                    criteria = lesserThan;
+                    break;
+                case "3":
+                    criteria = higherThanOdd;
+                    break;
+                case "4":
+                    criteria = lesserThanEven;
+                    break;
+                default:
+                case "1":
+                    criteria = higherThan;
+                    break;
+            }
+            return criteria;
+        }
+
+        function logOrderedArray(array, criteria) {
+            console.log(orderArray(array, criteria));
+        }
+
+        function higherThan(a, b) {
+            return (a > b);
+        }
+
+        function lesserThan(a, b) {
+            return (a < b);
+        }
+
+        function higherThanOdd(a, b) {
+            if (higherThan(a, b) || a % 2 == 0) {
+                return true;
+            }
+            else return false;
+        }
+
+        function lesserThanEven(a, b) {
+            if (lesserThan(a, b) || a % 2 == 1) {
+                return true;
+            }
+            else return false;
+        }
+
+        function range(start, end, step) {
+            var rangeArray = [];
+
+            start = parseFloat(start);
+            end = parseFloat(end);
+            
+            if (step == undefined) {
+                step = 1;
+            }
+            else {
+                step = parseFloat(step);
+            }
+
+            for (var i = start; i < end; i += step) {
+                rangeArray.push(i);
+            }
+            return rangeArray;
+        }
+
+        function encrypt(string, cipher, key) {
+            var criptografia = "";
+            for (i in range(0, string.length)) {
+                criptografia += cipher(string[i], key);
+            }
+            return criptografia;
+        }
+
+        function caesarCipher(char, key) {
+            if (key == undefined) {
+                key = 1;
+            }
+            char = char.charCodeAt(0);
+            char += parseFloat(key);
+            return String.fromCharCode(char);
+        }
+
+        function logEncrypt(string, cypher, key) {
+            console.log(encrypt(string, cypher, key));
+        }
+
+        function verifyNumber(number, verifier) {
+            return verifier(number);
+        }
+
+        function isOdd(number) {
+            return (number % 2 == 1);
+        }
+
+        function isPrime(number) {
+            var isPrime = true;
+            for (var i = 2; i <= (number / 2); i++) {
+                if (number % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            return isPrime;
+        }
+
+        function logVerifyNumber(number) {
+            if (verifyNumber(number, isOdd)) {
+                console.log(number + " é impar!");
+            }
+            else console.log(number + " não é impar...");
+
+            if (verifyNumber(number, isPrime)) {
+                console.log(number + " é primo!");
+            }
+            else console.log(number + " não é primo...");
+        }
+
+        function isUppercase(char) {
+            var charCode = char.charCodeAt(0);
+            return (charCode >= 65 && charCode <= 90);
+        }
+        function isLowercase(char) {
+            var charCode = char.charCodeAt(0);
+            return (charCode >= 97 && charCode <= 122);
+        }
+        function isLetter(char) {
+            return (isLowercase(char) || isUppercase(char));
+        }
+        function isVowel(char) {
+            var isVowel = false;
+
+            if (isLetter(char)) {
+                if ((char == "a" || char == "e" || char == "i" || char == "o" || char == "u" ) ||
+                    (char == "A" || char == "E" || char == "I" || char == "O" || char == "U" )) {
+                    isVowel = true;
+                }
+            }
+            return isVowel;
+        }
+        function isConsonant(char) {
+            return (!isVowel(char));
+        }
+        function uppercase(char) {
+            if (isLetter(char)) {
+                var charCode = char.charCodeAt(0);
+                char = String.fromCharCode(charCode - 32);
+            }
+            return char;
+        }
+        function lowercase(char) {
+            if (isLetter(char)) {
+                var charCode = char.charCodeAt(0);
+                char = String.fromCharCode(charCode + 32);
+            }
+            return char;
+        }
+
+        function uppercaseVowel(char) {
+            if (isVowel(char) && isLowercase(char)) {
+                char = uppercase(char);
+            }
+            return char;
+        }
+        function uppercaseConsonant(char) {
+            if (isConsonant(char) && isLowercase(char)) {
+                char = uppercase(char);
+            }
+            return char;
+        }
+        function lowercaseVowel(char) {
+            if (isVowel(char) && isUppercase(char)) {
+                char = lowercase(char);
+            }
+            return char;
+        }
+        function lowercaseConsonant(char) {
+            if (isConsonant(char) && isUppercase(char)) {
+                char = lowercase(char);
+            }
+            return char;
+        }
+
+        function transformString(string, transformation) {
+            var transformedString = "";
+            for (var i = 0; i < string.length; i++){
+                transformedString += transformation(string[i]);
+            }
+            return transformedString;
+        }
+
+        function logTransformString(string) {
+            console.log(string);
+            console.log(transformString(string, uppercaseVowel));
+            console.log(transformString(string, lowercaseVowel));
+            console.log(transformString(string, uppercaseConsonant));
+            console.log(transformString(string, lowercaseConsonant));
+        }
+
+        function logFuncaoMatricial() {
+            console.log("Infelizmente, o código para essa função não está disponível por motivos de não entendimento da questão proposta. Por conta do atraso, prefiro deixar para ler estudar a resolução quando for postada, estando ciente de minha perca em pontos.");
+        }
+    </script>
+</body>
+
+</html>
