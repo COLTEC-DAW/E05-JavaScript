@@ -1,4 +1,3 @@
-/*
 //Questão 1 - Desnhando um triângulo
 function triangle(nLinhas){
     console.log("Desenhando um triângulo...")
@@ -195,7 +194,7 @@ var toList = function(array){
 
 var array = [0,1,2,3,4,5,6,7];
 console.log(toList(array)); 
-*/
+
 
 //Questão 11 - DeepEquals
 function deepEquals(obj1, obj2){
