@@ -87,3 +87,16 @@ function mod2(number){
 function mod(number, mod){
     return (number % mod == 0)
 }
+
+//Conta caracteres
+
+function contaCaracteres(frase,c){
+    var contador = 0;
+    frase = frase.split('');
+    for(i = 0;i < frase.length; i++){
+        if(frase[i] == c){
+            contador++;
+        }
+    }
+    return contador;
+}
