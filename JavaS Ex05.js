@@ -180,6 +180,7 @@ var RangeI = function(Min, Max, i){
     return Vetor;
 }
 
+/*
 var MinR = prompt("Digite o minimo ");
 var MaxR = prompt("Digite o maximo ");
 var Inter = prompt("Digite o intervalo");
@@ -191,3 +192,17 @@ MaxR = prompt("Digite o maximo ");
 Inter = prompt("Digite o intervalo");
 Vetor = RangeI(MinR,MaxR,Inter);
 console.log(Vetor);
+*/
+
+/* Revertendo um Array */
+var ReverseArray = function(Vetor){
+    var Clone = [];
+    for(i = 0; i < Vetor.length; i++){
+        Clone[i] = Vetor[i];
+    }
+    return Clone.reverse();
+}
+
+var Vetor = [5, 68, 75, 40, 70, 87];
+VetorInver =ReverseArray(Vetor);
+console.log(VetorIver);
