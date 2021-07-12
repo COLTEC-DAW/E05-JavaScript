@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 class="display-1">
+                Funções
+            </h1>
+        </div>
+        <div class="row">
+            <div class="d-grid gap-2 mb-3">
+                <button type="button" class="btn btn-primary btn-lg" onclick="console.clear()">
+                    Limpar Console
+                </button>
+            </div>
+            <div class="col-4">
+                <button type="button" class="btn btn-primary btn-lg"
+                    onclick="logMinMax(prompt('Digite o primeiro número:'), prompt('Digite o segundo número:'))">
+                    Mínimo e Máximo
+                </button>
+            </div>
+            <div class="col-4">
+                <button type="button" class="btn btn-primary btn-lg"
+                    onclick="logMod2ModInput(prompt('Digite o número dividendo:'), prompt('Digite o número divisor:'))">
+                    Módulo / Resto
+                </button>
+            </div>
+            <div class="col-4">
+                <button type="button" class="btn btn-primary btn-lg"
+                onclick="logCount(prompt('Digite uma frase:'), prompt('Digite o caractere a ser contado:'))">
+                    Contar um Caractere na Frase
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function min(n1, n2) {
+            if (n1 < n2) {
+                return n1;
+            }
+            else {
+                return n2;
+            }
+        }
+
+        function max(n1, n2) {
+            if (n1 > n2) {
+                return n1;
+            }
+            else {
+                return n2;
+            }
+        }
+
+        function logMinMax(n1, n2) {
+            console.log("O menor valor é: " + min(n1, n2));
+            console.log("O maior valor é: " + max(n1, n2));
+        }
+
+        function mod2(num) {
+            return (num % 2 == 0);
+        }
+
+        function mod(num, mod) {
+            return (num % mod == 0);
+        }
+
+        function logMod2ModInput(num, modulo) {
+            if (mod2(num)) {
+                console.log(num + " é divisível por 2.");
+            }
+            else {
+                console.log(num + " não é divisível por 2.");
+            }
+
+            if (mod(num, modulo)) {
+                console.log(num + " é divisível por " + modulo + ".");
+            }
+            else {
+                console.log(num + " não é divisível por " + modulo + ".")
+            }
+        }
+
+        function countChars(frase, char) {
+            var count = 0;
+            for (var i = 0; i < frase.length; i++) {
+                if (frase[i] == char) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        function logCount(frase, char) {
+            console.log("O caractere " + char + " aparece " + countChars(frase, char) + " vezes na frase " + frase);
+        }
+    </script>
+</body>
+
+</html>
