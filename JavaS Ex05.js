@@ -9,8 +9,10 @@ var triangulo = function(NLinhas){
     }
 }
 
+/*
 var NLinhasT = prompt("Quantas Linhas deseja que o triangulo tenha? ");
 triangulo(NLinhasT);
+*/
 
 /* Tabuleiro De Xadrez */
 var Xadrez = function(NLinhas){
@@ -26,8 +28,10 @@ var Xadrez = function(NLinhas){
     }
 }
 
+/*
 var NLinhasX = prompt("Quantas Linhas deseja que o tabuleiro de Xadrez tenha? ");
 Xadrez(NLinhasX);
+*/
 
 /* Palindromo */
 var Palindromo = function(Palavra){
@@ -42,8 +46,10 @@ var Palindromo = function(Palavra){
     }
 }
 
+/*
 var Palavra = prompt("Digite a palavra que deseja conferir se é um palíndromo ")
 Palindromo(Palavra);
+*/
 
 /* Programa Diferente */
 var ProgramaDif = function(){
@@ -99,7 +105,7 @@ var Mod = function(Number, Mod){
 var Mod2 = function(Number){
     return Mod(Number, 2);
 }
-
+/*
 var Number = prompt("Digite um número que deseja saber se é par");
 var Resposta = Mod2(Number);
 if(Resposta == true){
@@ -118,3 +124,21 @@ if(Resposta == true){
 else{
     console.log("O número %s não é divisível por %s ", Number, ModNum);
 }
+*/
+
+/* Contando Caracteres */
+var CountChars = function(Frase, C){
+    var aux = 0;
+    
+    for(i = 0; i< Frase.length; i++){
+        if(Frase[i] == C){
+            aux++
+        }
+    }
+    return aux;
+}
+
+var Frase = prompt("Digite a frase ");
+var C = prompt("Digite o caractere ");
+var QuantCharac = CountChars(Frase,C);
+console.log("Tem %s do character %s dentro da frase: %s ", QuantCharac, C,Frase);
