@@ -304,5 +304,32 @@ var DecrescentePar = function (a, b){
     return ((a < b) && (a%2 === 0));
 }
 
+/*
 bubbleSort(Vetor2, Crescente);
 console.log(Vetor2);
+*/
+
+/* Criptografia */
+function CifraDoCesar(string){
+    var strEncrypted = "";
+
+    for(var i = 0; i < string.length; i++){
+        if(string[i] != "!" && string[i] != " " && string[i] != "." && string[i] != "?"){
+            if(string.charCodeAt(i) <= 77){
+                strEncrypted += String.fromCharCode(string.charCodeAt(i) + (Math.random() * (26 - 1) + 1));
+            }
+            else{
+                strEncrypted += String.fromCharCode(string.charCodeAt(i) - (Math.random() * (26 - 1) + 1));
+            }
+        }
+        else{
+            strEncrypted += string[i];
+        }
+    }
+    return strEncrypted;
+}
+
+var Encripta = function(string, criterio){
+    return criterio(string);
+}
+console.log(Encripta("Eu sou alguem escondido", CifraDoCesar));
