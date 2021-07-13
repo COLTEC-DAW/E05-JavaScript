@@ -139,3 +139,25 @@ var toList = function(array){
     return list;
 }
 console.log(toList(['A','B','C']));
+
+var deepEquals = function (obj1, obj2){
+    var answer = true;
+    
+    for(var prop in obj1){
+        if(prop in obj2){
+            continue;
+        }else{
+            answer = false;
+        }
+    }
+    for(var prop in obj2){
+        if(prop in obj1){
+            continue;
+        }else{
+            answer = false;
+        }
+    }
+    return answer;
+}
+
+console.log(deepEquals({produto:'abacaxi', preco:'15'},{produto:'pamonha', preco: '12'}));
