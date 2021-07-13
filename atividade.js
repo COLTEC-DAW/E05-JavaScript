@@ -264,3 +264,36 @@ console.log(transformString('OTORRINOLARINGOLOGISTA', function(char){
     }
     return char;
 }));
+
+// Funções Matriciais
+var criaMatriz = function(i,j,funcaoMatriz){
+    var maxI = i;
+    var maxJ = j;
+    matriz = [];
+    for(var i = 0; i < maxI; i++){
+        matriz[i] = [];
+        for(var j = 0; j < maxJ; j++){
+            matriz[i][j] = funcaoMatriz(i,j);
+        }
+    }
+   
+    return matriz;
+}
+
+console.log(criaMatriz(5,10,function(i,j){
+    return i+j;
+}));
+console.log(criaMatriz(5,10,function(i,j){
+    return i*j;
+}));
+console.log(criaMatriz(5,10,function(i,j){
+    return i == j ? 1 : 0;
+}));
+console.log(criaMatriz(5,10,function(i,j){
+    return i^2/(j+1);
+}));
+console.log(criaMatriz(5,10,function(i,j){
+    return i > j? 1 : (i < j ? 5 : 0);
+}));
+
+
