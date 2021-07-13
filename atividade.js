@@ -207,4 +207,23 @@ console.log(crioptografar('DIDGGWCDZOGWCUDZDUWHIO', function(char){
     return String.fromCharCode(((char.charCodeAt()-14)<65?(char.charCodeAt()-14)+25:(char.charCodeAt()-14)));
 }))
 
+// Verificando um número
+var verificaNumber = function (number, criterion){
+    if(criterion(number)){
+        return true;
+    }
+        return false;
+}
 
+console.log(verificaNumber(97, function(number){
+    return number % 2 == 0;
+}))
+
+console.log(verificaNumber(97, function(number){
+    for(var i = 2; i < (number/3); i++){
+        if(number % i == 0){
+            return  false;
+        }
+    }
+    return true;
+}))
