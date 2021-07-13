@@ -122,3 +122,20 @@ var reverseArray = function (array){
     return array.reverse();
 }
 console.log(reverseArray(['D','R','A','C','U','L','A',]));
+
+var toList = function(array){
+    var list = {};
+    var aux = list; 
+    var i;
+    for(i = 0; i < array.length-1; i++){
+        aux.value = array[i];
+        aux.rest = {};
+        aux = aux.rest;
+    }
+
+    aux.value = array[i];
+    aux.rest = null;
+
+    return list;
+}
+console.log(toList(['A','B','C']));
