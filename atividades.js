@@ -100,3 +100,16 @@ function contaCaracteres(frase,c){
     }
     return contador;
 }
+
+function range(min,max,variacao){
+    var intervalo = [];
+    for(i = (min + 1); i < max; i+=variacao){
+        intervalo.push(i);
+    }
+    return intervalo;
+}
+
+    function reverseArray(array){
+        reversedArray = array.reverse();
+        return reversedArray;
+    }
