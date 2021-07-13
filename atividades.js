@@ -109,7 +109,22 @@ function range(min,max,variacao){
     return intervalo;
 }
 
-    function reverseArray(array){
-        reversedArray = array.reverse();
-        return reversedArray;
+function reverseArray(array){
+    reversedArray = array.reverse();
+    return reversedArray;
+}
+
+function toList(array){
+    var list = null;
+
+    for(i = 0; i < array.length;i++){
+        var obj = {};
+        obj.value = array[i];
+        obj.rest = list;
+        list = obj;
     }
+    return list;
+}
+
+var bolo = ["ovo","banana","trigo","leite","fermento"]
+var teste = toList(bolo)
