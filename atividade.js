@@ -297,3 +297,12 @@ console.log(criaMatriz(5,10,function(i,j){
 }));
 
 
+// Recursividade
+var mod2 = function (number){
+    if(number % 2 == 0){
+        return true;
+    }
+    return false;
+}
+console.log(mod2(2));
+console.log(mod2(3));
