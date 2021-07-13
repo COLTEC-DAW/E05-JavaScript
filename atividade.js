@@ -1,3 +1,4 @@
+// Desenhando um triângulo
 var triangulo = function (size){
     var triang = [];
     
@@ -16,6 +17,7 @@ var triangulo = function (size){
 }
 triangulo(5);
 
+// Tabuleiro de Xadrez
 var tabuleiroXadrez = function(size){
     var xadrez = []
     for(var i = 0; i < size; i++){
@@ -45,6 +47,7 @@ var tabuleiroXadrez = function(size){
 }
 tabuleiroXadrez(20);
 
+// Verificando Palíndromos
 var ehPalindrono = function  (str){
     var aux = str.split('').reverse().join('')
 
@@ -54,6 +57,7 @@ var ehPalindrono = function  (str){
 }
 console.log(ehPalindrono("ava"))
 
+// Um programa diferente...
 var fizzBuzzDe1a100 = function(){
     for(var i = 1; i <= 100; i++){
         if((i%3 == 0) && (i%5 == 0)){
@@ -69,7 +73,7 @@ var fizzBuzzDe1a100 = function(){
 }
 fizzBuzzDe1a100();
 
-
+// Mínimo e Máximo
 var min = function (val1, val2){
     if(val1 < val2){
         return val1;
@@ -94,6 +98,7 @@ var max = function (val1, val2){
 }
 console.log("O menor valor eh:",min(1,2), "; o maior valor eh:",max(1,2))
 
+// Contando caracteres
 var countChars = function (frase, c){
     var aux = frase.split('');
     var count = 0;
@@ -106,6 +111,7 @@ var countChars = function (frase, c){
 }
 console.log(countChars("Eu estou digitando agora", 't'));
 
+// Trabalhando com intervalos
 var range = function(min, max, j){
     var interval = [];
     
@@ -118,11 +124,13 @@ var range = function(min, max, j){
 }
 console.log("O intervalo eh: ", range(12,28,3));
 
+// Revertendo um array
 var reverseArray = function (array){
     return array.reverse();
 }
 console.log(reverseArray(['D','R','A','C','U','L','A',]));
 
+// Trabalhando com listas
 var toList = function(array){
     var list = {};
     var aux = list; 
@@ -140,6 +148,7 @@ var toList = function(array){
 }
 console.log(toList(['A','B','C']));
 
+// DeepEquals
 var deepEquals = function (obj1, obj2){
     var answer = true;
     
@@ -180,3 +189,22 @@ var array = ['0','1','2','3','4','5','6','7','8','9']
 console.log(sort(function(A,B){return (A < B);},array));
 console.log(sort(function(A,B){return (A > B);},array));
 console.log(sort(function(A,B){return (((A > B) && ( A%2 == 0)) || ((A < B) && ( A%2 !=0 )));},array));
+
+// Criptografia
+var crioptografar = function (string, criterion){
+    characters = string.split('');
+    for(var i = 0; i < characters.length; i++){
+        characters[i]= criterion(characters[i]);
+    }
+    return characters.join('');
+}
+
+console.log(crioptografar('OTORRINOLARINGOLOGISTA', function(char){
+    return String.fromCharCode(((char.charCodeAt()+14)>90?(char.charCodeAt()+14)-25:(char.charCodeAt()+14)));
+}))
+
+console.log(crioptografar('DIDGGWCDZOGWCUDZDUWHIO', function(char){
+    return String.fromCharCode(((char.charCodeAt()-14)<65?(char.charCodeAt()-14)+25:(char.charCodeAt()-14)));
+}))
+
+
