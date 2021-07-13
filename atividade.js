@@ -192,7 +192,7 @@ console.log(sort(function(A,B){return (((A > B) && ( A%2 == 0)) || ((A < B) && (
 
 // Criptografia
 var crioptografar = function (string, criterion){
-    characters = string.split('');
+    var characters = string.split('');
     for(var i = 0; i < characters.length; i++){
         characters[i]= criterion(characters[i]);
     }
@@ -227,3 +227,40 @@ console.log(verificaNumber(97, function(number){
     }
     return true;
 }))
+
+//Transformações em uma String
+var transformString = function(string, criterion){
+    var characters = string.split('');
+    for(var i = 0; i < string.length; i++){
+        characters[i] = criterion(characters[i]);
+    }
+    return characters.join('');
+}
+// Convertendo vogais para caixa alta
+console.log(transformString('otorrinolaringologista', function(char){
+    if((char == 'a') || (char == 'e') || (char == 'i') || (char == 'o') ||  (char == 'u')){
+        char = char.toUpperCase();
+    }
+    return char;
+}));
+// Convertendo consoantes para caixa alta 
+console.log(transformString('otorrinolaringologista', function(char){
+    if((char != 'a') && (char != 'e') && (char != 'i') && (char != 'o') &&  (char != 'u')){
+        char = char.toUpperCase();
+    }
+    return char;    
+}));
+// Convertendo vogais para caixa baixa
+console.log(transformString('OTORRINOLARINGOLOGISTA', function(char){
+    if((char == 'A') || (char == 'E') || (char == 'I') || (char == 'O') ||  (char == 'U')){
+        char = char.toLowerCase();
+    }
+    return char;
+}));
+// Convertendo consoantes para caixa baixa
+console.log(transformString('OTORRINOLARINGOLOGISTA', function(char){
+    if((char != 'A') && (char != 'E') && (char != 'I') && (char != 'O') &&  (char != 'U')){
+        char = char.toLowerCase();
+    }
+    return char;
+}));
