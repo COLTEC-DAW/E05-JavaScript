@@ -161,3 +161,22 @@ var deepEquals = function (obj1, obj2){
 }
 
 console.log(deepEquals({produto:'abacaxi', preco:'15'},{produto:'pamonha', preco: '12'}));
+
+// Ordenação 
+var sort = function(criterion, array){ 
+    for(var i = array.length; i >= 0; i--){
+        for(var j = 0 ; j < array.length; j++){
+            if(criterion(array[j],array[j+1])){
+                var aux = array[j];
+                array[j] = array[j+1];
+                array[j+1] = aux;
+            }
+        }
+    }
+    return array;
+}
+var array = ['0','1','2','3','4','5','6','7','8','9']
+
+console.log(sort(function(A,B){return (A < B);},array));
+console.log(sort(function(A,B){return (A > B);},array));
+console.log(sort(function(A,B){return (((A > B) && ( A%2 == 0)) || ((A < B) && ( A%2 !=0 )));},array));
