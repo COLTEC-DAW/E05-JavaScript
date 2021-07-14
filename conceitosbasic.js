@@ -195,7 +195,6 @@ var toList = function(array){
 var array = [0,1,2,3,4,5,6,7];
 console.log(toList(array)); 
 
-
 //Questão 11 - DeepEquals
 function deepEquals(obj1, obj2){
     if((obj1.turma == obj2.turma)&&  (obj1.idade == obj2.idade) && (obj1.nome == obj2.nome)){
@@ -226,7 +225,209 @@ function aluno(turma, idade, nome){
 
 var obj1 = new aluno(333, 17, "Joao");
 var obj2 = new aluno(333, 16, "Indiano");
-console.log(deepEquals(obj1, obj2)); 
+
+
+//Questão 12 - Ordenação
+function Ordena(array, criterio) {
+    var ordenado = array;
+    for (var i = 0; i < ordenado.length; i++) {
+        for (var j = 0; j < ordenado.length; j++) {
+            if (criterio (ordenado[j], ordenado[j + 1]) == true){
+                var aux = ordenado[j];
+                ordenado[j] = ordenado[j + 1];
+                ordenado[j + 1] = aux;
+            }
+        }
+    }
+	return ordenado;
+}
+
+var array = [2,5,6,8,455,37,34,12,1,0,5555,10];
+
+console.log(array);
+console.log("Crescente: " + Ordena(array, function(a, b) { return a > b; })); //cres
+console.log("Decrescente: " + Ordena(array, function(a, b) { return a < b; })); //decres
+console.log("Par-impar: " + Ordena(array, function(a, b) { 
+    if((a>b) && (a%2 != 0)){ return true; }
+    else{ return false; }
+}));
+
+
+//Questão 13 - Criptografia
+var crypt = function(palavra, criterio){
+    var crip = palavra.split('');
+    for(var i=0; i< crip.length; i++){
+        crip[i] = criterio(crip[i]);
+    }
+    return crip.join("");
+}
+var CifradeCesar = function(letra){
+    for(var i=0; i< alfabeto.length; i++){
+        if(alfabeto[i] == letra){
+            break;
+        }
+    }
+    i += 2;
+    if(i>27){ i -=27; }
+    return alfabeto[i];
+}
+//main
+var palavra = prompt("Digite uma palavra para encriptarmos:");
+var alfabeto = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","ç"," "];
+
+console.log(crypt(palavra, CifradeCesar)); 
+
+
+
+//Questão 14 - Verificando um número
+var verifica = function (numero, criterio) {
+    if(criterio(numero) == true){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function primo(numero) {
+    var resultado = 0;
+    for (i = 2; i <= numero / 2; i++) {
+        if (numero % i == 0) {
+           resultado+=1;
+           break;
+        }
+    }
+     
+    if (resultado == 0){
+    return true;
+    }else{
+        return false
+    }     
+}
+
+function impar(numero) {
+    if(numero % 2 == 0){
+        return false
+    }else{
+        return true;
+    }
+}
+
+function par(numero) {
+    if(numero % 2 == 0){
+        return true
+    }else{
+        return false;
+    } 
+}
+
+var numero = prompt("Digite um numero:")
+
+console.log("Numero é primo? " + verifica(numero, primo));
+console.log("Numero é impar? "+ verifica(numero, impar));
+console.log("Numero é par? " + verifica(numero, par));
+
+
+//Questão 15 - Transformando em uma string
+
+var TransString = function(string, criterio) {
+    aux = string;
+
+    aux = criterio(aux)
+
+    return aux;
+}
+
+var string = prompt("Digite a String: ");
+
+//Caixa alta nas vogais
+console.log(TransString(string, function (string){
+    aux = string.split('');
+    vogais = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+    for(i = 0; i < aux.length; i++){
+        if(vogais.includes(aux[i]) == true){
+            aux[i] = aux[i].toUpperCase();
+        }
+    }
+
+    return aux;
+}));
+
+//Caixa alta nas consoantes
+console.log(TransString(string, function (string) {
+    aux = string.split('');
+    vogais = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+    for(i = 0; i < aux.length; i++){
+        if(vogais.includes(aux[i]) == true){            
+        }else{
+            aux[i] = aux[i].toUpperCase();
+        }
+    }
+
+    return aux;
+}));
+
+//Caixa baixa nas vogais
+console.log(TransString(string, function (string) {
+    aux = string.split('');
+    vogais = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+    for(i = 0; i < aux.length; i++){
+        if(vogais.includes(aux[i]) == true){
+            aux[i] = aux[i].toLowerCase();
+        }
+    }
+
+    return aux;
+}));
+
+//Caixa baixa nas consoantes
+console.log(TransString(string, function (string) {
+    aux = string.split('');
+    vogais = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+    for(i = 0; i < aux.length; i++){
+        if(vogais.includes(aux[i]) == true){
+        }else{
+            aux[i] = aux[i].toLowerCase();
+        }
+    }
+
+    return aux;
+}));
+
+
+//Questão 16 - Funções matriciais
+var matriz = function(i1, j1, criterio){
+    var matriz = [i1];
+
+    for(k = 0; k < i1; k++){
+        matriz[k] = [j1];
+
+        for(l = 0; l < j1; l++){
+            matriz[k][l] = criterio(k, l);
+        }
+    }
+    return matriz;
+}
+
+var i1 = prompt("Digite o indice 1: ");
+var j1 = prompt("Digite o indice 2: ");
+
+console.log(matriz(i1, j1, function(i, j) {
+    return i + j;
+}));
+console.log(matriz(i1, j1, function(i, j){
+    return i * j;
+}));
+console.log(matriz(i1, j1, function(i, j){
+    return  i == j? 1 : 0;
+}));
+console.log(matriz(i1, j1, function(i, j){
+    return i^2/(j+1);
+}));
+console.log(matriz(i1, j1, function(i, j){
+    return i > j ? 1 : (i < j ? 5 : 0);
+}));
+
+
 
 
 
