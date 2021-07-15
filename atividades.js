@@ -215,5 +215,6 @@ function cifraCesar(letra){
     return letraCriptografada = String.fromCharCode(ASCCriptografada);
 }
 
-var bela = "Rem";
-console.log(criptografia(bela,cifraCesar))
+var testeCifraCesar = "a ligeira raposa marrom saltou sobre o cachorro cansado";
+//resultado esperado com a rotação sendo 3: D OLJHLUD UDSRVD PDUURP VDOWRX VREUH R FDFKRUUR FDQVDGR
+console.log("Resultado Criptografia: " + criptografia(testeCifraCesar,cifraCesar));
