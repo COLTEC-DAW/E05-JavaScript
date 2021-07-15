@@ -227,6 +227,9 @@ var ehPrimo = a => {
     for(i = 1; i <= a; i++){
         if(a % i === 0){
             divisores++;
+            if(divisores > 2){
+                return false;
+            }
         }
     }
     if(divisores === 2){
