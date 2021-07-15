@@ -218,3 +218,26 @@ function cifraCesar(letra){
 var testeCifraCesar = "a ligeira raposa marrom saltou sobre o cachorro cansado";
 //resultado esperado com a rotação sendo 3: D OLJHLUD UDSRVD PDUURP VDOWRX VREUH R FDFKRUUR FDQVDGR
 console.log("Resultado Criptografia: " + criptografia(testeCifraCesar,cifraCesar));
+
+var verificaNumero = (a,metodo) => metodo(a);
+var ehPar = a => a % 2 === 0;
+var ehImpar = a => a % 2 !== 0;
+var ehPrimo = a => {
+    var divisores = 0;
+    for(i = 1; i <= a; i++){
+        if(a % i === 0){
+            divisores++;
+        }
+    }
+    if(divisores === 2){
+        return true
+    }else{
+        return false;
+    }
+}
+console.log(verificaNumero(27,ehPrimo))//false
+console.log(verificaNumero(17,ehPrimo))//true
+console.log(verificaNumero(4,ehPar))//true
+console.log(verificaNumero(5,ehPar))//false
+console.log(verificaNumero(2,ehImpar))//false
+console.log(verificaNumero(13,ehImpar))//true
