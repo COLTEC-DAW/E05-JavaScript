@@ -128,3 +128,71 @@ function toList(array){
 
 var bolo = ["ovo","banana","trigo","leite","fermento"]
 var teste = toList(bolo)
+
+var deepEquals = (a, b) => {
+    if(a === b){
+        return true;
+    }   else if (a && b && typeof a === 'object' && typeof b === 'object' && Object.keys(a).length === Object.keys(b).length){
+        if(Array.isArray(a) === Array.isArray(b)){
+            for(key in a){
+                if(key in b){
+                    if(!deepEquals(a[key],b[key])){
+                        return false;
+                    }
+                }   else{
+                    return false;
+                }
+                return true;
+            }
+        }    
+    }
+    return false;
+};
+
+var bubbleSort = (inputArr,criterio) => {
+    var len = inputArr.length;
+    var swapped;
+    do {
+        swapped = false;
+        for (var i = 0; i < len - 1; i++) {
+            if (criterio(inputArr[i],inputArr[i + 1])) {
+                var tmp = inputArr[i];
+                inputArr[i] = inputArr[i + 1];
+                inputArr[i + 1] = tmp;
+                swapped = true;
+            }
+        }
+    } while (swapped);
+    return inputArr;
+};
+
+var crescente = (a,b) => {return a > b};
+var decrescente = (a,b) => {return a < b};
+var crescenteImpar = (a,b) => {
+    if(a % 2 !==0 && b % 2 !==0){
+        return a > b;
+    }else if( a % 2 !== 0 && b % 2 === 0){
+        return false;
+    }else if(a % 2 === 0 && b % 2 !== 0){
+        return true;
+    }else {
+        return a > b;
+    }
+};
+var decrescentePar = (a,b) => {
+    if(a % 2 ===0 && b % 2 ===0){
+        return a < b;
+    }else if( a % 2 === 0 && b % 2 !== 0){
+        return false;
+    }else if(a % 2 !== 0 && b % 2 === 0){
+        return true;
+    }else {
+        return a < b;
+    }
+};
+//testes
+var arr = [2,5,6,9,7,21,10];
+console.log("Ordem Crescente: " + bubbleSort(arr,crescente));
+console.log("Ordem Decrescente: " + bubbleSort(arr,decrescente));
+console.log("Ordem Crescente Ímpar: " + bubbleSort(arr,crescenteImpar));
+console.log("Ordem Decrescente Par: " + bubbleSort(arr,decrescentePar));
