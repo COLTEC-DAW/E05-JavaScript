@@ -196,3 +196,24 @@ console.log("Ordem Crescente: " + bubbleSort(arr,crescente));
 console.log("Ordem Decrescente: " + bubbleSort(arr,decrescente));
 console.log("Ordem Crescente Ímpar: " + bubbleSort(arr,crescenteImpar));
 console.log("Ordem Decrescente Par: " + bubbleSort(arr,decrescentePar));
+
+function criptografia(frase,metodo){
+    frase = frase.split('');
+    var codificado = [];
+    for(letra of frase){
+        codificado.push(metodo(letra));
+    }
+    return frase = codificado.join('').replaceAll("="," ");
+}
+
+function cifraCesar(letra){
+    var codASC = letra.toUpperCase().charCodeAt(0);
+    const primeiraLetraASC = 65;
+    const rotacao = 3;
+    const tamanhoAlfabeto = 26;
+    var ASCCriptografada = (((codASC - primeiraLetraASC + rotacao) % tamanhoAlfabeto) + primeiraLetraASC);
+    return letraCriptografada = String.fromCharCode(ASCCriptografada);
+}
+
+var bela = "Rem";
+console.log(criptografia(bela,cifraCesar))
