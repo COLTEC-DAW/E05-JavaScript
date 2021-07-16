@@ -244,3 +244,52 @@ console.log(verificaNumero(4,ehPar))//true
 console.log(verificaNumero(5,ehPar))//false
 console.log(verificaNumero(2,ehImpar))//false
 console.log(verificaNumero(13,ehImpar))//true
+
+var transformaString = (a,metodo) => metodo(a);
+
+var vowellModify = (a,action) => {
+    const vowell = /[aeiouAEIOUáàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑ]/;
+    a = a.split('');
+    for(i = 0; i < a.length; i++){
+        if(a[i].match(vowell)){
+            a[i] = action(a[i]);
+        }
+    }
+    return a.join('');
+}
+
+
+var vowell = a => match(a);
+function vowellUpper(a){
+    return vowellModify(a , b => b.toUpperCase())
+}
+function vowellLower(a){
+    return vowellModify(a , b => b.toLowerCase())
+}
+
+var teste = "Oi bebEzIn"
+vowellLower(teste);
+
+var consonantModify = (a,action) => {
+    const vowell = /[aeiouAEIOUáàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑ]/;
+    
+    a = a.split('');
+    for(i = 0; i < a.length; i++){
+        if(!a[i].match(vowell)){
+            a[i] = action(a[i]);
+        }
+    }
+    return a.join('');
+}
+function consonantUpper(a){
+    return consonantModify(a , b => b.toUpperCase())
+}
+function consonantLower(a){
+    return consonantModify(a , b => b.toLowerCase())
+}
+
+var teste = "Light, parece que você perdeu. Lembra lá no início, quando nos conhecemos e eu te falei que eu escreveria o seu nome no meu caderno? Isso faz parte do acordo entre um shinigami que traz um caderno para o mundo dos humanos e o primeiro humano que o pega."
+console.log(vowellUpper(teste));
+console.log(vowellLower(teste));
+console.log(consonantUpper(teste));
+console.log(consonantLower(teste));
