@@ -293,3 +293,21 @@ console.log(vowellUpper(teste));
 console.log(vowellLower(teste));
 console.log(consonantUpper(teste));
 console.log(consonantLower(teste));
+
+var criaMatriz = (tamanho,metodo) => {
+    var matriz = [];
+    for(i = 0; i < tamanho; i++){
+        matriz[i] = [];
+        for(j = 0; j < tamanho;j++){
+            matriz[i][j] = metodo(i,j);
+        }
+    }
+    return matriz;
+}
+
+var somaMatriz = (a,b) => a+b;
+var multMatriz = (a,b) => a*b;
+var indiceIgual = (a,b) => (a == b ? 1:0);
+var quadradoMatriz = (a,b) => ((a^2)/ (b+ 1));
+var ehMaiorMatriz = (a,b) => a > b ? 1 : (a < b ? 5 : 0);
+var teste = criaMatriz(10,somaMatriz)
