@@ -27,6 +27,15 @@ function fizzBuzz(){
 /* Functions */
 
 /// min & max
+console.log(min(2, 3));
+function min(a, b){
+    return a < b ? a : b
+}
+
+console.log(max(2, 3));
+function max(a, b){
+   return a > b ? a : b
+}
 
 /// recursion
 
