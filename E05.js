@@ -6,14 +6,18 @@ function printTriangle(numberOfRows){
 }
 
 /// chess board
-
-printChessBoard(8);
 function printChessBoard(numberOfRows){
     let sequence = ["# # # #"];
     for(let i = 0; i < numberOfRows; i++) i%2 == 0 ? console.log(sequence.toString()) : console.log(' ' + sequence);  
 }
 
-/// palindromes verifier 
+/// palindrome verifier 
+function isPalindrome(justADummyString){
+    // removing all inconsistencies
+    justADummyString = justADummyString.toLowerCase().replace(/[\W_]/g, '');
+    for(let i = 0; i < (justADummyString.length)/2; i++) if(justADummyString[i] !==  justADummyString[justADummyString.length - 1 - i]) return false;
+    return true;
+}
 
 /// fizz buzz
 
