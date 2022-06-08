@@ -7,6 +7,12 @@ function printTriangle(numberOfRows){
 
 /// chess board
 
+printChessBoard(8);
+function printChessBoard(numberOfRows){
+    let sequence = ["# # # #"];
+    for(let i = 0; i < numberOfRows; i++) i%2 == 0 ? console.log(sequence.toString()) : console.log(' ' + sequence);  
+}
+
 /// palindromes verifier 
 
 /// fizz buzz
