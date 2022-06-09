@@ -66,3 +66,40 @@ function countChar(frase, c){
   
   return count;
 }
+
+//Trabalhando com intervalos
+function range(min, max, gap){
+    var arr = [];
+    for(var i = min; i <= max; i+=gap) arr[i-min] = i;
+    
+    return arr;
+  }
+  
+  //Revertendo um array
+  function reverseArray(array){
+    var aux;
+    for(var i = 0; i < array.length/2; i++){
+      aux = array[i];
+      array[i] = array[array.length - i];
+      array[array.length - i] = aux;
+    }
+    
+    return array;
+  }
+  
+  //Trabalhando com listas
+  function toList(array){
+      var list = [];
+  
+      for(var i = 0; i < array.length; i++){
+          list.push("value: " + i + ", \nrest:");
+      }
+  
+      return list;
+  }
+  
+  //DeepEquals
+  function deepEquals(obj1, obj2){
+      if(obj1 === obj2) return true;
+      return false;
+  }
