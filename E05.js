@@ -8,7 +8,7 @@
 // --> OPTIONS
 
 //DrawTriangle(5);
-//DrawChessBoard(8);
+//DrawChessBoard(20);
 //isPalindrome("hannah");
 //FizzBuzz(100);
 
@@ -19,7 +19,10 @@
 //console.log(countChars("africa", "a"));
 
 //console.log(range(10, 25));
-console.log(range(10, 25, 5));
+//console.log(rangeWithBreak(10, 25, 5));
+//console.log(reverseArray([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+//console.log(toList([1, 2, 3, 4, 5]));
+//console.log(deepEquals({ name: "Gabriel", years: "17", favoriteFood: "sushi" }, { name: "Ullas", years: "18", favoriteFood: "Bandex" }))
 
 //JavaScript: Conceitos Básicos
 
@@ -101,7 +104,6 @@ function countChars(frase, c) {
 
 //JavaScript: Objetos & Arrays
 
-//aproveitando do polimorfismo :P
 function range(start, end) {
     let array = [];
 
@@ -109,10 +111,49 @@ function range(start, end) {
 
     return array;
 }
-function range(start, end, pause) {
-    let array = [];
+function rangeWithBreak(start, end, pause) {
+    let array = Array(end - start).fill("-");
+    let counter = 0;
 
-    for(i = 0; i <= end - start; i += pause) { array[i] = start + (i - pause); }
+    for(i = 0; i <= end - start; i += (pause + 1)) { 
+        array[i] = start + (i - counter * pause); 
+        counter++;
+    }
 
     return array;
+}
+
+function reverseArray(array) {
+    let newArray = [];
+
+    for(i = array.length - 1; i >= 0; i--) { newArray.push(array[[i]]); }
+
+    return newArray;
+}
+
+function toList(array) {
+    let list = null;
+
+    for(i = 0; i < array.length; i++) {
+        let elem = {
+            value: array[i],
+            next: null
+        }
+
+        if(list == null) { list = elem; }
+        else {
+            let aux = list;
+
+            while(aux.next != null) { aux = aux.next; }
+
+            aux.next = elem;
+        }
+    }
+
+    //Opa, fesso! Converti a lista em uma string para aparecer por completo no console. Por algum motivo quando eu retorno apenas a lista em dado momento o "next" recebe um [object]
+    return JSON.stringify(list);
+}
+
+function deepEquals(obj1, obj2) { 
+    return (Object.keys(obj1).length === Object.keys(Object.assign(obj1, obj2)).length)? true : false;
 }
