@@ -1,3 +1,5 @@
+//___DESENHANDO_UM_TRIANGULO___//
+
 var neymar = prompt("digite o número de linhas");
 
 if (neymar > 0) {
@@ -11,14 +13,15 @@ if (neymar > 0) {
         document.write('<br/>');
     }
 }
-
+//_____________________________//
+//_____TABULEIRO_DE_XADREZ_____//
 document.write('<br/>');
 
 var hulk = prompt("digite o número de linhas!");
 if (hulk > 0) {
     var i = 0;
     for (; i < hulk; i++) {
-        if (i & 1) {} else { document.write("_") }
+        if (i & 1) { document.write("⠀") }
         console.log("< - numero de linhas")
         document.write("# # # # #");
         document.write('<br/>');
