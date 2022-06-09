@@ -32,3 +32,37 @@ function imprimeSequencia(){
         console.log("\n");
    }
 }
+
+//Mínimo
+function min(a, b){
+  if(a <= b) return a;
+  return b;
+}
+
+//Máximo
+function max(a, b){
+  if(a >= b) return a;
+  return b;
+}
+
+//Divisão por 2
+function mod2(number){
+  if(number % 2 == 0) return true;
+  return false;
+}
+
+//Divisão por outro número
+function mod(num, div){
+  if(num % div == 0) return true;
+  return false;
+}
+
+//Contando caracteres
+function countChar(frase, c){
+  var count = 0;
+  for(var i = 0; i < frase.length; i++){
+    if(frase[i] == c) count++;
+  }
+  
+  return count;
+}
