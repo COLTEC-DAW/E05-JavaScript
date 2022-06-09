@@ -15,15 +15,22 @@ if (neymar > 0) {
 }
 //_____________________________//
 //_____TABULEIRO_DE_XADREZ_____//
-document.write('<br/>');
 
+document.write('<br/>');
+//--------
 var hulk = prompt("digite o número de linhas!");
+
 if (hulk > 0) {
     var i = 0;
     for (; i < hulk; i++) {
-        if (i & 1) { document.write("⠀") }
-        console.log("< - numero de linhas")
-        document.write("# # # # #");
-        document.write('<br/>');
+        if (i & 1) {
+            document.write("&nbsp;# # # #");
+            document.write('<br/>');
+        } else {
+            document.write("# # # #");
+            document.write('<br/>');
+        }
     }
 }
+//_____________________________//
+//_____________________________//
