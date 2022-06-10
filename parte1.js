@@ -1,3 +1,5 @@
+//Desenhando um triângulo
+
 function DesenhandoUmTriangulo() {
 
     var tamanho = prompt("Digite o tamanho do triangulo:");
@@ -12,6 +14,8 @@ function DesenhandoUmTriangulo() {
 }
 
 DesenhandoUmTriangulo();
+
+//Tabuleiro de Xadrez
 
 function DesenhandoUmXadrez() {
 
@@ -30,6 +34,8 @@ function DesenhandoUmXadrez() {
 }
 
 DesenhandoUmXadrez();
+
+//Verificando Palíndromos
 
 function VerificandoPalindromo() {
 
@@ -52,6 +58,8 @@ function VerificandoPalindromo() {
 }
 
 VerificandoPalindromo();
+
+//Um programa diferente...
 
 function FizzBuzz() {
 
