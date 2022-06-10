@@ -1,25 +1,83 @@
-//! TODO: FINALIZAR
 console.log(`Ordenação\n`)
-function bubbleSort(vet, criterio) 
+
+function bubbleSort(vetor, criterio)
 {
-    concluido = 0
-    aux = 0
-    while (concluido == 0) 
-    {
-        if (condition)
+    terminou = false
+    while (terminou == false) 
+    {   
+        aux = vetor.slice(0) //se eu só fizer aux = vetor, aux vai ter o ponteiro para vetor e não os valores >:(
+
+        for (var i = 0; i < vetor.length - 1; i++)
         {
-            
+            vetor = criterio(vetor, i)
         }
+        if (JSON.stringify(aux) == JSON.stringify(vetor)) terminou = true
     }
-    // Ordenação
-    // Implemente uma função que faça a ordenação de um vetor. O critério de ordenação deverá ser enviado por parâmetro, na forma de função. A ordenação deverá seguir o algoritmo bubble sort.
-    
-    // Teste a ordenação criando critérios de ordenação crescente, descrente, crescente ímpares, decrescente pares.    
+    return vetor
 }
+
+function criterioCrescente(vet, i) 
+{
+    var aux
+    if (vet[i] > vet[i+1]) 
+    {
+        aux =  vet[i+1]
+        vet[i+1] = vet[i]
+        vet[i] = aux
+        return vet
+    }else return vet
+}
+
+function criterioDecrescente(vet, i) 
+{
+    var aux
+    if (vet[i] < vet[i+1]) 
+    {
+        aux =  vet[i+1]
+        vet[i+1] = vet[i]
+        vet[i] = aux
+        return vet
+    }else return vet
+}
+
+function criterioImparCrescenteParDescrescente(vet, i) 
+{
+    if ((vet[i] % 2 == 0) && (vet[i+1] % 2 == 0))
+    {
+        criterioDecrescente(vet, i)
+        return vet
+    }
+    else if ((vet[i] % 2 != 0) && (vet[i+1] % 2 != 0)) 
+    {
+        criterioCrescente(vet, i)
+        return vet
+    }
+    else if ((vet[i] % 2 != 0) && (vet[i+1] % 2 == 0))
+    {
+        return vet
+    }
+    else if ((vet[i] % 2 == 0) && (vet[i+1] % 2 != 0))
+    {
+        aux =  vet[i+1]
+        vet[i+1] = vet[i]
+        vet[i] = aux
+        return vet
+    }
+
+    return vet
+}
+//nice :)   
+desordenado = [3,7,2,8,6,1,4,5]
+
+console.log(`lista que será ordenada:                                      ${desordenado}`)
+console.log(`lista ordenada de forma crescente                             ${bubbleSort(desordenado, criterioCrescente)}`)
+console.log(`lista ordenada de forma decrescente                           ${bubbleSort(desordenado, criterioDecrescente)}`)
+console.log(`lista ordenada de forma crescente ímpares e decrescente pares ${bubbleSort(desordenado, criterioImparCrescenteParDescrescente)}`)
 console.log(`\n`)
 
 
 console.log(`Encriptação\n`)
+
 function crypt(frase, criterio)
 {
     vet = frase.split('')
@@ -66,7 +124,7 @@ function eImpar(num)
 }
 
 num = Math.floor(Math.random() * 10 + 1 )
-//nice :)
+
 if (testaNum(num, ePrimo)) console.log(`o número ${num} é primo`)
 else console.log (`o número ${num} não é primo`)
 
@@ -74,7 +132,8 @@ if (testaNum(num, eImpar)) console.log(`o número ${num} é impar`)
 else console.log(`o número ${num} é par`)
 console.log(`\n`);
 
-console.log(`Transformação de Strings`);
+
+console.log(`Transformação de Strings\n`);
 
 function stringTransform(frase, transformação)
 {
