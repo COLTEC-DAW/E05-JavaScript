@@ -1,17 +1,13 @@
-function range(min, max){
-    let list = [];
-    for(let i = min + 1; i < max; i++){
-       list.push(i);
-    }
-    return list;
-}
-
 function range(min, max, step){
     let list = [];
     for(let i = min + 1; i < max; i += step){
         list.push(i);
     }
     return list;
+}
+
+function range(min, max){
+    return range(min, max, 1);
 }
 
 function reverseList(list){
