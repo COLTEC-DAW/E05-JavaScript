@@ -38,12 +38,12 @@ const LowerCaseConsonant = (x) => {
 
 //DrawTriangle(5);
 //DrawChessBoard(20);
-//isPalindrome("hannah");
+//isPalindrome("Gabriel"); // hannah
 //FizzBuzz(100);
 
 //console.log(min(10, 100));
 //console.log(max(10, 100));
-//console.log(mod2(27));
+//console.log(mod2(27)); 
 //console.log(mod(27, 9));
 //console.log(countChars("africa", "a"));
 
@@ -57,9 +57,7 @@ const LowerCaseConsonant = (x) => {
 //console.log(encryptString("ABACATE", (char) => { return String.fromCharCode(((char.charCodeAt() - ASC_FIRST_CHAR_NUMBER + GO_FOWARD) % ALPHABET_SIZE) + ASC_FIRST_CHAR_NUMBER); }));
 //console.log(testNumber(29, isPrime));
 //console.log(transformString("Aurora", UpperCaseVowel));
-console.log(makeGrid(6, 6, (i, j) => {
-    return i + j;
-}));
+//console.log(makeGrid(6, 6, (i, j) => { return i + j; }));
 
 //JavaScript: Conceitos Básicos
 
@@ -125,11 +123,11 @@ function FizzBuzz(arrayLength) {
 
 function min(a, b) { return a < b? a : b; }
 
-function max(a, b) { return a >= b? a: b; }
+function max(a, b) { return a > b? a : b; }
 
-function mod2(number) { return number % 2 == 0? true : false; }
+function mod2(number) { return number % 2 == 0; }
 
-function mod(number, mod) { return number % mod == 0? true : false; }
+function mod(number, mod) { return number % mod == 0; }
 
 function countChars(frase, c) {
     return frase.split("").reduce((total, item) => {
