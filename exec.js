@@ -86,24 +86,31 @@ function range(min, max, gap){
     var aux;
     for(var i = 0; i < array.length/2; i++){
       aux = array[i];
-      array[i] = array[array.length - i];
-      array[array.length - i] = aux;
+      array[i] = array[array.length - 1 - i];
+      array[array.length - 1  - i] = aux;
     }
     
     return array;
   }
   
+//console.log(reverseArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
   //Trabalhando com listas
   function toList(array){
       var list = [];
   
       for(var i = 0; i < array.length; i++){
-          list.push("value: " + i + ", \nrest:");
+        var list = {
+          value: array[i],
+          rest: list,
+        	}
       }
-  
+
       return list;
   }
-  
+
+//console.log(toList([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
   //DeepEquals
   function deepEquals(obj1, obj2){
       if(obj1 === obj2) return true;
