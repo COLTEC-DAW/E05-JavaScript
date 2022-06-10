@@ -8,6 +8,7 @@ function printTriangle(numberOfRows){
     }
 }
 
+
 function printChessTable(numberOfRows){
 
     let coloredLine = "";
@@ -39,7 +40,6 @@ function verfyPalidrom(string){
            return false
         }
     }
-
     return true
 }
 
