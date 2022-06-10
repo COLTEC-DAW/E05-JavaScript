@@ -125,10 +125,6 @@ Teste a função passando como parâmetro as seguintes transformações:
 * Caixa baixa nas vogais
 * Caixa baixa nas consoantes
 
-<<<<<<< HEAD
-
-=======
->>>>>>> a71023884972995a9a4bd5870497bb733eca2b33
 ### Funções Matriciais
 
 Implemente uma função que crie matrizes com base em uma função matricial com base nos índices da matriz. A função matricial deverá ser enviada por parâmetro, na forma de função.
@@ -139,8 +135,4 @@ Teste o exercício passando como parâmetro as seguintes funções matriciais:
 * `[i,j] = i * j`
 * `m[i,j] = i == j ? 1 : 0`
 * `[i,j] = i^2/(j+1)`
-<<<<<<< HEAD
 * `m[i,j] = i > j ? 1 : (i < j ? 5 : 0)`
-=======
-* `m[i,j] = i > j ? 1 : (i < j ? 5 : 0)`
->>>>>>> a71023884972995a9a4bd5870497bb733eca2b33
