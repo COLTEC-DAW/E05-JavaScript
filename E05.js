@@ -5,6 +5,35 @@
     TO TEST THE CODE, JUST WRITE THE FUNCTION OF YOUR CHOICE AND IN THE COSOLE TYPE "node E05.js"
 */
 
+const ASC_FIRST_CHAR_NUMBER = 65;
+const GO_FOWARD = 1;
+const ALPHABET_SIZE = 26;
+
+const isPrime = (number) => {
+    for(i = 2; i < number; i++) { if(number % i == 0) { return false; } }
+
+    return true;
+};
+
+const isEven = (number) => { return number % 2 == 0; };
+
+const UpperCaseVowel = (x) => { 
+    if(x == "a" || x == "e" || x == "i" || x == "o" || x == "u" ) { return  String.fromCharCode(x.charCodeAt() - 32); }
+    else { return x; }
+};
+
+const UpperCaseConsonant = (x) => { 
+    if(x != "a" && x != "e" && x != "i" && x != "o" && x != "u" && x != "A" && x != "E" && x != "I" && x != "O" && x != "U" ) { return String.fromCharCode(x.charCodeAt() - 32); }
+    else { return x; }
+};
+const LowerCaseVowel = (x) => { 
+    if(x == "A" || x == "E" || x == "I" || x == "O" || x == "U" ) { return String.fromCharCode(x.charCodeAt() + 32); }
+    else { return x; }
+};
+const LowerCaseConsonant = (x) => { 
+    if(x != "a" && x != "e" && x != "i" && x != "o" && x != "u" && x != "A" && x != "E" && x != "I" && x != "O" && x != "U" ) { return String.fromCharCode(x.charCodeAt() + 32);  }
+};
+
 // --> OPTIONS
 
 //DrawTriangle(5);
@@ -23,6 +52,14 @@
 //console.log(reverseArray([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 //console.log(toList([1, 2, 3, 4, 5]));
 //console.log(deepEquals({ name: "Gabriel", years: "17", favoriteFood: "sushi" }, { name: "Ullas", years: "18", favoriteFood: "Bandex" }))
+
+//console.log(bubbleSort([2, 1, 5, 4, 3], (a, b) => { return a > b; }, isEven))
+//console.log(encryptString("ABACATE", (char) => { return String.fromCharCode(((char.charCodeAt() - ASC_FIRST_CHAR_NUMBER + GO_FOWARD) % ALPHABET_SIZE) + ASC_FIRST_CHAR_NUMBER); }));
+//console.log(testNumber(29, isPrime));
+//console.log(transformString("Aurora", UpperCaseVowel));
+console.log(makeGrid(6, 6, (i, j) => {
+    return i + j;
+}));
 
 //JavaScript: Conceitos Básicos
 
@@ -156,4 +193,49 @@ function toList(array) {
 
 function deepEquals(obj1, obj2) { 
     return (Object.keys(obj1).length === Object.keys(Object.assign(obj1, obj2)).length)? true : false;
+}
+
+
+//JavaScript: Funções de Alta Ordem
+
+function bubbleSort(array, order, test) {
+    for(i = 0; i < array.length; i++) {
+        if(test(array[i])) array.splice(i, 1);
+
+        for(j = 0; j < array.length; j++) {
+            if(order(array[j], array[j + 1])) {
+                let aux = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = aux;
+            }
+        }
+    }
+
+    return array;
+}
+
+function encryptString(string, standard) {
+    return string.split("").map(char => standard(char));
+}
+
+function testNumber(number, test) {
+    return test(number);
+}
+
+function transformString(string, tramsformer) {
+    return (string.split("").map(char => tramsformer(char))).join("");
+}
+
+function makeGrid(rows, columns, matricialFunction) {
+    let grid = Array(rows);
+
+    for(i = 0; i < rows; i++) {
+        grid[i] = Array(columns); 
+
+        for(j = 0; j < columns; j++) {
+            grid[i][j] = matricialFunction(i, j);
+        }
+    }
+
+    return grid;
 }
