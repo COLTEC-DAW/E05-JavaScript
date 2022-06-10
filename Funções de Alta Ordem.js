@@ -81,12 +81,12 @@ console.log(`Encriptação\n`)
 function crypt(frase, criterio)
 {
     vet = frase.split('')
-    chave = Math.floor(Math.random() * 27);
+    chave = Math.floor(Math.random() * 27)
 
     
     for ( var i = 0; i < vet.length; i++)
     {
-        vet[i] = criterio(vet[i], chave);
+        vet[i] = criterio(vet[i], chave)
     }
     return (vet.join(''))
 }
@@ -130,16 +130,16 @@ else console.log (`o número ${num} não é primo`)
 
 if (testaNum(num, eImpar)) console.log(`o número ${num} é impar`)
 else console.log(`o número ${num} é par`)
-console.log(`\n`);
+console.log(`\n`)
 
 
-console.log(`Transformação de Strings\n`);
+console.log(`Transformação de Strings\n`)
 
 function stringTransform(frase, transformação)
 {
     vet = frase.split('')
     
-    for(i = 0; i < vet.length; i++) vet[i] = transformação(vet[i])
+    for (i = 0; i < vet.length; i++) vet[i] = transformação(vet[i])
 
     return vet.join('')
 }
@@ -173,23 +173,72 @@ function consoanteMinuscula(letra)
 frase = `Javascript NÃO é de Deus não!`
 console.log(`A frase que será transformada é:              ${frase}\n`)
 console.log(`Frase com as todas as vogais maiusculas:      ${stringTransform(frase, vogalMaiuscula)}`)
-console.log(`Frase com as todas as vogais minusculas:      ${stringTransform(frase, vogalMinuscula)}`);
-console.log(`Frase com as todas as consoantes minusculas:  ${stringTransform(frase, consoanteMaiucula)}`);
-console.log(`Frase com as todas as consoantes maiusculas:  ${stringTransform(frase, consoanteMinuscula)}`);
+console.log(`Frase com as todas as vogais minusculas:      ${stringTransform(frase, vogalMinuscula)}`)
+console.log(`Frase com as todas as consoantes minusculas:  ${stringTransform(frase, consoanteMaiucula)}`)
+console.log(`Frase com as todas as consoantes maiusculas:  ${stringTransform(frase, consoanteMinuscula)}`)
+console.log(`\n`)
 
 
-//! TODO: COMEÇAR
-function criaMatriz()
+console.log(`Funções Matriciais\n`)
+
+function funçãoMatricial1(i, j) 
 {
-
+    val = i + j
+    return val
 }
-// Funções Matriciais
-// Implemente uma função que crie matrizes com base em uma função matricial com base nos índices da matriz. A função matricial deverá ser enviada por parâmetro, na forma de função.
 
-// Teste o exercício passando como parâmetro as seguintes funções matriciais:
+function funçãoMatricial2(i, j) 
+{
+    val = i * j
+    return val
+}
 
-// m[i,j] = i + j
-// [i,j] = i * j
-// m[i,j] = i == j ? 1 : 0
-// [i,j] = i^2/(j+1)
-// m[i,j] = i > j ? 1 : (i < j ? 5 : 0)
+function funçãoMatricial3(i, j) 
+{
+    val = i == j ? 1 : 0
+    return val
+}
+
+function funçãoMatricial4(i, j) 
+{
+    val = i^2/(j+1)
+    return val
+}
+
+function funçãoMatricial5(i, j) 
+{
+    val = i > j ? 1 : (i < j ? 5 : 0)
+    return val
+}
+
+matriz = [[0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0], [0,0,0,0,0]]
+
+function criaMatriz(matriz, criterioCriação)
+{
+    for (i = 0; i < matriz.length; i++) 
+    {
+        for (j = 0; j < matriz[0].length; j++)
+        {
+            matriz[i][j] = criterioCriação(i, j)
+        }
+        console.log(matriz[i])
+    }
+    return matriz
+}
+
+console.log(`Resultado função1`)
+matriz = criaMatriz(matriz, funçãoMatricial1)
+
+console.log(`Resultado função2`)
+matriz = criaMatriz(matriz, funçãoMatricial2)
+
+console.log(`Resultado função3`)
+matriz = criaMatriz(matriz, funçãoMatricial3)
+
+console.log(`Resultado função4`)
+matriz = criaMatriz(matriz, funçãoMatricial4)
+
+console.log(`Resultado função5`)
+matriz = criaMatriz(matriz, funçãoMatricial5)
+
+console.log(`FIM`)
