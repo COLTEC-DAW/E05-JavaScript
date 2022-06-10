@@ -9,8 +9,22 @@ function printTriangle(numberOfRows){
 }
 
 function printChessTable(numberOfRows){
+
+    let coloredLine = "";
+    let uncoloredLine = "";
+
     for(let i = 0; i < numberOfRows; i++){
-       i % 2 == 0 ? console.log("# # # #") : console.log(" # # # #");
+        if(i % 2 == 0){
+            coloredLine += "#";
+            uncoloredLine += " ";
+        }
+        else{
+            coloredLine += " ";
+            uncoloredLine += "#";
+        }
+    }
+    for(let i = 0; i < numberOfRows; i++){
+       i % 2 == 0 ? console.log(coloredLine) : console.log(uncoloredLine);
     }
 }
 
@@ -43,3 +57,4 @@ function printNumbers(){
         else console.log(i)
     }
 }
+
