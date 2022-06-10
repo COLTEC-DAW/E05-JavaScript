@@ -1,5 +1,5 @@
-//! FINALIZAR
-console.log("Ordenação\n")
+//! TODO: FINALIZAR
+console.log(`Ordenação\n`)
 function bubbleSort(vet, criterio) 
 {
     concluido = 0
@@ -16,13 +16,13 @@ function bubbleSort(vet, criterio)
     
     // Teste a ordenação criando critérios de ordenação crescente, descrente, crescente ímpares, decrescente pares.    
 }
-console.log("\n")
+console.log(`\n`)
 
 
-console.log("Encriptação\n")
+console.log(`Encriptação\n`)
 function crypt(frase, criterio)
 {
-    vet = frase.split('');
+    vet = frase.split('')
     chave = Math.floor(Math.random() * 27);
 
     
@@ -30,7 +30,7 @@ function crypt(frase, criterio)
     {
         vet[i] = criterio(vet[i], chave);
     }
-    return (vet.join())
+    return (vet.join(''))
 }
 
 function cifraCezar(caractere, chave)
@@ -41,13 +41,13 @@ function cifraCezar(caractere, chave)
     }else return String.fromCharCode(caractere.charCodeAt(0) + chave - 26)
 }
 
-texto = "Enzozozo"
-console.log("Texto a ser encriptado: " +  texto)
-console.log("Texo encriptado: " + crypt(texto, cifraCezar))
-console.log("\n")
+texto = `Enzozozo`
+console.log(`Texto a ser encriptado: ${texto}`)
+console.log(`Texo encriptado: ${crypt(texto, cifraCezar)}`)
+console.log(`\n`)
 
 
-console.log("Verificação de número\n")
+console.log(`Verificação de número\n`)
 
 function testaNum(num, condicao) {return condicao(num)}
 
@@ -65,32 +65,61 @@ function eImpar(num)
     else return true
 }
 
-num = 6
+num = Math.floor(Math.random() * 10 + 1 )
+//nice :)
+if (testaNum(num, ePrimo)) console.log(`o número ${num} é primo`)
+else console.log (`o número ${num} não é primo`)
 
-//primo ou não
-if (testaNum(num, ePrimo)) console.log("o número " + num + " é primo")
-else console.log ("o número " + num + "não é primo")
+if (testaNum(num, eImpar)) console.log(`o número ${num} é impar`)
+else console.log(`o número ${num} é par`)
+console.log(`\n`);
 
-//pra ou ímpar
-if (testaNum(num, eImpar)) console.log("o número " + num + " é impar")
-else console.log("o número " + num + " é par")
+console.log(`Transformação de Strings`);
 
-
-//!COMEÇAR
-function stringTransform()
+function stringTransform(frase, transformação)
 {
-// Transformações em uma String
-// Implemente uma função que faça transformações nos caracteres de uma string. A transformação a ser realizada deverá ser enviada por parâmetro, na forma de função.
+    vet = frase.split('')
+    
+    for(i = 0; i < vet.length; i++) vet[i] = transformação(vet[i])
 
-// Teste a função passando como parâmetro as seguintes transformações:
-
-// Caixa alta nas vogais
-// Caixa alta nas consoantes
-// Caixa baixa nas vogais
-// Caixa baixa nas consoantes
+    return vet.join('')
 }
 
-//!COMEÇAR
+const vogais = ['a','e','i','o','u','A','E','I','O','U']
+
+function vogalMaiuscula(letra)
+{
+    if (vogais.includes(letra) == true) return letra.toUpperCase()
+    else return letra
+}
+
+function consoanteMaiucula(letra)
+{
+    if (vogais.includes(letra) == false) return letra.toUpperCase()
+    else return letra
+}
+
+function vogalMinuscula(letra)
+{
+    if (vogais.includes(letra)) return letra.toLowerCase()
+    else return letra
+}
+
+function consoanteMinuscula(letra) 
+{
+    if (vogais.includes(letra) == false) return letra.toLowerCase()
+    else return letra
+}
+
+frase = `Javascript NÃO é de Deus não!`
+console.log(`A frase que será transformada é:              ${frase}\n`)
+console.log(`Frase com as todas as vogais maiusculas:      ${stringTransform(frase, vogalMaiuscula)}`)
+console.log(`Frase com as todas as vogais minusculas:      ${stringTransform(frase, vogalMinuscula)}`);
+console.log(`Frase com as todas as consoantes minusculas:  ${stringTransform(frase, consoanteMaiucula)}`);
+console.log(`Frase com as todas as consoantes maiusculas:  ${stringTransform(frase, consoanteMinuscula)}`);
+
+
+//! TODO: COMEÇAR
 function criaMatriz()
 {
 
