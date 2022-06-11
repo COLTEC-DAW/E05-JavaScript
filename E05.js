@@ -6,9 +6,29 @@ function printTriangle(numberOfRows){
 }
 
 /// chess board
+// explicação
+//
+// Considerando a matriz abaixo
+// 0 1 0 1
+// 1 0 1 0
+// 0 1 0 1
+// 1 0 1 0
+// apenas quando i e j são pares 
+// colocaremos 0, ou seja, apenas 
+// quando i%2 j%2 forem iguais a 0,
+// de modo que serão iguais entre si 
+// também, simplificando a expressão
+// para ((i%2) == (j%2);
+
 function printChessBoard(numberOfRows){
-    let sequence = ["# # # #"];
-    for(let i = 0; i < numberOfRows; i++) i%2 == 0 ? console.log(sequence.toString()) : console.log(' ' + sequence);  
+    let chessBoard = "";
+    for(let i = 0; i < numberOfRows; i++){
+        for(let j = 0; j < numberOfRows; j++){
+            chessBoard += ((i%2) == (j%2) ? " " : "#");
+        }
+        chessBoard += ("\n");
+    }
+    console.log(chessBoard);
 }
 
 /// palindrome verifier 
@@ -27,17 +47,24 @@ function fizzBuzz(){
 /* Functions */
 
 /// min & max
-console.log(min(2, 3));
+// min
 function min(a, b){
     return a < b ? a : b
 }
 
-console.log(max(2, 3));
+// max
 function max(a, b){
    return a > b ? a : b
 }
 
 /// recursion
+function mod2(number){
+    return modulus(number, 2);
+}
+
+function modulus(num, mod){
+    return (mod == 0 ? undefined : (num == 0 ? true : (num == mod ? true : (num > mod ? modulus(num-mod, mod) : false))));
+}
 
 /// count chars
 
