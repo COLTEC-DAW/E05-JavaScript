@@ -168,3 +168,16 @@ let isEven = (number) => { return number % 2 != 0; }
 function verifyNumber(value, verifierAlgorithm){
     return verifierAlgorithm(value);
 }
+
+/// transform string
+const vowelsToUpperCase = function(char){ return (/^[aeiou]$/).test(char) ? char.toUpperCase() : char };
+
+const consonantsToUpperCase= function(char){ return !(/^[aeiou]$/i).test(char) ? char.toUpperCase() : char };
+
+const vowelsToLowerCase = function(char){ return (/^[AEIOU]$/).test(char) ? char.toLowerCase() :char };
+
+const consonantsToLowerCase = function(char){ return (/^[aeiou]$/i).test(char) ? char.toLowerCase() : char };
+
+function transformString(string, stringTransformationAlgorithm){
+    return (string.split('').map(char =>stringTransformationAlgorithm(char))).join("");
+}
