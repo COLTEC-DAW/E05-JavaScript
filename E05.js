@@ -117,3 +117,42 @@ function deepEquals(obj1, obj2){
     for (let key of keysObj1) if(!keysObj2.includes(key) || !deepEquals(obj1[key], obj2[key])) return false;
     return true;
 }
+
+/* Higher-order Functions */
+
+/// sorting algorithms
+function increasing(array, i) {
+    return (array[i] > array[i + 1]) ? true : false;
+}
+
+function decreasing(array, i) {
+    return (array[i] < array[i + 1]) ? true : false;
+}
+
+function increasingOdd(array, i) {
+    return (array[i] > array[i + 1] && array[i] % 2 != 0) ? true : false;
+}
+
+function decreasingEven(array, i) {
+    return (array[i] < array[i + 1] && array[i] % 2 == 0) ? true : false;
+}
+
+function swap(array, i){
+    let temp = array[i];
+    array[i] = array[i + 1];
+    array[i + 1] = temp;
+}
+
+function bubbleSort(array, sortingCriteria){
+    let swapped;
+    do{
+        swapped = false;
+        for(let i = 0; i < array.length; i++){
+            if(sortingCriteria(array, i)){
+                swap(array, i);
+                swapped = true;
+            }
+        }
+    } while(swapped);
+    return array;
+}
