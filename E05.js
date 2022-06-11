@@ -88,7 +88,6 @@ function range(min, max, i){
 }
 
 /// reverse array
-console.log(reverseArray([4,2,6,7,9,1,3,5]));
 function reverseArray(array){
     for(var reversedArray = [array[array.length - 1]]; reversedArray.length < array.length; reversedArray.push(array[array.length - 1 - reversedArray.length]));
     return reversedArray;
@@ -155,4 +154,53 @@ function bubbleSort(array, sortingCriteria){
         }
     } while(swapped);
     return array;
+}
+
+/// cryptography
+function encrypt(encryptionAlgorithm, string){
+    for(var encryptedString = [encryptionAlgorithm(string[string.length - 1])]; encryptedString.length < string.length; encryptedString.push(encryptionAlgorithm(string[string.length - 1 - encryptedString.length])));
+    return encryptedString;
+}
+
+/// number verifier 
+let isEven = (number) => { return number % 2 != 0; }
+
+function verifyNumber(value, verifierAlgorithm){
+    return verifierAlgorithm(value);
+}
+
+/// transform string
+const vowelsToUpperCase = function(char){ return (/^[aeiou]$/).test(char) ? char.toUpperCase() : char };
+
+const consonantsToUpperCase= function(char){ return !(/^[aeiou]$/i).test(char) ? char.toUpperCase() : char };
+
+const vowelsToLowerCase = function(char){ return (/^[AEIOU]$/).test(char) ? char.toLowerCase() :char };
+
+const consonantsToLowerCase = function(char){ return (/^[aeiou]$/i).test(char) ? char.toLowerCase() : char };
+
+function transformString(string, stringTransformationAlgorithm){
+    return (string.split('').map(char =>stringTransformationAlgorithm(char))).join("");
+}
+
+/// matrix functions
+const sum = ((i,j) => i+j);
+
+const sub = ((i,j) => i-j);
+
+const mult = ((i,j) => i*j);
+
+const equals = ((i,j) => (i == j ? 1 : 0));
+
+const sqrtDividedByPlusOne = ((i,j) => ((i*i)/(j+1)));
+
+const oneOrFive = ((i,j) => ( i > j ? 1 : (i < j ? 5 : 0)));
+
+function matrixBuilder(matrixFunction, i, j){
+    let matrix = [[],[]];
+    for(let m = 0; m < i; m++){
+        for(let n = 0; n < j; n++){
+            matrix[m][n] = matrixFunction(m,n);
+        }
+    }
+    return matrix;
 }
