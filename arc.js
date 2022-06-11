@@ -48,9 +48,8 @@ function palindrome(pal) {
 var matue = prompt("Digite um palindromo! :D");
 
 if (palindrome(matue) == true) {
-    document.write("palindromo foda, parabens!!", '<br/>');
-} else { document.write("que palindromo RUIM!", '<br/>'); }
-document.write('<br/>');
+    console.log("palindromo incrivel, parabens!!");
+}
 //_____________________________//
 //________DIVIDE_5_e_3_________//
 
@@ -105,16 +104,16 @@ var maior = max(a,b);
 
 if (a == b)
 {
-    document.write("os dois sao iguais :D " + menor);
+    console.log("os dois sao iguais :D " + menor);
 } else {
-document.write("o menor numero é " + menor);
+console.log("o menor numero é " + menor);
 }
-document.write('<br/>');
+console.log('<br/>');
 if (a == b)
 {
-    document.write("os dois sao iguais :D " + maior);
+    console.log("os dois sao iguais :D " + maior);
 } else {
-document.write("o maior numero é " + maior);
+    console.log("o maior numero é " + maior);
 }
 
 //_____________________________//
@@ -144,23 +143,24 @@ var numDiv2 = prompt("Digite um numero!");
 
 if (mod2(numDiv2)==true)
 {
-    document.write(numDiv2 +" eh divisivel");
-} else {document.write(numDiv2 +" nao eh divisivel")}
+    console.log(numDiv2 +" eh divisivel");
+} else {console.log(numDiv2 +" nao eh divisivel");}
 
 
 if (mod(a, b)==true)
 {
-    document.write(numDiv2 +" eh divisivel");
-} else {document.write(numDiv2 +" nao eh divisivel")}
+    console.log(numDiv2 +" eh divisivel");
+} else {console.log(numDiv2 +" nao eh divisivel");}
 //_____________________________//
 //______CONTANDO_CARACTERE_____//
 
-var frase = {"arara"}
+var frase = "arara";
 var Char;
 
 function countChar(frase, c)
 {
-    var con = 0, i = 0;
+    var count = 0;
+    var i = 0;
     for (;i<frase.length;i++)
     {
         if(frase[i] == c)
@@ -168,7 +168,7 @@ function countChar(frase, c)
             count++;
         }
     }
-    console.log(c, "aparece", count "vezes");
+    console.log(c, "aparece", count, "vezes");
 }
 
 countChar(frase, Char);
@@ -214,10 +214,12 @@ range2(numAle1, numAle2, aux01);
 function EnchArray (aux)
 {
     var i=0;
+    var array1 = [];
     for(;i>10;i++)
     {
-        array.push(i+1);
+        array1.push(i+1);
     }
+    return array1;
 }
 
 function reverseArray(array)
@@ -239,11 +241,223 @@ console.log(array);
 arrayRev = reverseArray(array);
 console.log(array);
 //_____________________________//
-//____TRABALHANDO COM LISTAS___//
+//____TRABALHANDO_COM_LISTAS___//
 
 function list(array)
 {
-    var lista ={}
+    var lista ={};
+    var i=0;
+    for(; i<array.length;i++)
+    {
+        var objet = {};
+        objet.value = array[i];
+        objet.rest = lista;
+        lista = objet;
+    }
+    return lista;
 }
 
-var array2 = EnchArray(10)
+var array2 = EnchArray(10);
+console.log(list(array));
+//_____________________________//
+//_________DEEP_EQUALS_________//
+
+function DeepEqual(obj1,obj2)
+{
+    return(obj1 == obj2);
+}
+
+var obj1 = {num : 10,};
+var obj2 = obj1;
+var obj3 = {num : obj1.num,};
+
+console.log(DeepEqual(obj1,obj2));
+console.log(DeepEqual(obj1,obj3));
+console.log(DeepEqual(obj2,obj3));
+//_____________________________//
+//__________ORDENAÇÃO__________//
+
+function crescente(num,num2){return(num>num2);};
+function decrescente(num,num2){return(num<num2);}
+function decrescentePar(num,num2){return((num>num2)&&(num%2==0));}
+function crescenteImpar(num,num2){return((num>num2)&&(a%2==0));}
+
+function ordena(array, mod)
+{
+    var tam = array.length;
+    var i=0;
+    for(;i<tam;i++)
+    {
+        var j=0;
+        for(;j<tam;j++)
+        {
+            if(mod(array[j],array[j+1]))
+            {
+                let temp = array[j];
+                array[j] = array[j +1];
+                array[j+1] = temp;
+            }
+        }
+    }
+    console.log(array);
+}
+
+function enchDec (array)
+{
+    var i=100;
+    for(;i>=0;i--)
+    {
+        array.push(i);
+    }
+    return array;
+}
+
+var array3 = [];
+array3 = enchDec(array3);
+//_____________________________//
+//_________CRIPTOGRAFIA________//
+
+function PosFINAL (car, des)
+{
+    var alfa=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    var aux;
+    var i=0;
+    for(;i<26;i++)
+    {
+        if(char==alfa[i])
+        {
+            aux = i;
+        }
+    }
+    var max= 25 - des;
+    if(aux>max)
+    {
+        aux = (des-(25-aux));
+    }else{
+        aux+=3;
+    }
+    return alfa[aux];
+}
+
+function cripto (str, des)
+{
+    var str2 = [];
+    var car;
+    var i=0;
+    for(;str.length;i++)
+    {
+        car = PosFINAL (str[i], des);
+        str2.push(car);
+    }
+    str2 = str2.concat();
+    console.log(str2);
+}
+
+var string = "Neymar";
+var des = 3;
+
+cripto(string,des);
+//_____________________________//
+//____VERIFICANDO_UM NUMERO____//
+
+function caixaAltaVogal (car)
+{
+    car.toLowerCase();
+    if(car == "a" || car == "e" || car == "i" || car == "o" || car == "u")
+    {
+        car = car.toUpperCase();
+    }
+    return car;
+}
+
+function caixaAltaCon (car)
+{
+    char.toLowerCase();
+    if(car != "a" && car != "e" && car != "i" && car != "o" && car != "u")
+    {
+        car = car.toUpperCase();
+    }
+    return car;
+}
+
+function caixaBaixaVogal (car)
+{
+    car = car.toUpperCase();
+    if(car == "a" || car == "e" || car == "i" || car == "o" || car == "u")
+    {
+        car.toLowerCase();
+    }
+    return car;
+}
+
+function caixaBaixaCon (car)
+{
+    char.toUpperCase();
+    if(car != "a" && car != "e" && car != "i" && car != "o" && car != "u")
+    {
+        car = car.toLowerCase();
+    }
+    return car;
+}
+
+function TraStr(str, mod)
+{
+    var str2= "";
+    var aux;
+    var i=0;
+    for(;i<str.length;i++)
+    {
+        aux=mod(str[i]);
+        str2 += aux;
+    }
+    console.log(str2);
+}
+
+TraStr("MATUE", caixaBaixaCon);
+//_____________________________//
+//_____FUNCOES_MATRICIAIS______//
+
+function soma(num,num2)
+{
+    num = parseInt(num);
+    num2 = parseInt(num2);
+    return num + num2;
+}
+function mult(num,num2){
+    num = parseInt(num);
+    num2 = parseInt(num2);
+    return num * num2;
+}
+function igual(num,num2){
+    num = parseInt(num);
+    num2 = parseInt(num2);
+    return num == num2 ? 1 : 0;
+}
+function equa1(num,num2){
+    num = parseInt(num);
+    num2 = parseInt(num2);
+    return num^2/(num2+1);
+}
+function equa2(num,num2){
+    num = parseInt(num);
+    num2 = parseInt(num2);
+    return num > num ? 1 : (num < num ? 5 : 0);
+}
+
+function Cmatriz(tam, mod){   
+    var matriz = [];
+    var array = [];
+    for(var i = 0;i<tama;i++){
+        for(var j = 0;j<tam;j++){
+            array.push(mod(i,j));
+        }
+        matriz.push(array);
+        var array = [];
+    }
+    return matriz;
+}
+
+console.log(Cmatriz(5,soma));
+console.log(Cmatriz(5,equa2));
+//_____________________________//
+//_____________________________//
