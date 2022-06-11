@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="triangulo.js"></script>
+    <script src="palindromo.js"></script>
+    <script src="tabuleiro.js"></script>
+    <script src="umprogdif.js"></script>
+    <script src="Max_Min.js"></script>
+    <script src="mod.js"></script>
+    <script src="countchars.js"></script>
+    <script src="range.js"></script>
+    <script src="reversearray.js"></script>
+    <script src="Tolist.js"></script>
+    <script src="deepEquals.js"></script>
+    <script src="ordenacao.js"></script>
+    <script src="criptografia.js"></script>
+    <script src="transforma.js"></script>
+    <script src="verifica.js"></script>
+    <script src="matriciais.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 style="text-align: center;">Integrantes: Gabriel Moreira Silva, Jean Berly Rivera Sarmiento e Gustavo Rangel Bandeira Cauduro <span style="color: #ffffff;">ajudante(caduard0)</span></h1>
+    <h1 style="text-align: center; color:red">Funções que tem somente um botão necessitam do console do navegador</h1>
+
+    <h2>Desenhando um triangulo</h2>
+    <label for="input_triangulo">Insira o número de linhas:</label>
+    <input id="input_triangulo" type="number">
+    <button onclick="desenhaTriangulo()" type="submit">Desenhar Triângulo</button>
+    <div id="desenho_triangulo"></div>
+
+    <h2>Tabuleiro de Xadrez</h2>
+    <label for="input_tabuleiro">Insira o número de linhas:</label>
+    <input id="input_tabuleiro" type="number">
+    <button onclick="tabuleiro()" type="submit">Desenhar Tabuleiro</button>
+    <div id="tabuleiro"></div>
+
+    <h2>Verificando Palindromo</h2>
+    <h1></h1>
+    <label for="input_palavra">Digite a palavra para verificar se é palíndromo: </label>
+    <input id="input_palavra" type="text">
+    <button onclick="ePalindromo()" type="submit">Verificar</button>
+    <div id="e_palindromo"></div>
+
+    <h2>Um programa diferente</h2> 
+    <label for="inputumprogdif">Imprimir números de 1 a 100</label>
+    <button onclick="umprogdif()" type="submit">Imprimir</button>
+    <div id="umprogdif"></div>
+
+    <h2>Maximo e Minimo</h2>
+    <label for="inputmax">Insira os números:</label>
+    <input id="input_amax" name="inputmax" type="number" placeholder="a"/>
+    <input id="input_bmax" name="inputmax" type="number" placeholder="b"/>
+    <button onclick="maxPag()" type="submit">Retorna o maior</button>
+    <div id="max"></div>
+
+    <label for="inputmin">Insira os números:</label>
+    <input id="input_amin" name="inputmin" type="number" placeholder="a"/>
+    <input id="input_bmin" name="inputmin" type="number" placeholder="b"/>
+    <button onclick="minPag()" type="submit">Retorna o menor</button>
+    <div id="min"></div>
+
+    <h2>Recursividade</h2>
+    <label for="inputmod">Insira o número:</label>
+    <input id="inputmod" type="number"/>
+    <button onclick="mod2Pagina()" type="submit">Retorna x mod 2 == 0</button>
+    <div id="mod"></div>
+
+    <h2>Contando caracteres</h2>
+    <label for="inputcc">Insira a frase e o caractere:</label>
+    <input id="inputcc" type="text"/>
+    <input type="text" id="inputccchar">
+    <button onclick="ccpag()" type="submit">Retorna numero de char</button>
+    <div id="cc"></div>
+
+    <h2>Trabalhando com intervalos</h2>
+    <button onclick="rangeMain()" type="submit">Range</button>
+    <div id="range"></div>
+    
+    <h2>Revertendo um array</h2>
+    <label for="input_reverse">Insira a frase:</label>
+    <input id="input_reverse" type="text"/>
+    <button onclick="reversearraypage()" type="submit">Retorna o array revertido</button>
+    <div id="reversearray"></div>
+
+    <h2>Trabalhando com listas</h2>
+    <button onclick="mainCriptografar()" type="submit">Trabalhando com listas</button>
+    <div id="criptografar"></div>
+
+    <h2>Deep Equals</h2>
+    <button onclick="mainDeepEquals()" type="submit">Retorna se são iguais</button>
+    <div id="deepEquals"></div>
+
+    <h2>Ordenando um array</h2>
+    <button onclick="mainOrdenacao()" type="submit">Ordenar</button>
+
+    <h2>Criptografia</h2>
+    <button onclick="mainCriptografia()" type="submit">Criptografar</button>
+
+    <h2>Verificando se numero é impar e se é primo</h2>
+    <label for="input_verifica">Insira a frase:</label>
+    <input id="input_verifica" type="number"/>
+    <button onclick="mainVerifica()" type="submit">Verifica</button>
+    <div id="verifica"></div>
+
+    <h2>Transformando um array</h2>
+    <label for="input_transforma">Insira a frase:</label>
+    <input id="input_transforma" type="text"/>
+    <button onclick="mainTransforma()" type="submit">Transforma</button>
+    <div id="transforma"></div>
+
+    <h2>Matriciais</h2>
+    <button onclick="mainMatriciais()" type="submit">Matriciais</button>
+    <div id="matriciais"></div>
+
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="text-decoration: none;"><footer style="text-align: center;">Só o Básico.<img src="ericbombado.jpg"></footer></a>
+
+</body>
+
+</html>
