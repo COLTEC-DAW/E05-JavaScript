@@ -76,9 +76,18 @@ function countChars(frase, c){
 
 /* Objects and Arrays */
 
-/// range -> max min 
+/// range -> min max 
+function rangeWStep(min, max){
+   return range(min, max, 1);
+}
 
-/// range -> max min i
+/// range -> min max i
+function range(min, max, i){
+    for(var list = [max < min ? undefined : min + 1]; list[list.length - 1]  < max - 1; list.push(list[list.length - 1] + i));
+    return list;
+}
+
+
 
 /// reverse array
 
