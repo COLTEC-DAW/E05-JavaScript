@@ -181,3 +181,26 @@ const consonantsToLowerCase = function(char){ return (/^[aeiou]$/i).test(char) ?
 function transformString(string, stringTransformationAlgorithm){
     return (string.split('').map(char =>stringTransformationAlgorithm(char))).join("");
 }
+
+/// matrix functions
+const sum = ((i,j) => i+j);
+
+const sub = ((i,j) => i-j);
+
+const mult = ((i,j) => i*j);
+
+const equals = ((i,j) => (i == j ? 1 : 0));
+
+const sqrtDividedByPlusOne = ((i,j) => ((i*i)/(j+1)));
+
+const oneOrFive = ((i,j) => ( i > j ? 1 : (i < j ? 5 : 0)));
+
+function matrixBuilder(matrixFunction, i, j){
+    let matrix = [[],[]];
+    for(let m = 0; m < i; m++){
+        for(let n = 0; n < j; n++){
+            matrix[m][n] = matrixFunction(m,n);
+        }
+    }
+    return matrix;
+}
