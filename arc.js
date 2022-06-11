@@ -241,3 +241,9 @@ console.log(array);
 //_____________________________//
 //____TRABALHANDO COM LISTAS___//
 
+function list(array)
+{
+    var lista ={}
+}
+
+var array2 = EnchArray(10)
