@@ -107,3 +107,13 @@ function toList(array){
     //return {value: (array.shift()), rest: (array[array.length - 1] === undefined ? null : toList(array))};
     return {value: array[0], rest: (array.shift() === undefined ? null : toList(array))};
 }
+
+// deep equals
+function deepEquals(obj1, obj2){
+    if (obj1 === obj2) return true;
+    if (obj1 == null || typeof obj1 != "object" || obj2 == null || typeof obj2 != "object") return false;
+    let keysObj1 = Object.keys(obj1), keysObj2 = Object.keys(obj2);
+    if (keysObj1.length != keysObj2.length) return false;
+    for (let key of keysObj1) if(!keysObj2.includes(key) || !deepEquals(obj1[key], obj2[key])) return false;
+    return true;
+}
