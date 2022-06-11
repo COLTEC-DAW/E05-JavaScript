@@ -58,17 +58,19 @@ function max(a, b){
 }
 
 /// recursion
+// mod2
 function mod2(number){
     return modulus(number, 2);
 }
 
+// mod
 function modulus(num, mod){
     return (mod == 0 ? undefined : (num == 0 ? true : (num == mod ? true : (num > mod ? modulus(num-mod, mod) : false))));
 }
 
 /// count chars
 function countChars(frase, c){
-    for( let i = counter = 0; i < frase.length; counter += (c == frase[i++]));
+    for(let i = counter = 0; i < frase.length; counter += ((c == frase[i++]) ? 1 : 0));
     return counter;
 }
 
