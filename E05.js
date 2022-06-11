@@ -86,3 +86,10 @@ function range(min, max, i){
     for(var list = [max < min ? undefined : min + 1]; list[list.length - 1] < max - 1; list.push(list[list.length - 1] + i));
     return list;
 }
+
+/// reverse array
+console.log(reverseArray([4,2,6,7,9,1,3,5]));
+function reverseArray(array){
+    for(var reversedArray = [array[array.length - 1]]; reversedArray.length < array.length; reversedArray.push(array[array.length - 1 - reversedArray.length]));
+    return reversedArray;
+}
