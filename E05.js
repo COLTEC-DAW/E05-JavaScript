@@ -67,6 +67,10 @@ function modulus(num, mod){
 }
 
 /// count chars
+function countChars(frase, c){
+    for( let i = counter = 0; i < frase.length; counter += (c == frase[i++]));
+    return counter;
+}
 
 /* Objects and Arrays */
 
