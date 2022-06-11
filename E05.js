@@ -35,7 +35,7 @@ function printChessBoard(numberOfRows){
 function isPalindrome(justADummyString){
     // removing all inconsistencies
     justADummyString = justADummyString.toLowerCase().replace(/[\W_]/g, '');
-    for(let i = 0; i < (justADummyString.length)/2; i++) if(justADummyString[i] !==  justADummyString[justADummyString.length - 1 - i]) return false;
+    for(let i = 0; i < (justADummyString.length)/2; i++) if(justADummyString[i] !== justADummyString[justADummyString.length - 1 - i]) return false;
     return true;
 }
 
@@ -83,13 +83,15 @@ function rangeWStep(min, max){
 
 /// range -> min max i
 function range(min, max, i){
-    for(var list = [max < min ? undefined : min + 1]; list[list.length - 1]  < max - 1; list.push(list[list.length - 1] + i));
+    for(var list = [max < min ? undefined : min + 1]; list[list.length - 1] < max - 1; list.push(list[list.length - 1] + i));
     return list;
 }
 
-
-
 /// reverse array
+function reverseArray(array){
+    for(var reversedArray = [array[array.length - 1]]; reversedArray.length < array.length; reversedArray.push(array[array.length - 1 - reversedArray.length]));
+    return reversedArray;
+}
 
 /// working with lists
 
