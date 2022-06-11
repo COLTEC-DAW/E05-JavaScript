@@ -93,3 +93,17 @@ function reverseArray(array){
     for(var reversedArray = [array[array.length - 1]]; reversedArray.length < array.length; reversedArray.push(array[array.length - 1 - reversedArray.length]));
     return reversedArray;
 }
+
+/// working with lists
+
+// bota um JSON.stringify(toList(array))
+// para ter a saida de dados bonitinha
+// se não vc vai ficar parecendo um otário 
+// que nem eu que fiquei uma hora debugando o 
+// trem pq a saída dava rest: [Object] depois 
+// de uma dada quantidade de iterações e eu achei
+// que o trem tava dando errado :p
+function toList(array){
+    //return {value: (array.shift()), rest: (array[array.length - 1] === undefined ? null : toList(array))};
+    return {value: array[0], rest: (array.shift() === undefined ? null : toList(array))};
+}
