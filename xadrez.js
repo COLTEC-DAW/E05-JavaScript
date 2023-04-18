@@ -13,7 +13,7 @@ function multiplicaString(strOriginal, num, strAtual = "", i = 0) {
 
 function tabuleiro(i, altura, str) {
     if(i < altura) {
-        if (i%2) console.log(" " + str);
+        if (i & 1) console.log(" " + str); // Operador de AND bitwise, o verdadeiro jeito de fazer modulo 2
         else console.log(str);
 
         tabuleiro(i+1, altura, str);
