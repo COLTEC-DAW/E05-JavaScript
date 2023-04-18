@@ -1,5 +1,5 @@
-var width = 6;
-var height = 5;
+var width = parseInt(prompt("Largura :"));
+var height = parseInt(prompt("Altura :"));
 for (var i = 0; i < height; i++) {
     var output_1 = "";
     for (var j = 0; j < width; j++) {
