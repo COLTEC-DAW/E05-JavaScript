@@ -1,4 +1,4 @@
-isPalindromo = (word) => {
+let isPalindromo = (word) => {
 	let words = word.split('')
     words = words.filter(l => l !== ' ')
     let wordsReverse = words.map(x => x)
