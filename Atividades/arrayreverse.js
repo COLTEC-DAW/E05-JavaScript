@@ -1,0 +1,1 @@
+const reverseArray = (array) => array.map(x => x).reverse()
