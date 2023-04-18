@@ -1,3 +1,11 @@
+// Jão, meu querido, peço perdão de ante-mão pelos crimes cometidos nesse código.
+// Ele não sabe o que fazes, por favor ignore estes crimes de guerra...
+// Ass: Thales Davi
+
+// EU NÃO ME ARREPENDO DE NADA
+// Ass: Eduardo Birchal
+
+
 function multiplicaString(strOriginal, num, strAtual = "", i = 0) {
     if (i >= num) return strAtual;
     else return multiplicaString(strOriginal, num, strAtual+strOriginal, i+1);
