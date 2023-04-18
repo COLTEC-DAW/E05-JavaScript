@@ -1,0 +1,17 @@
+let input: string = prompt("Digite a palavra: ");
+
+function verify(): void
+{
+    input = input.toLocaleLowerCase();
+    for(let i = 0; i < Math.floor(input.length/2); i++)
+    {
+        if(input[i] != input[input.length-1-i])
+        {
+            console.log("Palavra comum");
+            return;
+        }
+    }
+    console.log("Palíndromo encontrado!");
+}
+
+verify();
