@@ -1,3 +1,7 @@
+> *"Me recuso a trabalhar com JavaScript puro. Vida longa ao TypeScript!"*
+>
+> *CostaCesar*
+
 **OBS: É importante que você gere um commit para cada parte da atividade que você concluir.**
 
 *Nota: Exercícios retirados/inspirados do livro Eloquent JavaScript, de Marijn Haverbeke.*
