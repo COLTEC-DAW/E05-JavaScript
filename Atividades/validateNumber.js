@@ -1,0 +1,1 @@
+const validateNumber = (number = 2, validation = (x) => (x % 2) == 0) => validation(number) 
