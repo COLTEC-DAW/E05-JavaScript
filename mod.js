@@ -1,5 +1,11 @@
 function mod2(number){
-    return (number%2==0);
+    if(number >= 2){
+        return mod2((number-2));
+    } else if(number == 0){
+        return true;
+    } else {
+        return false;
+    }
 }
 
 function mod(num, modu){
