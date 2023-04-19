@@ -10,10 +10,14 @@ function min (num1, num2) {
     else return null;
 }
 
-let min1 = Math.floor(Math.random() * 100);
-let min2 = Math.floor(Math.random() * 100);
-let max1 = Math.floor(Math.random() * 100);
-let max2 = Math.floor(Math.random() * 100);
+function intAleatorio() {
+    return Math.floor(Math.random() * 100);
+}
+
+let min1 = intAleatorio();
+let min2 = intAleatorio();
+let max1 = intAleatorio();
+let max2 = intAleatorio();
 
 console.log(`min(${min1}, ${min2}) = ${min(min1, min2)}`);
 console.log(`max(${max1}, ${max2}) = ${max(max1, max2)}`);
