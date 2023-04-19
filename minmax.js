@@ -1,6 +1,7 @@
 var a = prompt("Primeiro número: ");
 var b = prompt("Segundo número: ");
 var c = prompt("Deseja saber o minimo (1) ou o maximo? (2)");
+
 function min (a, b){
     if(a<b){
         console.log("O menor número é: " + a);
