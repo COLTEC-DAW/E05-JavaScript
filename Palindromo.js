@@ -8,10 +8,9 @@ function palindromo() {
         posReverse++;
     }
     
-    console.log(reverse.prototype.ToString());
-    console.log(palavra);
+    let strReverse = reverse.join('');
 
-    if(reverse == palavra) {
+    if(strReverse == palavra) {
         console.log("É um palindromo");
     } else {
         console.log("Não é um palindromo");
