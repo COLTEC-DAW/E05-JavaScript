@@ -20,8 +20,6 @@ function toList(source: number[]): list
         index.next = step;
         index = index.next;
     }
-
-    console.log("Base: " + base.value);
     return base;
 }
 
