@@ -15,6 +15,10 @@ function range (num1, num2, array = [], i = 1) {
     else return array;
 }
 
+function intAleatorio() {
+    return Math.floor(Math.random() * 100);
+}
+
 let num1 = intAleatorio();
 let num2 = intAleatorio();
 
