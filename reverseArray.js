@@ -6,14 +6,6 @@ function reverseArray(array){
     return reverse;
 }
 
-function range(min, max){
-    var array = [];
-    for (let j = min + 1; j < max; j++) {
-        array.push(j);
-    }
-    return array; 
-}
-
 let a = [5, 'd', 5, 8, 1, 'g'];
 
 console.log(a);
