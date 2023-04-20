@@ -1,8 +1,9 @@
 {
     "compilerOptions": {
-      "target": "es5",
+      "target": "ESNext",
       "module": "commonjs",
       "sourceMap": true,
-      "outDir": "JS"
+      "outDir": "JS",
+      "lib":["ESNext"]
     }
   }
