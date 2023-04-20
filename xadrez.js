@@ -2,6 +2,7 @@
 function xadrez() {
     let nLinhas = prompt("Digite o numero de linhas: ");
 
+    // Imprime com o padrão de xadrez
     for(i = 1; i <= nLinhas; i++) {
         let linhaAtual;
 
