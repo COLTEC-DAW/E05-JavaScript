@@ -1,5 +1,4 @@
 var n_linhas = prompt ("Digite a quantidade de linhas");
-
 for (i = 1, alt=true; i <=n_linhas; i++, alt=!alt) 
 {
     var hash = "# # # # #"
