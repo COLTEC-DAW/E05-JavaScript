@@ -165,31 +165,128 @@ function toList(array){
 
 function deepEquals(obj1, obj2){
     for (const prop in obj1){
-        if(!obj2.hasProperty(prop)){
+        if(!obj2.hasOwnProperty(prop)){
             return false
         }
-
     }
 
+    for (const prop in obj2){
+        if(!obj1.hasOwnProperty(prop)){
+            return false
+        }
+    }
 
     return true
 }
 
-o = {
-    a: 1,
-    b: 2,
-    c: 3
-}
-p = {
-    a: 1,
-    b: 2,
-    c: 3
+
+function verificaNum(num, func){
+    if(func(num)){
+        return true
+    }else{
+        return false
+    }
 }
 
-q = {
-    a: 1,
-    c: 3
+function impar(num){
+    return num % 2 === 1;
 }
 
-deepEquals(p, o)
-deepEquals(p, q)
+function primo(num){
+    let i = 0
+    for (let index = 1; index <= num; index++) {
+        if(num % index === 0){
+            i++;
+        }
+    }
+
+    if(i == 2){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
+console.log( verificaNum(5, impar) );
+console.log( verificaNum(5, primo) );
+console.log( verificaNum(16, impar) );
+console.log( verificaNum(15, primo) );
+
+
+function ehVogal(char){
+    switch (char) {
+        case "a":
+            return true
+            break;
+        case "A":
+            return true
+            break;
+        case "e":
+            return true
+            break;
+        case "E":
+            return true
+            break;
+        case "i":
+            return true
+            break;
+        case "I":
+            return true
+            break;
+        case "o":
+            return true
+            break;
+        case "O":
+            return true
+            break;
+        case "u":
+            return true
+            break;
+        case "U":
+            return true
+            break;
+        default:
+            return false
+            break;
+    }
+}
+
+
+function transformaString(str, func){
+    s = ""
+    for (let index = 0; index < str.length; index++) {
+        s += func(str[index]);
+    }
+    return str;
+}
+
+function aumentaVogal(char){
+    if(ehVogal(char)){
+        return char.toUpperCase()
+    }
+    return char
+}
+function aumentaConsoante(char){
+    if(!ehVogal(char)){
+        return char.toUpperCase()
+    }
+    return char
+}
+function diminuiVogal(char){
+    if(ehVogal(char)){
+        return char.toLowerCase()
+    }
+    return char
+}
+function diminuiConsoante(char){
+    if(!ehVogal(char)){
+        return char.toLowerCase()
+    }
+    return char
+}
+
+console.log( transformaString("teste", aumentaVogal) );
+console.log( transformaString("teste", aumentaConsoante) );
+console.log( transformaString("TESTE", diminuiVogal) );
+console.log( transformaString("TESTE", diminuiConsoante) );
