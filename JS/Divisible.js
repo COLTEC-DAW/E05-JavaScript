@@ -1,5 +1,5 @@
 function modOf(num, mod) {
-    var current = Math.abs(num);
+    let current = Math.abs(num);
     current -= Math.abs(mod);
     if (current == 0)
         return true;

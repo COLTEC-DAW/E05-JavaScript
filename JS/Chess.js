@@ -1,13 +1,13 @@
-var width = parseInt(prompt("Largura :"));
-var height = parseInt(prompt("Altura :"));
-for (var i = 0; i < height; i++) {
-    var output_1 = "";
-    for (var j = 0; j < width; j++) {
+let width = parseInt(prompt("Largura :"));
+let height = parseInt(prompt("Altura :"));
+for (let i = 0; i < height; i++) {
+    let output = "";
+    for (let j = 0; j < width; j++) {
         if (i % 2 == 0)
-            output_1 += " #";
+            output += " #";
         else
-            output_1 += "# ";
+            output += "# ";
     }
-    console.log(output_1);
+    console.log(output);
 }
 //# sourceMappingURL=Chess.js.map

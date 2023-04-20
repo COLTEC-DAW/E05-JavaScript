@@ -1,9 +1,9 @@
-for (var i = 1; i < 100; i++) {
-    var output_1 = i.toString() + ": ";
+for (let i = 1; i < 100; i++) {
+    let output = i.toString() + ": ";
     if (i % 3 == 0)
-        output_1 += "Fizz";
+        output += "Fizz";
     if (i % 5 == 0)
-        output_1 += "Buzz";
-    console.log(output_1);
+        output += "Buzz";
+    console.log(output);
 }
 //# sourceMappingURL=FizzBuzz.js.map

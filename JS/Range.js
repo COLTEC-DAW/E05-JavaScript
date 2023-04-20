@@ -1,11 +1,11 @@
 function range(min, max) {
-    var output;
+    let output;
     if (min <= max) {
-        for (var i = min; i <= max; i++)
+        for (let i = min; i <= max; i++)
             output.push(i);
     }
     else {
-        for (var i = min; i >= max; i--)
+        for (let i = min; i >= max; i--)
             output.push(i);
     }
     return output;
