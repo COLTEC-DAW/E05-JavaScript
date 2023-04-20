@@ -12,4 +12,4 @@ function max(a: number, b: number): number
 }
 
 console.log(min(13, 10));
-console.log(mxn(7, 24));
+console.log(max(7, 24));
