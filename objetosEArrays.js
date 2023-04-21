@@ -25,6 +25,7 @@ function reverseArray(array){
     return array;
 }
 
+//testes
 range(10,20);
 rangeI(10,20,3);
 reverseArray([6,5,4,3,2,1]);

@@ -50,6 +50,7 @@ function countChar(frase, c){
     return resultado;
 }
 
+//testes
 min(9,19);
 max(20,21);
 mod2(149);

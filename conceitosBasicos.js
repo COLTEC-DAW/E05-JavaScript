@@ -92,4 +92,5 @@ function contagem_diferente(){
     }
 }
 
+//testes e interação com usuário
 decide_exercicio();
