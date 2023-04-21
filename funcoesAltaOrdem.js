@@ -144,8 +144,37 @@ function consoanteCaixaBaixa(letra){
     }
 }
 
+function criaMatriz(funcao){
+    var matriz=[[],[],[]];
+    var numColunas=4;
+    for(let i=0;i<matriz.length;i++){
+        for(let j=0;j<numColunas;j++){
+            funcao(matriz,i,j);
+        }
+    }
+    return matriz;
+}
+
+//funções para teste
+function matrizSoma(matriz,i,j) {
+    return matriz[i][j]=i+j
+}
+function matrizMultiplica(matriz,i,j) {
+    return matriz[i][j]=i*j
+}
+function matrizBinario(matriz,i,j) {
+    return matriz[i][j]= i==j ? 1:0;
+}
+function matrizExpressao(matriz, i,j){
+    return matriz[i][j]= i**2/(j+1)
+}
+function matrizCondicional(matriz, i, j){
+    return matriz[i][j]=i>j?1:(i<j?5:0);
+}
+
 //testes
 ordenacao([1,3,4,5,2,6], decrescentePar);
 criptografia("Ola tudo Bem",cifraDeCesar);
 verificaNumero(7,ehPrimo);
 tranformaString("ola TUDO bem", vogalCaixaBaixa);
+criaMatriz(matrizSoma);
