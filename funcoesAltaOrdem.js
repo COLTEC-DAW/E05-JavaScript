@@ -8,7 +8,7 @@ function ordenacao(array, condicao){
             }
         }
     }
-    
+
     return array
 }
 
@@ -26,5 +26,32 @@ function decrescentePar(array, i, j){
     return array[i] < array[j] && array[i]%2===0&&array[j]%2===0;
 }
 
+function criptografia(str, criterio){
+    var novaStr="";
+    str=str.toLowerCase(str);
+    for(let i=0;i<str.length;i++){
+        if(str[i]!==" "){
+            novaStr=novaStr+criterio(str[i]);
+        }else{
+            novaStr+=" ";
+        }
+    }
+    return novaStr;
+}
+
+//função para teste
+function cifraDeCesar(letra){
+    letra=letra.charCodeAt(0)+7;
+    a="a";
+    a=a.charCodeAt(0);
+    z="z";
+    z=z.charCodeAt(0);
+    if(letra>122){
+        letra=a+(letra-z-1);
+    }
+    return String.fromCharCode(letra);
+}
+
 //testes
 ordenacao([1,3,4,5,2,6], decrescentePar);
+criptografia("Ola tudo Bem",cifraDeCesar);
