@@ -7,6 +7,8 @@ function decide_exercicio(){
     break;
     case 'palindromo':verifica_palindromo();
     break;
+    case 'contagem':contagem_diferente();
+    break;
     }
 }
 
@@ -59,7 +61,7 @@ function verifica_palindromo(){
 
     palavra=palavra.join('');
     palavra_reversa=palavra_reversa.join('');
-            
+
 
     if(palavra!==palavra_reversa){
         ehPalindromo=false;
@@ -70,6 +72,24 @@ function verifica_palindromo(){
     }else{
         alert("A expressão dada não é um  palíndromo");
     }  
+}
+
+function contagem_diferente(){
+    var str="";
+    for(var i=1;i<=100;i++){
+        str="";
+        if(i%3===0){
+            str+="Fizz";
+        }
+        if(i%5===0){
+            str+="Buzz";
+        }
+        if(str===""){
+            console.log(i);
+        }else{
+            console.log(str);
+        }
+    }
 }
 
 decide_exercicio();
