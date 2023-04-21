@@ -40,7 +40,18 @@ function mod(num, modulo){
     }
 }
 
+function countChar(frase, c){
+    var resultado=0;
+    for(let i=0;i<frase.length;i++){
+        if(frase[i]===c){
+            resultado++;
+        }
+    }
+    return resultado;
+}
+
 min(9,19);
 max(20,21);
 mod2(149);
 mod(81,8);
+countChar("ola tudo bem", "o");
