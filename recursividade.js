@@ -20,10 +20,15 @@ function chamaFuncao(funcao, dividendo){
 }
 
 function mod2(dividendo){
-    if (dividendo%2 ==0){
+    var numero=dividendo/2;
+    if (numero==1){
         return true;
     }else{
-        return false;
+        if(numero>2&&numero<4){
+            return false;
+        } else{
+            mod2(numero);
+        }
     }
 }
 
