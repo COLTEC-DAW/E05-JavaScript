@@ -11,9 +11,20 @@ function rangeI(min, max, i){
     for(let j=min;j<=max;j=j+i){
         resultado.push(j);
     }
-    console.log(resultado);
+
     return resultado;
+}
+
+function reverseArray(array){
+    for (let i=0, j=array.length-1;i<array.length/2;i++, j--){
+        var temp=array[i];
+        array[i]=array[j];
+        array[j]=temp;
+    }
+    console.log(array)
+    return array;
 }
 
 range(10,20);
 rangeI(10,20,3);
+reverseArray([6,5,4,3,2,1]);
