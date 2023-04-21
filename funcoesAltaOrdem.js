@@ -54,10 +54,8 @@ function cifraDeCesar(letra){
 
 function verificaNumero(num, verificacao){
     if(verificacao(num)){
-        console.log(true)
         return true;
     }else{
-        console.log(false)
         return false
     }
 }
@@ -85,7 +83,7 @@ function tranformaString(string, transformacao){
     for(let i=0;i<string.length;i++){
         novaStr+=transformacao(string[i])
     }
-    console.log(novaStr);
+   return novaStr
 }
 
 //funções para teste
