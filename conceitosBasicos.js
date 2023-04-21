@@ -5,6 +5,8 @@ function decide_exercicio(){
     break;
     case 'xadrez':imprime_jogo_xadrez();
     break;
+    case 'palindromo':verifica_palindromo();
+    break;
     }
 }
 
@@ -40,6 +42,34 @@ function imprime_jogo_xadrez(){
         }
         console.log(string);
     }
+}
+
+function verifica_palindromo(){
+    var palavra = prompt("Digite o possível palíndromo");
+    var palavra_reversa=palavra;
+    var ehPalindromo=true;
+
+    palavra_reversa=palavra_reversa.split("");
+    palavra=palavra.split("");
+
+    palavra=palavra.filter((letra)=>letra!==" ");
+    palavra_reversa=palavra_reversa.filter((letra)=>letra!==" ");
+
+    palavra_reversa.reverse();
+
+    palavra=palavra.join('');
+    palavra_reversa=palavra_reversa.join('');
+            
+
+    if(palavra!==palavra_reversa){
+        ehPalindromo=false;
+    }
+
+    if(ehPalindromo){
+        alert("A expressão dada é um palíndromo!");
+    }else{
+        alert("A expressão dada não é um  palíndromo");
+    }  
 }
 
 decide_exercicio();
