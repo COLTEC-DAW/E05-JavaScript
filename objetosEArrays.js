@@ -21,11 +21,30 @@ function reverseArray(array){
         array[i]=array[j];
         array[j]=temp;
     }
-    console.log(array)
+
     return array;
+}
+
+
+function toList(array){
+    var list={};
+    var listAnt=null;
+
+    for(let i=array.length-1;i>=0;i--){
+        let list2={};
+
+        list2.value=array[i];
+        list2.rest=listAnt;
+
+        listAnt=list2;
+        list=list2;
+    }
+
+    return list;
 }
 
 //testes
 range(10,20);
 rangeI(10,20,3);
 reverseArray([6,5,4,3,2,1]);
+toList([1,2,3]);
