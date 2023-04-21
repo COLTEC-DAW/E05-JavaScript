@@ -8,7 +8,8 @@ function ordenacao(array, condicao){
             }
         }
     }
-    console.log(array);
+    
+    return array
 }
 
 //funções teste
