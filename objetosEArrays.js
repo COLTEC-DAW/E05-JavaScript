@@ -43,8 +43,39 @@ function toList(array){
     return list;
 }
 
+function deepEquals(obj1, obj2){
+    const props1=Object.keys(obj1);
+    const props2=Object.keys(obj2);
+
+    if(props1.length!==props2.length){
+        return false;
+    }else{
+        for(let i=0;i<props1.length;i++){
+
+            var resultado = props2.filter((valor)=>valor===props1[i]);
+
+            if(resultado.length!==0){
+                if(resultado==props1[i]){
+                    continue;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
 //testes
 range(10,20);
 rangeI(10,20,3);
 reverseArray([6,5,4,3,2,1]);
 toList([1,2,3]);
+deepEquals(
+    {nome:"Julia", 
+    cargo:"estudante"}
+    , {nome:"Joao", 
+    cargo:"professor"}
+);
