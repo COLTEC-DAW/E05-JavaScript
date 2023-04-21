@@ -52,6 +52,35 @@ function cifraDeCesar(letra){
     return String.fromCharCode(letra);
 }
 
+function verificaNumero(num, verificacao){
+    if(verificacao(num)){
+        console.log(true)
+        return true;
+    }else{
+        console.log(false)
+        return false
+    }
+}
+
+//funções para teste
+function ehImpar(num){
+    return num%2!==0;
+}
+function ehPrimo(num){
+    var numDivisoes=0;
+    for(let i=1;i<=num;i++){
+        if(num%i===0){
+            numDivisoes++;
+        }
+    }
+    if(numDivisoes===2){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 //testes
 ordenacao([1,3,4,5,2,6], decrescentePar);
 criptografia("Ola tudo Bem",cifraDeCesar);
+verificaNumero(7,ehPrimo);
