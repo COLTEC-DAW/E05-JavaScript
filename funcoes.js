@@ -5,7 +5,7 @@ function min(a,b){
     }else{
         menor=b;
     }
-    console.log(`O menor valor é: ${menor}`);
+    return menor;
 }
 
 function max(a,b){
@@ -15,7 +15,7 @@ function max(a,b){
     }else{
         maior=b;
     }
-    console.log(`O maior valor é: ${maior}`);
+    return maior;
 }
 
 function mod2(number){
