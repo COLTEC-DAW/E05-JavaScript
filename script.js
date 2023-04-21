@@ -290,3 +290,45 @@ console.log( transformaString("teste", aumentaVogal) );
 console.log( transformaString("teste", aumentaConsoante) );
 console.log( transformaString("TESTE", diminuiVogal) );
 console.log( transformaString("TESTE", diminuiConsoante) );
+
+
+function bubbleSort(vetor, func) {
+    let l = vetor.length;
+    for (let i = 0; i < l; i++) {
+      for (let j = 0; j < l - i - 1; j++) {
+        if (func(vetor[j], vetor[j + 1])) {
+          [vetor[j], vetor[j + 1]] = [vetor[j + 1], vetor[j]];
+        }
+      }
+    }
+    return vetor;
+  }
+  
+  function cresc(x, y) {
+    return x > y;
+  }
+  
+  function decresc(x, y) {
+    return x < y;
+  }
+  
+  function crescI(x, y) {
+    if (x % 2 === 1 && y % 2 === 1) {
+      return x > y;
+    } else if (x % 2 === 1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
+  function decrescP(x, y) {
+    if (x % 2 === 0 && y % 2 === 0) {
+      return x < y;
+    } else if (x % 2 === 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+  
