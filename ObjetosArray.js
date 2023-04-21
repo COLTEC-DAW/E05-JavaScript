@@ -96,7 +96,7 @@ function deepEquals(obj1, obj2) {
     }
 }
 
-/* Testes */
+/* ----- Testes ----- */
 // Range
 console.log("4 a 10: " + range(4, 10));
 console.log("4 a 10 de 3 em 3: " + range2(4, 10, 3));
@@ -122,14 +122,14 @@ var obj1 = {
 };
   
 var obj2 = {
-    name: "John",
-    age: 30,
+    name: "Igor Barroso",
+    age: 17,
     address: {
-      city: "New York",
-      state: "NY",
-      country: "USA"
+      city: "Belo Horizonte",
+      state: "MG",
+      country: "Brasil"
     },
-    pets: ["dog", "cat", "fish"]
+    pets: ["dog", "fish"]
 };
 
 console.log(deepEquals(obj1, obj2) ? "Objetos são iguais" : "Objetos são diferentes");
