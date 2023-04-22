@@ -16,6 +16,9 @@ var numMin = prompt("Digite um número: ");
 var numMax = prompt("Digite outro número: ");
 var aux = numMin;
 
+numMin = numMin++;
+numMax = numMax++;
+
 if(aux > numMax){
 
     aux = numMax;
@@ -24,8 +27,6 @@ if(aux > numMax){
 
 }
 
-numMin = numMin++;
-numMax = numMax++;
 
 numeros = range(numMin, numMax);
 
