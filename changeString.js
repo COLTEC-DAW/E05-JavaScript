@@ -9,7 +9,7 @@ function upper(array, char){
     }else{
         for(i = 1; i < array.length; i++){
             if(array[i] == char){
-                tmp = array.slice(0, i) + array[i].toUpperCase() +        array.slice(++i);
+                tmp = array.slice(0, i) + array[i].toUpperCase() + array.slice(++i);
                     break;
             }
         }
@@ -25,7 +25,7 @@ function lower(array, char){
     }else{
         for(i = 1; i < array.length; i++){
             if(array[i] == char){
-                tmp = array.slice(0, i) + array[i].toLowerCase() +        array.slice(++i);
+                tmp = array.slice(0, i) + array[i].toLowerCase() + array.slice(++i);
                     break;
             }
         }
