@@ -1,0 +1,23 @@
+body{
+    background-color: #fafafa;
+    color: #025056;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+h1{
+    background: rgb(120, 182, 182);
+    color: #073133;
+    font-size: 28px;
+    display: inline-block;
+    width: 520px;
+    border: solid rgb(70, 116, 116) 1px ;
+}
+
+
+input{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+}

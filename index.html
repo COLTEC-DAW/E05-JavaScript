@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicios-Daw</title>
+  <!-- Exercicio 1 -->
+  <script type="text/javascript">
+    const imprimeSequencia = () => {
+      const numLinhas = document.exe1.elements["numLinhas"].value;
+      var jogoVelha = "#"
+      for (var i = 0; i < numLinhas; i++) {
+        document.writeln(jogoVelha);
+        jogoVelha += "#"
+        document.write('<br>');
+      }
+    }
+  </script>
+  <!-- Exercicio 2 -->
+  <script type="text/javascript">
+    const imprimeXadrez = () => {
+      const numLinhas = document.exe2.elements["numLinhas"].value;
+      var jogoVelha = "# # # #"
+      for (var i = 0; i < numLinhas; i++) {
+        if (i % 2 == 0) {
+          document.writeln(jogoVelha);
+          document.write('<br>');
+        }
+        else {
+          document.writeln('&nbsp');
+          document.writeln(jogoVelha);
+          document.write('<br>');
+        }
+      }
+    }
+  </script>
+  <!-- Exercicio 3 -->
+  <script type="text/javascript">
+    const ehPalindromo = () => {
+      const palavra = document.exe3.elements["palavra"].value;
+
+      let reverso = palavra.split("").reverse().join("");
+
+      if (palavra === reverso) {
+        document.write("A palavra " + palavra + " é um palíndromo");
+      }
+      if (palavra !== reverso) {
+        document.write("A palavra " + palavra + " não é um palíndromo");
+      }
+    }
+  </script>
+  <!-- Exercicio 4 -->
+  <script type="text/javascript">
+    const programaDiferente = () => {
+      for (var i = 1; i <= 100; i++) {
+        if (i % 3 === 0) {
+          document.writeln(i + "  Fizz");
+          document.write('<br>');
+        }
+        if (i % 5 === 0) {
+          document.writeln(i + "  Buzz");
+          document.write('<br>');
+        }
+        if (i % 3 === 0 || i % 5 === 0) {
+          document.writeln(i + "  FizzBuzz");
+          document.write('<br>');
+        }
+        else {
+          document.writeln(i);
+          document.write('<br>');
+        }
+      }
+    }
+  </script>
+  <!-- Exercicio 5 -->
+  <script type="text/javascript">
+    const maxEMin = () => {
+      num1 = document.exe5.elements["num1"].value;
+      num2 = document.exe5.elements["num2"].value;
+      if (num1 > num2) {
+        document.write("Maior número: " + num1 + "\nMenor número: " + num2);
+      }
+      else {
+        document.write("Maior número: " + num2 + "\nMenor número: " + num1);
+      }
+    }
+  </script>
+  <!-- Exercicio 6 -->
+  <script type="text/javascript">
+    const mod2 = () => {
+      numero = document.exe6.elements["numero"].value;
+      var mod = numero % 2;
+
+      if (mod === 0) {
+        document.write("O número " + numero + " é divisível por 2");
+        return true;
+      }
+      if (mod !== 0) {
+        document.write("O número " + numero + " não é divisível por 2");
+        return false;
+      }
+    }
+  </script>
+  <!-- Exercicio 7 -->
+  <script type="text/javascript">
+    const countChars = () => {
+      let contador = 0;
+      frase = document.exe7.elements["frase"].value;
+      caractere = document.exe7.elements["caractere"].value;
+      for (var i = 0; i < frase.length; i++) {
+        if (frase.charAt(i) === caractere) {
+          contador++;
+        }
+      }
+      document.write("O caractere " + caractere + "  aparece " + contador + " vezes no texto");
+    }
+  </script>
+  <!-- Exercicio 8 -->
+  <script type="text/javascript">
+    const range = () => {
+      num1 = document.exe8.elements["num1"].value;
+      num2 = document.exe8.elements["num2"].value;
+      var menorNumero = 0;
+      var maiorNumero = 0;
+
+      if (num1 > num2) {
+        maiorNumero = num1;
+        menorNumero = num2;
+      }
+      else {
+        maiorNumero = num2;
+        menorNumero = num1;
+      }
+      var resultado = maiorNumero - menorNumero - 1;
+      document.writeln("Intervalo de variação: " + resultado);
+      document.write('<br>');
+      for (var i = menorNumero; i <= maiorNumero; i++) {
+        document.write(i);
+        document.write('<br>');
+      }
+    }
+  </script>
+  <!-- Exercicio 9 -->
+  <script type="text/javascript">
+    const reverseArray = () => {
+      array = document.exe9.elements["array"].value;
+      let reverso = array.split("").reverse().join("");
+      document.write("Array reverso: " + reverso);
+    }
+  </script>
+  
+  <!-- Exercicio 11 -->
+  <script type="text/javascript">
+    const deepEquals = () => {
+      nomeObj1 = document.exe11.elements["nomeObj1"].value;
+      nomeObj2 = document.exe11.elements["nomeObj2"].value;
+      numeroObj1 = document.exe11.elements["numeroObj1"].value;
+      numeroObj2 = document.exe11.elements["numeroObj2"].value;
+
+      if (nomeObj1 === nomeObj2 || nomeObj1.length === nomeObj2.length) {
+        if (numeroObj1 === numeroObj2 || numeroObj1.length === numeroObj2.length) {
+          document.write("Os objetos são iguais")
+          document.write('<br>');
+          document.write(nomeObj1 + "   " + numeroObj1);
+          document.write('<br>');
+          document.write(nomeObj2 + "   " + numeroObj2);
+          document.write('<br>');
+        }
+      }
+
+      else {
+        document.write("Os objetos não são iguais")
+        document.write('<br>');
+        document.write(nomeObj1 + "   " + numeroObj1);
+        document.write('<br>');
+        document.write(nomeObj2 + "   " + numeroObj2);
+        document.write('<br>');
+      }
+    }
+  </script>
+  <!-- Exercicio 13 -->
+  <script type="text/javascript">
+    const criptografia = () => {
+      texto = document.exe13.elements["texto"].value;
+      deslocamento = document.exe13.elements["deslocamento"].value;
+      var alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+      var retorna = parseInt(deslocamento);
+      var manter = [];
+
+      document.write(texto);
+      document.write('<br>');
+      for (var i = 0; i < texto.length; i++) {
+        if (texto[i] !== ' ') {
+          for (var j = 0; j < alfabeto.length; j++) {
+            if (texto[i] == alfabeto[j]) {
+              manter[i] = alfabeto[(j + retorna) % alfabeto.length];
+              break;
+            }
+          }
+        }
+        else {
+          manter[i] = ' ';
+        }
+      }
+      document.write(manter);
+
+    }
+  </script>
+  <!-- Exercicio 14 -->
+  <script type="text/javascript">
+    const verificaNumero = () => {
+      numero = document.exe14.elements["numero"].value;
+
+      function ehImpar(num) {
+        if (num % 2 === 0) {
+          document.writeln("O número " + num + " é par");
+          document.writeln('<br>');
+          return false;
+        }
+        else {
+          document.writeln("O número " + num + " é  ímpar");
+          document.writeln('<br>');
+          return true;
+        }
+      }
+      var divisor = 0;
+      function ehPrimo(num) {
+        for (var i = 2; i < num / 2; i++) {
+          if (num % i === 0) {
+            divisor++;
+          }
+        }
+        if (divisor === 0) {
+          document.write("O número é primo");
+          return true;
+        }
+        else {
+          document.write("O número não é primo");
+        }
+
+      }
+      ehImpar(numero);
+      ehPrimo(numero);
+
+    }
+  </script>
+  <!-- Exercicio 15 -->
+  <script type="text/javascript">
+    const transformaString = () => {
+      texto = document.exe15.elements["texto"].value;
+
+      for (var i = 0; i < texto.length; i++) {
+        if (texto[i] === "a" || texto[i] === "e" || texto[i] === "i" || texto[i] === "o" || texto[i] === "u") {
+          var char = texto[i].toUpperCase(texto[i]);
+          document.write(char);
+        }
+        else {
+          document.write(texto[i]);
+        }
+      }
+    }
+  </script>
+</head>
+
+
+<body>
+  <form id="exe1" name="exe1" action="#">
+    <h1>Desenhando um triângulo</h1>
+    <br>
+    <label>Digite o número de linhas que deseja imprimir</label>
+    <br>
+    <input type="text" id="numLinhas" name="numLinhas">
+    <input type="submit" value="Imprimir" onclick="imprimeSequencia()">
+  </form>
+
+  <form id="exe2" name="exe2" action="#">
+    <h1>Tabuleiro de Xadrez</h1>
+    <br>
+    <label>Digite o número de linhas que deseja imprimir</label>
+    <br>
+    <input type="text" id="numLinhas" name="numLinhas">
+    <input type="submit" value="Imprimir" onclick="imprimeXadrez()">
+  </form>
+
+  <form id="exe3" name="exe3" action="#">
+    <h1>Verificando Palíndromos</h1>
+    <br>
+    <label>Digite a palavra para saber se é um palídromo</label>
+    <br>
+    <input type="text" id="palavra" name="palavra">
+    <input type="submit" value="Imprimir" onclick="ehPalindromo()">
+  </form>
+
+  <form id="exe4" name="exe4" action="#">
+    <h1>Um programa diferente</h1>
+    <br>
+    <label>Aperte para imprimir o resultado deste programa diferente...</label>
+    <input type="submit" value="Aperte" onclick="programaDiferente()">
+  </form>
+
+  <form id="exe5" name="exe5" action="#">
+    <h1>Mínimo e Máximo</h1>
+    <br>
+    <label>Adicione os 2 números para calcular max e min</label>
+    <br>
+    <input type="text" id="num1" name="num1">
+    <input type="text" id="num2" name="num2">
+    <input type="submit" value="Calcular" onclick="maxEMin()">
+  </form>
+
+  <form id="exe6" name="exe6" action="#">
+    <h1>Recursividade</h1>
+    <br>
+    <label>Digite o número para saber se ele é divisível por 2</label>
+    <br>
+    <input type="text" id="numero" name="numero">
+    <input type="submit" value="Calcular" onclick="mod2()">
+  </form>
+
+  <form id="exe7" name="exe7" action="#">
+    <h1>Contando caracteres</h1>
+    <br>
+    <label>Digite a frase e o caractere para saber quantas vezes ele aparece</label>
+    <br>
+    <input type="text" id="frase" name="frase">
+    <input type="text" id="caractere" name="caractere">
+    <input type="submit" value="Calcular" onclick="countChars()">
+  </form>
+
+  <form id="exe8" name="exe8" action="#">
+    <h1>Trabalhando com intervalos</h1>
+    <br>
+    <label>Digite 2 números para saber os inteiros entre eles</label>
+    <br>
+    <input type="text" id="num1" name="num1">
+    <input type="text" id="num2" name="num2">
+    <input type="submit" value="Mostrar" onclick="range()">
+  </form>
+
+  <form id="exe9" name="exe9" action="#">
+    <h1>Revertendo um array</h1>
+    <br>
+    <label>Digite os componentes do array para recebê-lo reverso</label>
+    <br>
+    <input type="text" id="array" name="array">
+    <input type="submit" value="Reverter" onclick="reverseArray()">
+  </form>
+
+
+
+  <form id="exe11" name="exe11" action="#">
+    <h1>DeepEquals</h1>
+    <br>
+    <label>Entre com os dois objetos para compará-los</label>
+    <br>
+    <label>Objeto 1</label><br>
+    <input type="text" id="nomeObj1" name="nomeObj1" placeholder="Nome objeto">
+    <input type="text" id="numeroObj1" name="numeroObj1" placeholder="Número objeto"><br>
+    <label>Objeto 2</label><br>
+    <input type="text" id="nomeObj2" name="nomeObj2" placeholder="Nome objeto">
+    <input type="text" id="numeroObj2" name="numeroObj2" placeholder="Número objeto"><br>
+    <input type="submit" value="Comparar" onclick="deepEquals()">
+  </form>
+
+
+  <form id="exe13" name="exe13" action="#">
+    <h1>Criptografia</h1>
+    <br>
+    <label>Entre com o texto a ser criptografado e o deslocamento da criptografia</label>
+    <br>
+    <input type="text" id="texto" name="texto">
+    <input type="text" id="deslocamento" name="deslocamento">
+    <input type="submit" value="Gerar" onclick="criptografia()">
+  </form>
+
+  <form id="exe14" name="exe14" action="#">
+    <h1>Verificando um número</h1>
+    <br>
+    <label>Entre com 1 número para saber se é ímpar e primo</label>
+    <br>
+    <input type="text" id="numero" name="numero">
+    <input type="submit" value="Calcular" onclick="verificaNumero()">
+  </form>
+
+  <form id="exe15" name="exe15" action="#">
+    <h1>Transformações em uma String</h1>
+    <br>
+    <label>Entre com o texto e veja as transformações</label>
+    <br>
+    <input type="text" id="texto" name="texto">
+    <input type="submit" value="Transformar" onclick="transformaString()">
+  </form>
+
+</body>
+
+</html>
