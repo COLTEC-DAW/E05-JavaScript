@@ -18,6 +18,10 @@ var numMax = prompt("Digite outro número: ");
 var intervalo = prompt("Digite o intervalo entre eles: ");
 var aux = numMin;
 
+numMin = numMin++;
+numMax = numMax++;
+intervalo = intervalo++;
+
 if(aux > numMax){
 
     aux = numMax;
@@ -25,10 +29,6 @@ if(aux > numMax){
     numMin = aux;
 
 }
-
-numMin = numMin++;
-numMax = numMax++;
-intervalo = intervalo++;
 
 numeros = range(numMin, numMax, intervalo);
 
