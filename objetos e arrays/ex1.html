@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade1PT3</title>
+</head>
+
+<body>
+    <script>
+        
+        var min = Number.parseInt(prompt('Digite o numero min: '));
+        var max = Number.parseInt(prompt('Digite o numero max: '));
+        var inter = Number.parseInt(prompt('Digite um intervalo: '));
+        
+        function range(max, min, intervalo) {
+            var numbers = new Array();
+            for (let i = (min+1); i < max; i+= intervalo) {
+                numbers.push(i);
+            }
+            return numbers
+        }
+        console.log(range(max, min, inter));
+    </script>
+</body>
+
+</html>

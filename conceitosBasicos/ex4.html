@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade4</title>
+</head>
+
+<body>
+    <script>
+        
+        
+        for (var i = 1; i <= 100; i++) {
+            
+            var resultadoTres = i % 3;
+            var resultadoCinco = i % 5;
+            if (resultadoTres == 0 && resultadoCinco == 0) {
+                console.log("FizzBuzz");
+            } 
+            else if(resultadoCinco == 0)
+            {
+                console.log("Fizz");
+            }
+            else if(resultadoTres == 0){
+                console.log("Buzz");
+            }
+            else{
+                console.log(i);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
