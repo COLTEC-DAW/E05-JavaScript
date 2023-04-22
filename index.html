@@ -152,35 +152,6 @@
     }
   </script>
   
-  <!-- Exercicio 11 -->
-  <script type="text/javascript">
-    const deepEquals = () => {
-      nomeObj1 = document.exe11.elements["nomeObj1"].value;
-      nomeObj2 = document.exe11.elements["nomeObj2"].value;
-      numeroObj1 = document.exe11.elements["numeroObj1"].value;
-      numeroObj2 = document.exe11.elements["numeroObj2"].value;
-
-      if (nomeObj1 === nomeObj2 || nomeObj1.length === nomeObj2.length) {
-        if (numeroObj1 === numeroObj2 || numeroObj1.length === numeroObj2.length) {
-          document.write("Os objetos são iguais")
-          document.write('<br>');
-          document.write(nomeObj1 + "   " + numeroObj1);
-          document.write('<br>');
-          document.write(nomeObj2 + "   " + numeroObj2);
-          document.write('<br>');
-        }
-      }
-
-      else {
-        document.write("Os objetos não são iguais")
-        document.write('<br>');
-        document.write(nomeObj1 + "   " + numeroObj1);
-        document.write('<br>');
-        document.write(nomeObj2 + "   " + numeroObj2);
-        document.write('<br>');
-      }
-    }
-  </script>
   <!-- Exercicio 13 -->
   <script type="text/javascript">
     const criptografia = () => {
@@ -348,23 +319,6 @@
     <input type="text" id="array" name="array">
     <input type="submit" value="Reverter" onclick="reverseArray()">
   </form>
-
-
-
-  <form id="exe11" name="exe11" action="#">
-    <h1>DeepEquals</h1>
-    <br>
-    <label>Entre com os dois objetos para compará-los</label>
-    <br>
-    <label>Objeto 1</label><br>
-    <input type="text" id="nomeObj1" name="nomeObj1" placeholder="Nome objeto">
-    <input type="text" id="numeroObj1" name="numeroObj1" placeholder="Número objeto"><br>
-    <label>Objeto 2</label><br>
-    <input type="text" id="nomeObj2" name="nomeObj2" placeholder="Nome objeto">
-    <input type="text" id="numeroObj2" name="numeroObj2" placeholder="Número objeto"><br>
-    <input type="submit" value="Comparar" onclick="deepEquals()">
-  </form>
-
 
   <form id="exe13" name="exe13" action="#">
     <h1>Criptografia</h1>
