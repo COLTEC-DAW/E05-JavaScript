@@ -1,4 +1,4 @@
-function minMax(a, b){
+function min(a, b){
     if (a < b){
         return a;
     } else if(b < a){
@@ -8,7 +8,18 @@ function minMax(a, b){
     }
 }
 
+function max(a, b){
+    if(a>b){
+        return a;
+    } else if(b>a){
+        return b;
+    } else{
+        return "Igual";
+    }
+}
+
 let a = parseInt(prompt("a?"));
 let b = parseInt(prompt("b?"));
 
-console.log(minMax(a, b));
+console.log(min(a, b));
+console.log(max(a, b));
