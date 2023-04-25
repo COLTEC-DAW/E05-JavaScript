@@ -2,15 +2,6 @@ const valorZMaiusculo = 90;
 const tamanhoAlfabeto = 26;
 const valorCifraCesar = 3;
 
-function fazCifra (string, cifra, stringCifrada = "", i = 0) {
-    if (i < string.length) {
-        numChar = string[i].toUpperCase().charCodeAt(0) - 65;
-        let novaString = stringCifrada.concat(cifra[numChar].toLowerCase());
-        return fazCifra(string, cifra, novaString, i+1);
-    }
-    else return novaString;
-}
-
 function cifraCesar (string, stringCifrada = "", i = 0) {
     if (i < string.length) {
         let numChar = string.toUpperCase().charCodeAt(i);
@@ -26,6 +17,10 @@ function cifraCesar (string, stringCifrada = "", i = 0) {
     else return stringCifrada;
 }
 
-let string = prompt("Digite a string: ");
+function recebeString(funcao) {
+    let string = prompt("Digite a string: ");
 
-console.log("Sua string é: " + string + "\nSua string criptografada é: " + cifraCesar(string));
+    console.log("Sua string é: " + string + "\nSua string criptografada é: " + funcao(string));
+}
+
+recebeString(cifraCesar);
